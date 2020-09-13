@@ -1,0 +1,182 @@
+﻿namespace = sub_pose
+
+sub_pose.0001 = {
+	type = character_event
+	title = sub_pose.0001.t
+	desc = sub_pose.0001.desc.short
+	theme = seduction
+
+	right_portrait = {
+		character = scope:recipient
+    animation = personality_compassionate
+	}
+
+	option = {
+		name = sub_pose.0001.b
+		trigger_event = sub_pose.0002
+	}
+
+	option = {
+		name = sub_pose.0001.c
+		trigger_event = sub_pose.0003
+	}
+
+	option = {
+		name = sub_pose.0001.d
+		trigger_event = sub_pose.0004
+	}
+
+	option = {
+		name = sub_pose.0001.e
+		trigger_event = sub_pose.0005
+	}
+
+	option = {
+		name = sub_pose.0001.f
+	}
+
+}
+
+sub_pose.0002 = {
+	type = character_event
+	title = sub_pose.0001.t
+	desc = sub_pose.0002.desc.short
+	theme = seduction
+
+	right_portrait = {
+		character = scope:recipient
+    animation = flirtation
+	}
+
+	option = {
+		name = sub_pose.0001.a
+		trigger_event = sub_pose.0001
+	}
+
+	option = {
+		name = sub_pose.0001.c
+		trigger_event = sub_pose.0003
+	}
+
+	option = {
+		name = sub_pose.0001.d
+		trigger_event = sub_pose.0004
+	}
+
+	option = {
+		name = sub_pose.0001.e
+		trigger_event = sub_pose.0005
+	}
+
+	option = {
+		name = sub_pose.0001.f
+	}
+}
+
+sub_pose.0003 = {
+	type = character_event
+	title = sub_pose.0001.t
+	desc = sub_pose.0003.desc.short
+	theme = seduction
+
+	right_portrait = {
+		character = scope:recipient
+    animation = shame
+	}
+
+	option = {
+		name = sub_pose.0001.a
+		trigger_event = sub_pose.0001
+	}
+
+	option = {
+		name = sub_pose.0001.b
+		trigger_event = sub_pose.0002
+	}
+
+	option = {
+		name = sub_pose.0001.d
+		trigger_event = sub_pose.0004
+	}
+
+	option = {
+		name = sub_pose.0001.e
+		trigger_event = sub_pose.0005
+	}
+
+	option = {
+		name = sub_pose.0001.f
+	}
+}
+
+sub_pose.0004 = {
+	type = character_event
+	title = sub_pose.0001.t
+	desc = sub_pose.0004.desc.short
+	theme = seduction
+
+	right_portrait = {
+		character = scope:recipient
+    animation = personality_content
+	}
+
+	option = {
+		name = sub_pose.0001.a
+		trigger_event = sub_pose.0001
+	}
+
+	option = {
+		name = sub_pose.0001.b
+		trigger_event = sub_pose.0002
+	}
+
+	option = {
+		name = sub_pose.0001.c
+		trigger_event = sub_pose.0003
+	}
+
+	option = {
+		name = sub_pose.0001.e
+		trigger_event = sub_pose.0005
+	}
+
+	option = {
+		name = sub_pose.0001.f
+	}
+}
+
+sub_pose.0005 = {
+	type = character_event
+	title = sub_pose.0001.t
+	desc = sub_pose.0005.desc.short
+	theme = seduction
+	
+	right_portrait = {
+		character = scope:recipient
+    animation = prisondungeon
+	}
+
+	option = {
+		name = sub_pose.0001.a
+		trigger_event = sub_pose.0001
+	}
+
+	option = {
+		name = sub_pose.0001.b
+		trigger_event = sub_pose.0002
+	}
+
+	option = {
+		name = sub_pose.0001.c
+		trigger_event = sub_pose.0003
+	}
+
+	option = {
+		name = sub_pose.0001.d
+		trigger_event = sub_pose.0004
+	}
+
+	option = {
+		name = sub_pose.0001.f
+	}
+}

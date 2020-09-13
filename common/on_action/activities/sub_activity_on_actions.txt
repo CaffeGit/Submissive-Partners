@@ -1,0 +1,17 @@
+﻿sub_ask_to_pose = {
+  events = {
+    sub_pose.0001
+  }
+}
+
+sub_set_chastity_rules = {
+  events = {
+    sub_rules.0001
+  }
+}
+
+sub_set_training = {
+  events = {
+    sub_training.0001
+  }
+}

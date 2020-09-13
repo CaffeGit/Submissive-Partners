@@ -1,0 +1,18 @@
+﻿l_english:
+
+ # Scheme Interaction
+ sub_train_obedience_interaction: "Obedience Training #weak (Scheme)#!"
+ sub_train_obedience_interaction_desc: "Train [recipient.GetShortUINameNoTooltip] in obedience."
+
+ # Notifications
+ sub_train_obedience: "Obedience Training Scheme"
+ sub_train_obedience_invalid: "I stop trying to train [target.GetShortUIName|U] as she can no longer become my Submissive."
+
+ # Scheme Name/Description
+ sub_train_obedience_desc: "Train a character to be more obedient"
+ sub_train_obedience_desc_general: "$train_obedience_desc$."
+ sub_train_obedience_action: "Train (Obedience)"
+ SUB_TRAIN_OBEDIENCE_SUCCESS_DESC: "[TARGET_CHARACTER.GetShortUIName|U] will be devoted and loyal to you for life"
+
+ # Progress Modifiers
+ # TRAIN_OBEDIENCE_TARGET_FICKLE: "[target.GetShortUIName|U] is [GetTrait('fickle').GetName( target )]: $VALUE|=+0$"

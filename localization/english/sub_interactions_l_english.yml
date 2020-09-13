@@ -1,0 +1,26 @@
+﻿l_english:
+ # Interactions
+ sub_make_nude_interaction: "Revoke Clothing Privileges"
+ sub_make_nude_interaction_desc: "This character will remain naked, until you decide otherwise."
+ sub_make_subservient_interaction: "Instill Obedience"
+ sub_make_subservient_interaction_desc: "This character will become loyal and obedient to you."
+ sub_undo_nude_interaction: "Permit Clothing"
+ sub_undo_nude_interaction_desc: "You've changed your mind about this character's nudity- order her to put on clothes again."
+ sub_show_pose_interaction: "Pose For Me"
+ sub_show_pose_interaction_desc: "Have [recipient.GetFirstNameNoTooltip] strike some poses."
+ sub_chastity_rules_interaction: "Set Chastity Rules"
+ sub_chastity_rules_interaction_desc: "Decide how often [recipient.GetFirstNameNoTooltip] is allowed orgasms, or lock her up in chastity to prevent pregnancy entirely."
+
+ START_SUB_TRAINING: "Begin Training"
+
+ # Toasts
+ sub_accept_order: "Of course, My Lord."
+ sub_train_obedience_interaction_toast: "Obedience Training"
+
+ # Debugging/Testing
+ sub_make_busty_interaction: "Breast Enhancement"
+ sub_make_busty_interaction_desc: "..."
+ sub_undo_busty_interaction: "Breast Reduction"
+ sub_undo_busty_interaction_desc: "You've changed your mind about the breast enhancement. Back to normal size."
+
+ sub_breast_enhancement_order: "I feel funny..."

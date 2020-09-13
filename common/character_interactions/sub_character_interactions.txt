@@ -1,0 +1,346 @@
+﻿#######
+### RULES/SIMPLE INTERACTIONS
+#######
+
+#Set Clothing Rules
+sub_make_nude_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	interface_priority = 101
+
+  desc = sub_make_nude_interaction_desc
+
+  auto_accept = yes
+
+	is_shown = {
+    scope:recipient = {
+      AND = {
+        NOT = { has_trait = sub_clothing_rule_4 }
+				is_adult = yes
+				is_female = yes
+        OR = {
+          is_consort_of = scope:actor
+          has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+					has_trait = sub_subservient_4
+        }
+      }
+		}
+	}
+
+  is_valid_showing_failures_only = {
+		scope:recipient = { has_trait = sub_subservient_4 }
+	}
+
+	on_accept = {
+
+    scope:recipient = {
+      add_trait = sub_clothing_rule_4
+      add_opinion = {
+				modifier = sub_made_me_go_naked
+				target = scope:actor
+			}
+    }
+
+    scope:actor = {
+      send_interface_toast = {
+        title = sub_accept_order
+        right_icon = scope:recipient
+      }
+    }
+	}
+}
+
+sub_undo_nude_interaction = {
+	category = interaction_category_friendly
+	common_interaction = no
+	interface_priority = 101
+
+  desc = sub_undo_nude_interaction_desc
+
+  auto_accept = yes
+	is_shown = {
+    scope:recipient = { has_trait = sub_clothing_rule_4 }
+	}
+
+	on_accept = {
+
+    scope:recipient = {
+      remove_trait = sub_clothing_rule_4
+    }
+
+    scope:actor = {
+      send_interface_toast = {
+        title = sub_accept_order
+        right_icon = scope:recipient
+      }
+    }
+	}
+}
+
+# Set Chastity Rules
+sub_chastity_rules_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	interface_priority = 95
+
+  desc = sub_chastity_rules_interaction_desc
+
+  auto_accept = yes
+
+	is_shown = {
+    scope:recipient = {
+			AND = {
+				is_adult = yes
+				is_female = yes
+				OR = {
+					is_consort_of = scope:actor
+					has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+					has_trait = sub_subservient
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = { has_trait = sub_subservient }
+	}
+
+	on_accept = {
+    scope:actor = {
+      trigger_event = {
+        on_action = sub_set_chastity_rules
+      }
+    }
+	}
+}
+
+# Posing
+sub_show_pose_interaction = {
+	category = interaction_category_friendly
+	common_interaction = no
+	interface_priority = 90
+
+  desc = sub_show_pose_interaction_desc
+
+  auto_accept = yes
+
+	is_shown = {
+    scope:recipient = {
+			AND = {
+				is_adult = yes
+				is_female = yes
+				OR = {
+					is_consort_of = scope:actor
+					has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+					has_trait = sub_subservient
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = { has_trait = sub_subservient }
+	}
+
+	on_accept = {
+    scope:actor = {
+      trigger_event = {
+        on_action = sub_ask_to_pose
+      }
+    }
+	}
+}
+
+#######
+### TRAINING SCHEMES
+#######
+
+# Start train_obedience scheme
+sub_train_obedience_interaction = {
+	category = interaction_category_friendly
+
+	common_interaction = yes
+	interface_priority = 150
+
+	auto_accept = yes
+	ignores_pending_interaction_block = yes
+
+	scheme = sub_train_obedience
+
+	send_name = START_SUB_TRAINING
+
+	desc = sub_train_obedience_interaction_desc
+
+	is_shown = {
+		scope:recipient = {
+			AND = {
+				is_adult = yes
+				is_female = yes
+				OR = {
+					is_consort_of = scope:actor
+					has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+				}
+				NOT = { has_trait = sub_subservient_4 }
+			}
+		}
+	}
+
+	is_valid = {
+		scope:actor = { is_ai = no }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_adult = yes
+			NOT = {
+				is_scheming_against = { target = scope:recipient }
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			hidden_effect = {
+				send_interface_toast = {
+					title = sub_train_obedience_interaction_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+
+					start_scheme = {
+						target = scope:recipient
+						type = sub_train_obedience
+					}
+				}
+			}
+		}
+	}
+}
+
+# TBD: Add loc and actual options
+# Spawn window to choose training
+sub_set_training_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	interface_priority = 95
+
+  desc = "test desc"
+
+  auto_accept = yes
+
+	is_shown = {
+    scope:recipient = {
+			AND = {
+				is_adult = yes
+				is_female = yes
+				OR = {
+					is_consort_of = scope:actor
+					has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = { has_trait = sub_subservient_4 }
+	}
+
+	on_accept = {
+    scope:actor = {
+      trigger_event = {
+        on_action = sub_set_training
+      }
+    }
+	}
+}
+
+
+#######
+### EXPERIMENTAL
+#######
+
+# Breast Enhancement
+sub_make_busty_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	interface_priority = 100
+
+  desc = sub_make_busty_interaction_desc
+
+  auto_accept = yes
+
+	is_shown = {
+    scope:recipient = {
+      AND = {
+        NOT = { has_trait = sub_busty }
+				is_female = yes
+        OR = {
+          is_consort_of = scope:actor
+          has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+					has_trait = sub_subservient
+        }
+      }
+		}
+	}
+
+  is_valid_showing_failures_only = {
+		scope:recipient = { is_adult = yes }
+	}
+
+	on_accept = {
+
+    scope:recipient = {
+      add_trait = sub_busty
+    }
+
+    scope:actor = {
+      send_interface_toast = {
+        title = sub_breast_enhancement_order
+        right_icon = scope:recipient
+      }
+    }
+	}
+}
+
+sub_undo_busty_interaction = {
+	category = interaction_category_friendly
+	common_interaction = no
+	interface_priority = 100
+
+  desc = sub_undo_busty_interaction_desc
+
+  auto_accept = yes
+
+	is_shown = {
+    scope:recipient = {
+      AND = {
+        has_trait = sub_busty
+        OR = {
+          is_consort_of = scope:actor
+          has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+					has_trait = sub_subservient
+        }
+      }
+		}
+	}
+
+	on_accept = {
+
+    scope:recipient = {
+      remove_trait = sub_busty
+    }
+
+    scope:actor = {
+      send_interface_toast = {
+        title = sub_breast_enhancement_order
+        right_icon = scope:recipient
+      }
+    }
+	}
+}

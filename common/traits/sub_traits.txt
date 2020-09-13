@@ -1,0 +1,217 @@
+﻿###
+# Indices notes for other modders
+# Reserved 5600 - 5699 for this mod
+# 5600-5603: subservient_1-4
+# 5604-5607: clothing_rule_1-4, may not all get used
+# 5608-5611: chastity rules
+# 5690: 'busty' which will be removed at some point now that carnalitas exists
+###
+
+sub_subservient_4 = {
+	index = 5603
+
+	group = sub_subservient
+	level = 4
+
+	diplomacy = 4
+	learning = 2
+	intrigue = -2
+	prowess = -3
+
+	fertility = 0.2
+
+	opinion_of_liege = 20
+
+	personal_scheme_power_mult = -0.9
+
+	ai_compassion = 100
+	ai_vengefulness = -100
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_sub_subservient_4_desc
+			}
+			desc = trait_sub_subservient_4_character_desc
+		}
+	}
+}
+
+sub_clothing_rule_4 = {
+	index = 5607
+
+	group = sub_clothing_rules
+	level = 4
+
+	intrigue = 2
+	prowess = -5
+
+	monthly_prestige = -0.2
+
+	attraction_opinion = 50
+
+	monthly_dread = -10
+	dread_loss_mult = 5
+}
+
+sub_chastity_rule_1 = {
+	index = 5608
+
+	group = sub_chastity_rules
+	level = 1
+
+	fertility = 0.1
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_sub_chastity_rule_1_desc
+			}
+			desc = trait_sub_chastity_rule_1_character_desc
+		}
+	}
+
+	compatibility = {
+		lustful = @pos_compat_medium
+		seducer = @pos_compat_medium
+		beauty_good_1 = @pos_compat_low
+		beauty_good_2 = @pos_compat_medium
+		beauty_good_3 = @pos_compat_medium
+		physique_good_1 = @pos_compat_low
+		physique_good_2 = @pos_compat_low
+		physique_good_3 = @pos_compat_low
+		whole_of_body = @pos_compat_low
+	}
+}
+
+sub_chastity_rule_2 = {
+	index = 5609
+
+	group = sub_chastity_rules
+	level = 2
+
+	fertility = 0.2
+
+	learning = -2
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_sub_chastity_rule_2_desc
+			}
+			desc = trait_sub_chastity_rule_2_character_desc
+		}
+	}
+
+	compatibility = {
+		lustful = @pos_compat_high
+		seducer = @pos_compat_high
+		beauty_good_1 = @pos_compat_medium
+		beauty_good_2 = @pos_compat_high
+		beauty_good_3 = @pos_compat_high
+		physique_good_1 = @pos_compat_low
+		physique_good_2 = @pos_compat_low
+		physique_good_3 = @pos_compat_low
+		whole_of_body = @pos_compat_low
+		chaste = @neg_compat_low
+		celibate = @neg_compat_low
+	}
+}
+
+sub_chastity_rule_3 = {
+	index = 5610
+
+	group = sub_chastity_rules
+	level = 3
+
+	learning = -4
+
+	fertility = 0.5
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_sub_chastity_rule_3_desc
+			}
+			desc = trait_sub_chastity_rule_3_character_desc
+		}
+	}
+
+	compatibility = {
+		lustful = @pos_compat_high
+		seducer = @pos_compat_high
+		beauty_good_1 = @pos_compat_medium
+		beauty_good_2 = @pos_compat_high
+		beauty_good_3 = @pos_compat_high
+		physique_good_1 = @pos_compat_low
+		physique_good_2 = @pos_compat_medium
+		physique_good_3 = @pos_compat_medium
+		whole_of_body = @pos_compat_medium
+		rakish = @pos_compat_low
+		chaste = @neg_compat_medium
+		celibate = @neg_compat_medium
+	}
+}
+
+sub_chastity_rule_4 = {
+	index = 5611
+
+	group = sub_chastity_rules
+	level = 4
+
+	# unclear which of these options is preferable- fertility could still allow for deliberate event pregnancy
+	can_have_children = no
+	# fertility = -10
+
+	learning = 2
+
+	stress_gain_mult = 0.1
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_sub_chastity_rule_4_desc
+			}
+			desc = trait_sub_chastity_rule_4_character_desc
+		}
+	}
+
+	compatibility = {
+		celibate = @pos_compat_high
+		sub_chastity_rule_4 = @pos_compat_medium
+		chaste = @pos_compat_medium
+	}
+}
+
+#######
+## Experimental Section: unlikely to survive to 1.0
+#######
+
+sub_busty = {
+  index = 5690
+
+  dna_modifiers = {
+    morph = {
+      mode = replace
+
+      gene = gene_bs_bust
+      template = bust_shape_3_full
+      value = 1.0
+    }
+  }
+}

@@ -1,0 +1,172 @@
+﻿sub_train_obedience = {
+
+	skill = martial
+	uses_agents = no
+	power_per_skill_point = 5
+	resistance_per_skill_point = 0
+	uses_resistance = no
+	minimum_progress_chance = 40
+	maximum_progress_chance = 99
+	maximum_success = 100
+
+	# Does not use Spymaster
+	spymaster_power_per_skill_point = 0
+	spymaster_resistance_per_skill_point = 0
+
+	allow = {
+	  is_ai = no
+		is_adult = yes
+		scope:target = {
+      is_adult = yes
+      OR = {
+        is_consort_of = scope:owner
+        has_relation_lover = scope:owner
+        has_relation_soulmate = scope:owner
+      }
+      NOT = { has_trait = sub_subservient_4 }
+    }
+	}
+
+	valid = {
+    # no more valid relationship with target
+    OR = {
+      is_consort_of = scope:target
+      has_relation_lover = scope:target
+      has_relation_soulmate = scope:target
+    }
+
+		is_imprisoned = no
+
+		scope:target = {
+			OR = {
+				exists = location
+				in_diplomatic_range = scope:owner
+			}
+		}
+	}
+
+	base_success_chance = {
+		base = 100
+	}
+
+	# TBD
+	# modify power/resistance based on traits & opinion
+
+	# <scheme_name>_power_add = x.x # Used on character
+	# <scheme_name>_power_mult = x # Used on character
+	# <scheme_name>_resistance_add = x.x # Used on character
+	# <scheme_name>_resistance_mult = x # Used on character
+	# scheme_power = x.x # Provides a given amount of scheme power to the scheme itself. Used on the scheme itself
+	# scheme_resistance = x.x # Provides a given amount of scheme resistance to the scheme itself. Used on the scheme itself
+
+  # Just fire conclusion event; no chance of discovery and scheme owner is always player
+	on_ready = {
+		scheme_owner = {
+      trigger_event = sub_train_obedience_outcome.2000
+		}
+	}
+
+	on_invalidated = {
+    # Dead target
+		if = {
+			limit = {
+				scheme_target = { is_alive = no }
+			}
+			scheme_owner = {
+				trigger_event = sub_train_obedience_outcome.0002
+			}
+		}
+
+    # Has none of the original qualifying relationships
+		if = {
+			limit = {
+				NOT = { scheme_progress = 100 }
+				scheme_owner = {
+					NOR = {
+						is_consort_of = scope:scheme.scheme_target
+						has_relation_lover = scope:scheme.scheme_target
+						has_relation_soulmate = scope:scheme.scheme_target
+					}
+				}
+			}
+			scheme_owner = {
+				trigger_event = sub_train_obedience_outcome.0001
+			}
+		}
+
+    # Misc conditions like being imprisoned, no more diplo range
+		else_if = { #fallback invalidation
+			limit = {
+				OR = {
+					scope:owner = { is_imprisoned = yes }
+
+					scope:target = {
+						NOR = {
+							exists = location
+							in_diplomatic_range = scope:owner
+						}
+					}
+				}
+			}
+			scheme_owner = {
+				send_interface_message = {
+					type = event_generic_neutral
+					title = sub_train_obedience
+					left_icon = scope:target
+					custom_tooltip = sub_train_obedience_invalid
+				}
+			}
+		}
+	}
+
+  # trigger training start event
+	on_start = {
+		save_scope_as = scheme
+		scheme_owner = { save_scope_as = owner }
+		scheme_target = { save_scope_as = target }
+
+    scope:owner = {
+      trigger_event = {
+        id = sub_train_obedience_outcome.1000
+        days = { 3 7 }
+      }
+    }
+	}
+
+  # TBD
+  # Since scheme can be cancelled and restarted, milestones should first check
+  # for presence of subservient_1-3
+	on_monthly = {
+		save_scope_as = scheme
+		scheme_owner = { save_scope_as = owner }
+		scheme_target = { save_scope_as = target }
+
+		#Milestone 1 event
+		#if = {
+			#limit = {
+				#scheme_progress >= 3
+				#scheme_progress < 7
+				#NOR = {
+					#has_scheme_modifier = seduce_success_1_modifier
+					#has_scheme_modifier = seduce_failure_1_modifier
+					#has_variable = declined_seduce_milestone_1_event
+				#}
+				#scheme_owner = {
+					#is_available = yes
+				#}
+				#scheme_target = {
+					#is_available = yes
+				#}
+				#player_target_available_for_personal_scheme_ongoing_events_trigger = {
+					#OWNER = scope:owner
+					#TARGET = scope:target
+				#}
+			#}
+			#scheme_owner = {
+				#trigger_event = { on_action = seduce_ongoing_milestone_1 }
+			#}
+		#}
+
+	}
+	success_desc = "SUB_TRAIN_OBEDIENCE_SUCCESS_DESC"
+}

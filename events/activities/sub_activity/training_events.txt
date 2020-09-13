@@ -1,0 +1,32 @@
+﻿namespace = sub_training
+
+sub_training.0001 = {
+	type = character_event
+	title = "test title"
+	desc = "test desc"
+	theme = seduction
+
+	right_portrait = {
+		character = scope:recipient
+    animation = personality_compassionate
+	}
+
+	option = {
+		name = "start obedience training"
+
+		trigger = {
+			scope:recipient = {
+				NOT = { has_trait = sub_subservient_4 }
+			}
+		}
+
+		start_scheme = {
+      type = sub_train_obedience
+      target = scope:recipient
+    }
+	}
+
+  option = {
+    name = "cancel"
+  }
+}

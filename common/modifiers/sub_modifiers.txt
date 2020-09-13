@@ -1,0 +1,7 @@
+﻿sub_recent_training_modifier = {
+	icon = social_positive
+	direct_vassal_opinion = 5
+  monthly_prestige = 0.5
+  attraction_opinion = 20
+	stacking = yes
+}

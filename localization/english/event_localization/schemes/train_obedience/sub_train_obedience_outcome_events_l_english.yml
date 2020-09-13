@@ -1,0 +1,16 @@
+﻿l_english:
+ sub_train_obedience_outcome.0001.t: "[target.GetTitledFirstName]'s Departure"
+ sub_train_obedience_outcome.0001.desc: "Though [target.GetTitledFirstName] had been showing promise in her training, since our separation she has no longer been coming to my chambers for her nightly lessons.\n\nPerhaps we will be together again one day, or perhaps I should simply find a new pet to liven up my chamber at night?"
+ sub_train_obedience_outcome.0001.a: "I must move on."
+
+ sub_train_obedience_outcome.0002.t: "Cut Tragically Short"
+ sub_train_obedience_outcome.0002.desc: "With the death of my [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('target') )] [target.GetTitledFirstName], my plans for her no longer matter.\n\nWhatever may once have been, it is now dead."
+ sub_train_obedience_outcome.0002.a: "Truly a Pity."
+
+ sub_train_obedience_outcome.1000.t: "TBD"
+ sub_train_obedience_outcome.1000.desc: "TBD"
+ sub_train_obedience_outcome.1000.a: "TBD"
+
+ sub_train_obedience_outcome.2000.t: "TBD"
+ sub_train_obedience_outcome.2000.desc: "TBD"
+ sub_train_obedience_outcome.2000.a: "TBD"

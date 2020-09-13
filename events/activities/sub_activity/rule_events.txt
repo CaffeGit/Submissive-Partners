@@ -1,0 +1,102 @@
+﻿namespace = sub_rules
+
+#Set Chastity Rules
+sub_rules.0001 = {
+	type = character_event
+	title = sub_rules.0001.t
+	desc = sub_rules.0001.desc.short
+	theme = marriage
+
+	right_portrait = {
+		character = scope:recipient
+    animation = personality_coward
+	}
+
+	# TBD
+	# Add option to remove all rules
+
+	# TBD
+  # When different levels of subservient are implemented, make options b-d available at different levels
+	option = {
+		name = sub_rules.0001.a
+    scope:recipient = {
+      if = {
+        limit = { has_trait = sub_chastity_rule_2 }
+        remove_trait = sub_chastity_rule_2
+      }
+      if = {
+        limit = { has_trait = sub_chastity_rule_3 }
+        remove_trait = sub_chastity_rule_3
+      }
+      if = {
+        limit = { has_trait = sub_chastity_rule_4 }
+        remove_trait = sub_chastity_rule_4
+      }
+      add_trait = sub_chastity_rule_1
+    }
+	}
+
+	option = {
+		name = sub_rules.0001.b
+    scope:recipient = {
+      if = {
+        limit = { has_trait = sub_chastity_rule_1 }
+        remove_trait = sub_chastity_rule_1
+      }
+      if = {
+        limit = { has_trait = sub_chastity_rule_3 }
+        remove_trait = sub_chastity_rule_3
+      }
+      if = {
+        limit = { has_trait = sub_chastity_rule_4 }
+        remove_trait = sub_chastity_rule_4
+      }
+      add_trait = sub_chastity_rule_2
+    }
+
+	}
+
+	option = {
+		name = sub_rules.0001.c
+    scope:recipient = {
+      if = {
+        limit = { has_trait = sub_chastity_rule_1 }
+        remove_trait = sub_chastity_rule_1
+      }
+      if = {
+        limit = { has_trait = sub_chastity_rule_2 }
+        remove_trait = sub_chastity_rule_2
+      }
+      if = {
+        limit = { has_trait = sub_chastity_rule_4 }
+        remove_trait = sub_chastity_rule_4
+      }
+      add_trait = sub_chastity_rule_3
+    }
+
+	}
+
+	option = {
+		name = sub_rules.0001.d
+    scope:recipient = {
+      if = {
+        limit = { has_trait = sub_chastity_rule_1 }
+        remove_trait = sub_chastity_rule_1
+      }
+      if = {
+        limit = { has_trait = sub_chastity_rule_2 }
+        remove_trait = sub_chastity_rule_2
+      }
+      if = {
+        limit = { has_trait = sub_chastity_rule_3 }
+        remove_trait = sub_chastity_rule_3
+      }
+      add_trait = sub_chastity_rule_4
+    }
+
+	}
+
+	option = {
+		name = sub_rules.0001.e
+	}
+}
