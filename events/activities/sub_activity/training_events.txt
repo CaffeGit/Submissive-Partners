@@ -8,7 +8,7 @@ sub_training.0001 = {
 
 	right_portrait = {
 		character = scope:recipient
-    animation = personality_compassionate
+    	animation = personality_compassionate
 	}
 
 	option = {
@@ -21,12 +21,12 @@ sub_training.0001 = {
 		}
 
 		start_scheme = {
-      type = sub_train_obedience
-      target = scope:recipient
-    }
+			type = sub_train_obedience
+			target = scope:recipient
+    	}
 	}
 
-  option = {
-    name = "cancel"
-  }
+	option = {
+		name = "cancel"
+	}
 }

@@ -14,26 +14,28 @@
 	spymaster_resistance_per_skill_point = 0
 
 	allow = {
-	  is_ai = no
+		is_ai = no
 		is_adult = yes
 		scope:target = {
-      is_adult = yes
-      OR = {
-        is_consort_of = scope:owner
-        has_relation_lover = scope:owner
-        has_relation_soulmate = scope:owner
-      }
-      NOT = { has_trait = sub_subservient_4 }
-    }
+			NOT = { has_trait = sub_subservient_4 }
+			is_adult = yes
+			is_female = yes
+			OR = {
+				is_consort_of = scope:owner
+				has_relation_lover = scope:owner
+				has_relation_soulmate = scope:owner
+			}
+    	}
 	}
 
 	valid = {
-    # no more valid relationship with target
-    OR = {
-      is_consort_of = scope:target
-      has_relation_lover = scope:target
-      has_relation_soulmate = scope:target
-    }
+		# TBD: can this be deleted? It's already in allow
+    	# valid relationship with target
+		OR = {
+			is_consort_of = scope:target
+			has_relation_lover = scope:target
+			has_relation_soulmate = scope:target
+		}
 
 		is_imprisoned = no
 
@@ -59,15 +61,15 @@
 	# scheme_power = x.x # Provides a given amount of scheme power to the scheme itself. Used on the scheme itself
 	# scheme_resistance = x.x # Provides a given amount of scheme resistance to the scheme itself. Used on the scheme itself
 
-  # Just fire conclusion event; no chance of discovery and scheme owner is always player
+	# Just fire conclusion event; no chance of discovery and scheme owner is always player
 	on_ready = {
 		scheme_owner = {
-      trigger_event = sub_train_obedience_outcome.2000
+			trigger_event = sub_train_obedience_outcome.2000
 		}
 	}
 
 	on_invalidated = {
-    # Dead target
+    	# Dead target
 		if = {
 			limit = {
 				scheme_target = { is_alive = no }
@@ -77,7 +79,7 @@
 			}
 		}
 
-    # Has none of the original qualifying relationships
+    	# Has none of the original qualifying relationships
 		if = {
 			limit = {
 				NOT = { scheme_progress = 100 }
@@ -94,7 +96,7 @@
 			}
 		}
 
-    # Misc conditions like being imprisoned, no more diplo range
+    	# Misc conditions like being imprisoned, no more diplo range
 		else_if = { #fallback invalidation
 			limit = {
 				OR = {
@@ -119,23 +121,23 @@
 		}
 	}
 
-  # trigger training start event
+	# trigger training start event
 	on_start = {
 		save_scope_as = scheme
 		scheme_owner = { save_scope_as = owner }
 		scheme_target = { save_scope_as = target }
 
-    scope:owner = {
-      trigger_event = {
-        id = sub_train_obedience_outcome.1000
-        days = { 3 7 }
-      }
-    }
+		scope:owner = {
+			trigger_event = {
+				id = sub_train_obedience_outcome.1000
+				days = { 3 7 }
+			}
+		}
 	}
 
-  # TBD
-  # Since scheme can be cancelled and restarted, milestones should first check
-  # for presence of subservient_1-3
+	# TBD
+	# Since scheme can be cancelled and restarted, milestones should first check
+	# for presence of subservient_1-3
 	on_monthly = {
 		save_scope_as = scheme
 		scheme_owner = { save_scope_as = owner }

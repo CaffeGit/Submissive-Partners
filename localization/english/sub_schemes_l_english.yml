@@ -1,5 +1,4 @@
 ﻿l_english:
-
  # Scheme Interaction
  sub_train_obedience_interaction: "Obedience Training #weak (Scheme)#!"
  sub_train_obedience_interaction_desc: "Train [recipient.GetShortUINameNoTooltip] in obedience."

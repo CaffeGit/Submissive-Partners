@@ -1,10 +1,10 @@
 ﻿###
 # Indices notes for other modders
 # Reserved 5600 - 5699 for this mod
-# 5600-5603: subservient_1-4
-# 5604-5607: clothing_rule_1-4, may not all get used
-# 5608-5611: chastity rules
-# 5690: 'busty' which will be removed at some point now that carnalitas exists
+# 5600-5603: sub_subservient_1-4
+# 5604-5607: sub_clothing_rule_1-4, may not all get used
+# 5608-5611: sub_chastity_rule_1-4
+# 5690: sub_busty, which will be removed at some point now that carnalitas exists
 ###
 
 sub_subservient_4 = {
@@ -203,15 +203,15 @@ sub_chastity_rule_4 = {
 #######
 
 sub_busty = {
-  index = 5690
+	index = 5690
 
-  dna_modifiers = {
-    morph = {
-      mode = replace
+	dna_modifiers = {
+		morph = {
+			mode = replace
 
-      gene = gene_bs_bust
-      template = bust_shape_3_full
-      value = 1.0
-    }
-  }
+			gene = gene_bs_bust
+			template = bust_shape_3_full
+			value = 1.0
+		}
+	}
 }

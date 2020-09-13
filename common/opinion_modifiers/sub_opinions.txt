@@ -4,6 +4,6 @@
 }
 
 sub_made_me_go_naked = {
-  opinion = -20
-  years = 1
+	opinion = -20
+	years = 1
 }
