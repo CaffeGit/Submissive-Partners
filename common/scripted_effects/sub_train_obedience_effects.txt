@@ -1,8 +1,11 @@
 ﻿# scripted effects needed
-	# select every good trait char does have (for size), add to scheme power for reach
-	# select every bad trait char does have (for size), add to scheme resistance for each
-	# clear all of the above 2 scheme modifiers, for recalc on milestones
-	# any wrapper scripted effects of the above
+	# add to scheme power for each good sub trait target has
+	# subtract from scheme power for each bad sub trait target has
+	# clear all of the above 2 scheme modifiers, for recalc on milestones (if trait swap option chosen)
+
+########
+## Random Trait Selection Effects
+########
 
 # selects a random good sub trait that target character doesn't have
 # call on a scheme
@@ -259,8 +262,333 @@ sub_select_random_bad_sub_trait = {
 				}
 			}
 		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:arrogant
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_arrogant
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:callous
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_callous
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:deceitful
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_deceitful
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:fickle
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_fickle
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:gluttonous
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_gluttonous
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:impatient
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_impatient
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:lazy
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_lazy
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:paranoid
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_paranoid
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:sadistic
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_sadistic
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:stubborn
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_stubborn
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:wrathful
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_wrathful
+				}
+			}
+		}
 	}
 }
+
+# selects a random questionable sub trait that target character has
+# call on a scheme
+sub_select_random_questionable_sub_trait = {
+	# get the list of options
+	sub_list_questionable_sub_traits = yes
+
+	# then choose from options and clear the list of options
+	hidden_effect = {
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_list_questionable_sub_traits
+						target = flag:arbitrary
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_arbitrary
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_list_questionable_sub_traits
+						target = flag:chaste
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_chaste
+				}
+			}
+		}
+	}
+}
+
+# selects a random neutral sub trait that target character has
+# call on a scheme
+sub_select_random_neutral_sub_trait = {
+	# get the list of options
+	sub_list_neutral_sub_traits = yes
+
+	# then choose from options and clear the list of options
+	hidden_effect = {
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:brave
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_brave
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:craven
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_craven
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:cynical
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_cynical
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:generous
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_generous
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:greedy
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_greedy
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:gregarious
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_gregarious
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:just
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_just
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:lustful
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_lustful
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:shy
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_shy
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_neutral_sub_traits
+						target = flag:zealous
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_zealous
+				}
+			}
+		}
+	}
+}
+
+########
+## Make List Effects
+########
 
 # make a list of all the good sub traits that target character has
 # call on a scheme
@@ -681,11 +1009,53 @@ sub_list_neutral_sub_traits = {
 	}
 }
 
+########
+## Maintenance Effects
+########
+
 # clean temporary character flags after they have been used
 # call on a scheme
 sub_scheme_train_obedience_event_aftereffects = {
 	scope:target = {
+		# replacement traits
+		remove_character_flag = sub_replacement_trait_calm
+		remove_character_flag = sub_replacement_trait_compassionate
 		remove_character_flag = sub_replacement_trait_content
+		remove_character_flag = sub_replacement_trait_diligent
+		remove_character_flag = sub_replacement_trait_honest
+		remove_character_flag = sub_replacement_trait_humble
+		remove_character_flag = sub_replacement_trait_patient
+		remove_character_flag = sub_replacement_trait_temperate
+		remove_character_flag = sub_replacement_trait_trusting
+
+		# bad replaced traits
 		remove_character_flag = sub_replaced_trait_ambitious
+		remove_character_flag = sub_replaced_trait_arrogant
+		remove_character_flag = sub_replaced_trait_callous
+		remove_character_flag = sub_replaced_trait_deceitful
+		remove_character_flag = sub_replaced_trait_fickle
+		remove_character_flag = sub_replaced_trait_gluttonous
+		remove_character_flag = sub_replaced_trait_impatient
+		remove_character_flag = sub_replaced_trait_lazy
+		remove_character_flag = sub_replaced_trait_paranoid
+		remove_character_flag = sub_replaced_trait_sadistic
+		remove_character_flag = sub_replaced_trait_stubborn
+		remove_character_flag = sub_replaced_trait_wrathful
+
+		# questionable replaced traits
+		remove_character_flag = sub_replaced_trait_arbitrary
+		remove_character_flag = sub_replaced_trait_chaste
+
+		# neutral replaced traits
+		remove_character_flag = sub_replaced_trait_brave
+		remove_character_flag = sub_replaced_trait_craven
+		remove_character_flag = sub_replaced_trait_cynical
+		remove_character_flag = sub_replaced_trait_generous
+		remove_character_flag = sub_replaced_trait_greedy
+		remove_character_flag = sub_replaced_trait_gregarious
+		remove_character_flag = sub_replaced_trait_just
+		remove_character_flag = sub_replaced_trait_lustful
+		remove_character_flag = sub_replaced_trait_shy
+		remove_character_flag = sub_replaced_trait_zealous
 	}
 }
