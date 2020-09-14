@@ -119,12 +119,17 @@
 		scheme_owner = { save_scope_as = owner }
 		scheme_target = { save_scope_as = target }
 
+		scope:scheme = {
+			sub_train_obedience_set_dummy_variables = yes
+		}
+
 		scope:owner = {
 			trigger_event = {
 				on_action = sub_train_obedience_start
 				days = { 3 7 }
 			}
 		}
+
 	}
 
 	# TBD
