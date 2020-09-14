@@ -1,0 +1,40 @@
+﻿# scripted effect to select a random good trait that character doesn't have,
+# and a random bad one that they do
+sub_select_submissive_traits = {
+	# first determine options
+	if = {
+		limit = {
+			NOT = { has_trait = content }
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:content
+		}
+	}
+
+	# then choose from options and clear the list of options
+	hidden_effect = {
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
+						target = flag:content
+					}
+				}
+				add_character_flag = sub_replacement_trait_content
+			}
+		}
+
+		clear_variable_list = sub_replacement_trait_option
+	}
+}
+
+# TBD: Similar but not identical scripted effect to determine # of good vs. bad traits based on variable
+# list size, and set character flag for good vs. bad vs. neutral response using that and opinion
+
+
+# clean character flags
+sub_train_obedience_event_aftereffects = {
+	remove_character_flag = sub_replacement_trait_content
+}

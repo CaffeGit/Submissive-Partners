@@ -29,15 +29,15 @@ namespace = sub_train_obedience_outcome
 # Target died
 sub_train_obedience_outcome.0001 = {
 	type = character_event
-	title = sub_train_obedience.0002.t
-	desc = sub_train_obedience.0002.desc
+	title = sub_train_obedience_outcome.0002.t
+	desc = sub_train_obedience_outcome.0002.desc
 
 	theme = seduce_scheme
 	left_portrait = scope:target
 	#No scheme, no widget
 
 	option = {
-		name = sub_train_obedience.0002.a
+		name = sub_train_obedience_outcome.0002.a
 	}
 }
 
@@ -56,11 +56,16 @@ sub_train_obedience_outcome.0002 = {
 	}
 }
 
+######################################################
+# SETUP EVENTS
+# 1000-1999
+######################################################
+
 # Begin scheme
 sub_train_obedience_outcome.1000 = {
 	type = character_event
-	title = sub_train_obedience.1000.t
-	desc = sub_train_obedience.1000.desc
+	title = sub_train_obedience_outcome.1000.t
+	desc = sub_train_obedience_outcome.1000.desc
 
 	theme = seduce_scheme
 	left_portrait = scope:target
@@ -69,10 +74,44 @@ sub_train_obedience_outcome.1000 = {
 		container = "custom_widgets_container"
 	}
 
+	trigger = {
+		exists = scope:scheme
+	}
+
+	immediate = {
+		scope:target = {
+			sub_select_submissive_traits = yes
+		}
+	}
+
+	# TBD: currently gives bad option if sub isn't content, should update to use different
+	# scripted effect and use current scripted effect for milestone events
 	option = {
-		name = sub_train_obedience.1000.a
+		trigger = {
+			scope:target = {
+				has_character_flag = sub_replacement_trait_content
+			}
+		}
+		name = "do bad response"
+	}
+
+	option = {
+		name = sub_train_obedience_outcome.1000.a
+
+		trigger_event = {
+			on_action = sub_train_obedience_start_response
+		}
+	}
+
+	after = {
+		scope:target = {
+			sub_train_obedience_event_aftereffects = yes
+		}
 	}
 }
+
+# Training begin responses
+sub_train_obedience_outcome.1001 = {}
 
 ######################################################
 # SUCCESS EVENTS FOR OWNER

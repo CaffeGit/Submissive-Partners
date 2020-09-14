@@ -1,0 +1,14 @@
+﻿sub_train_obedience_start = {
+	trigger = {
+		exists = scope:scheme
+	}
+
+	first_valid = {
+		sub_train_obedience_outcome.1000
+	}
+}
+
+# Select target's response based on traits and opinion of player
+sub_train_obedience_start_response = {
+
+}

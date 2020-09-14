@@ -13,12 +13,31 @@ sub_rules.0001 = {
 	}
 
 	# TBD
-	# Add option to remove all rules
-
-	# TBD
 	# When different levels of sub_subservient are implemented, make options b-d available at different levels
 	option = {
 		name = sub_rules.0001.a
+		scope:recipient = {
+			if = {
+				limit = { has_trait = sub_chastity_rule_1 }
+				remove_trait = sub_chastity_rule_1
+			}
+			if = {
+				limit = { has_trait = sub_chastity_rule_2 }
+				remove_trait = sub_chastity_rule_2
+			}
+			if = {
+				limit = { has_trait = sub_chastity_rule_3 }
+				remove_trait = sub_chastity_rule_3
+			}
+			if = {
+				limit = { has_trait = sub_chastity_rule_4 }
+				remove_trait = sub_chastity_rule_4
+			}
+		}
+	}
+
+	option = {
+		name = sub_rules.0001.b
 		scope:recipient = {
 			if = {
 				limit = { has_trait = sub_chastity_rule_2 }
@@ -37,7 +56,7 @@ sub_rules.0001 = {
 	}
 
 	option = {
-		name = sub_rules.0001.b
+		name = sub_rules.0001.c
 		scope:recipient = {
 			if = {
 				limit = { has_trait = sub_chastity_rule_1 }
@@ -56,7 +75,7 @@ sub_rules.0001 = {
 	}
 
 	option = {
-		name = sub_rules.0001.c
+		name = sub_rules.0001.d
 		scope:recipient = {
 			if = {
 				limit = { has_trait = sub_chastity_rule_1 }
@@ -75,7 +94,7 @@ sub_rules.0001 = {
 	}
 
 	option = {
-		name = sub_rules.0001.d
+		name = sub_rules.0001.e
 		scope:recipient = {
 			if = {
 				limit = { has_trait = sub_chastity_rule_1 }
@@ -94,6 +113,6 @@ sub_rules.0001 = {
 	}
 
 	option = {
-		name = sub_rules.0001.e
+		name = sub_rules.0001.f
 	}
 }

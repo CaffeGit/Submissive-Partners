@@ -216,7 +216,7 @@ sub_train_obedience_interaction = {
 	}
 }
 
-# TBD: Add loc and actual options
+# TBD: Add loc and actual options, then uncomment is_shown and is_valid_showing_failures_only
 # Spawn window to choose training
 sub_set_training_interaction = {
 	category = interaction_category_friendly
@@ -230,20 +230,28 @@ sub_set_training_interaction = {
 	is_shown = {
 		scope:recipient = {
 			AND = {
-				is_adult = yes
+				is_male = yes
 				is_female = yes
-				OR = {
-					is_consort_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_soulmate = scope:actor
-				}
 			}
 		}
 	}
+	# is_shown = {
+	# 	scope:recipient = {
+	# 		AND = {
+	# 			is_adult = yes
+	# 			is_female = yes
+	# 			OR = {
+	# 				is_consort_of = scope:actor
+	# 				has_relation_lover = scope:actor
+	# 				has_relation_soulmate = scope:actor
+	# 			}
+	# 		}
+	# 	}
+	# }
 
-	is_valid_showing_failures_only = {
-		scope:recipient = { has_trait = sub_subservient_4 }
-	}
+	# is_valid_showing_failures_only = {
+	# 	scope:recipient = { has_trait = sub_subservient_4 }
+	# }
 
 	on_accept = {
 		scope:actor = {

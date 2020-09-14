@@ -25,18 +25,10 @@
 				has_relation_lover = scope:owner
 				has_relation_soulmate = scope:owner
 			}
-    	}
+		}
 	}
 
 	valid = {
-		# TBD: can this be deleted? It's already in allow
-    	# valid relationship with target
-		OR = {
-			is_consort_of = scope:target
-			has_relation_lover = scope:target
-			has_relation_soulmate = scope:target
-		}
-
 		is_imprisoned = no
 
 		scope:target = {
@@ -69,7 +61,7 @@
 	}
 
 	on_invalidated = {
-    	# Dead target
+		# Dead target
 		if = {
 			limit = {
 				scheme_target = { is_alive = no }
@@ -79,7 +71,7 @@
 			}
 		}
 
-    	# Has none of the original qualifying relationships
+		# Has none of the original qualifying relationships
 		if = {
 			limit = {
 				NOT = { scheme_progress = 100 }
@@ -96,7 +88,7 @@
 			}
 		}
 
-    	# Misc conditions like being imprisoned, no more diplo range
+		# Misc conditions like being imprisoned, no more diplo range
 		else_if = { #fallback invalidation
 			limit = {
 				OR = {
@@ -129,7 +121,7 @@
 
 		scope:owner = {
 			trigger_event = {
-				id = sub_train_obedience_outcome.1000
+				on_action = sub_train_obedience_start
 				days = { 3 7 }
 			}
 		}
