@@ -79,8 +79,8 @@ sub_train_obedience_outcome.1000 = {
 	}
 
 	immediate = {
-		scope:target = {
-			sub_select_submissive_traits = yes
+		scope:scheme = {
+			sub_scheme_select_random_good_sub_trait = yes
 		}
 	}
 
@@ -104,8 +104,8 @@ sub_train_obedience_outcome.1000 = {
 	}
 
 	after = {
-		scope:target = {
-			sub_train_obedience_event_aftereffects = yes
+		scope:scheme = {
+			sub_scheme_train_obedience_event_aftereffects = yes
 		}
 	}
 }

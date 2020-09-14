@@ -249,6 +249,7 @@ sub_set_training_interaction = {
 	# 	}
 	# }
 
+	# TBD: if no valid training options, show failure
 	# is_valid_showing_failures_only = {
 	# 	scope:recipient = { has_trait = sub_subservient_4 }
 	# }
@@ -261,7 +262,6 @@ sub_set_training_interaction = {
 		}
 	}
 }
-
 
 #######
 ### EXPERIMENTAL

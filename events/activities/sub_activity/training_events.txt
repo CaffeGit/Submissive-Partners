@@ -11,20 +11,20 @@ sub_training.0001 = {
     	animation = personality_compassionate
 	}
 
-	option = {
-		name = "start obedience training"
+	# option = {
+	# 	name = "start obedience training"
 
-		trigger = {
-			scope:recipient = {
-				NOT = { has_trait = sub_subservient_4 }
-			}
-		}
+	# 	trigger = {
+	# 		scope:recipient = {
+	# 			NOT = { has_trait = sub_subservient_4 }
+	# 		}
+	# 	}
 
-		start_scheme = {
-			type = sub_train_obedience
-			target = scope:recipient
-    	}
-	}
+	# 	start_scheme = {
+	# 		type = sub_train_obedience
+	# 		target = scope:recipient
+    # 	}
+	# }
 
 	option = {
 		name = "cancel"

@@ -130,6 +130,8 @@
 	# TBD
 	# Since scheme can be cancelled and restarted, milestones should first check
 	# for presence of subservient_1-3
+
+	# Also need to recalc scheme power/resistance, since it's being done with modifiers
 	on_monthly = {
 		save_scope_as = scheme
 		scheme_owner = { save_scope_as = owner }

@@ -1,14 +1,118 @@
-﻿# scripted effect to select a random good trait that character doesn't have,
-# and a random bad one that they do
-sub_select_submissive_traits = {
-	# first determine options
+﻿# scripted effects needed
+	# select every good trait char does have (for size), add to scheme power for reach
+	# select every bad trait char does have (for size), add to scheme resistance for each
+	# clear all of the above 2 scheme modifiers, for recalc on milestones
+	# any wrapper scripted effects of the above
+
+# selects a random good sub trait that target character doesn't have
+# call on a scheme
+sub_select_random_good_sub_trait = {
+	# clear the list so it can be recalculated
 	if = {
 		limit = {
-			NOT = { has_trait = content }
+			has_variable_list = sub_replacement_trait_option
+		}
+		clear_variable_list = sub_replacement_trait_option
+	}
+
+	# determine options
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = calm }
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:calm
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = compassionate }
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:compassionate
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = content }
+			}
 		}
 		add_to_variable_list = {
 			name = sub_replacement_trait_option
 			target = flag:content
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = diligent }
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:diligent
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = honest }
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:honest
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = humble }
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:humble
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = patient }
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:patient
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = temperate }
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:temperate
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				NOT = { has_trait = trusting }
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:trusting
 		}
 	}
 
@@ -19,22 +123,569 @@ sub_select_submissive_traits = {
 				trigger = {
 					is_target_in_variable_list = {
 						name = sub_replacement_trait_option
+						target = flag:calm
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_calm
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
+						target = flag:compassionate
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_compassionate
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
 						target = flag:content
 					}
 				}
-				add_character_flag = sub_replacement_trait_content
+				scope:target = {
+					add_character_flag = sub_replacement_trait_content
+				}
 			}
 		}
-
-		clear_variable_list = sub_replacement_trait_option
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
+						target = flag:diligent
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_diligent
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
+						target = flag:honest
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_honest
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
+						target = flag:humble
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_humble
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
+						target = flag:patient
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_patient
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
+						target = flag:temperate
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_temperate
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
+						target = flag:trusting
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_trusting
+				}
+			}
+		}
 	}
 }
 
-# TBD: Similar but not identical scripted effect to determine # of good vs. bad traits based on variable
-# list size, and set character flag for good vs. bad vs. neutral response using that and opinion
+# selects a random bad sub trait that target character has
+# call on a scheme
+sub_select_random_bad_sub_trait = {
+	# get the list of options
+	sub_list_bad_sub_traits = yes
 
+	# then choose from options and clear the list of options
+	hidden_effect = {
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
+						target = flag:ambitious
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_ambitious
+				}
+			}
+		}
+	}
+}
 
-# clean character flags
-sub_train_obedience_event_aftereffects = {
-	remove_character_flag = sub_replacement_trait_content
+# make a list of all the good sub traits that target character has
+# call on a scheme
+sub_list_good_sub_traits = {
+	# clear the list so it can be recalculated
+	if = {
+		limit = {
+			has_variable_list = sub_good_sub_traits
+		}
+		clear_variable_list = sub_good_sub_traits
+	}
+
+	# fill the list
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = calm
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:calm
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = compassionate
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:compassionate
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = content
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:content
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = diligent
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:diligent
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = honest
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:honest
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = humble
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:humble
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = patient
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:patient
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = temperate
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:temperate
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = trusting
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:trusting
+		}
+	}	
+}
+
+# make a list of all the bad sub traits that target character has
+# call on a scheme
+sub_list_bad_sub_traits = {
+	# clear the list so it can be recalculated
+	if = {
+		limit = {
+			has_variable_list = sub_bad_sub_traits
+		}
+		clear_variable_list = sub_bad_sub_traits
+	}
+
+	# fill the list
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = ambitious
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:ambitious
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = arrogant
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:arrogant
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = callous
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:callous
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = deceitful
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:deceitful
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = fickle
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:fickle
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = gluttonous
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:gluttonous
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = impatient
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:impatient
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = lazy
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:lazy
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = paranoid
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:paranoid
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = sadistic
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:sadistic
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = stubborn
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:stubborn
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = wrathful
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:wrathful
+		}
+	}
+}
+
+# make a list of all the questionable sub traits that target character has
+# call on a scheme
+sub_list_questionable_sub_traits = {
+	# clear the list so it can be recalculated
+	if = {
+		limit = {
+			has_variable_list = sub_questionable_sub_traits
+		}
+		clear_variable_list = sub_questionable_sub_traits
+	}
+
+	# fill the list
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = arbitrary
+			}
+		}
+		add_to_variable_list = {
+			name = sub_questionable_sub_traits
+			target = flag:arbitrary
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = chaste
+			}
+		}
+		add_to_variable_list = {
+			name = sub_questionable_sub_traits
+			target = flag:chaste
+		}
+	}
+}
+
+# make a list of all the neutral sub traits that target character has
+# call on a scheme
+sub_list_neutral_sub_traits = {
+	# clear the list so it can be recalculated
+	if = {
+		limit = {
+			has_variable_list = sub_neutral_sub_traits
+		}
+		clear_variable_list = sub_neutral_sub_traits
+	}
+
+	# fill the list
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = brave
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:brave
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = craven
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:craven
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = cynical
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:cynical
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = generous
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:generous
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = greedy
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:greedy
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = gregarious
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:gregarious
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = just
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:just
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = lustful
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:lustful
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = shy
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:shy
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = zealous
+			}
+		}
+		add_to_variable_list = {
+			name = sub_neutral_sub_traits
+			target = flag:zealous
+		}
+	}
+}
+
+# clean temporary character flags after they have been used
+# call on a scheme
+sub_scheme_train_obedience_event_aftereffects = {
+	scope:target = {
+		remove_character_flag = sub_replacement_trait_content
+		remove_character_flag = sub_replaced_trait_ambitious
+	}
 }
