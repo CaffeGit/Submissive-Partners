@@ -1,4 +1,5 @@
 ﻿# scripted effects needed
+	# calc for which beginning
 	# add to scheme power for each good sub trait target has
 	# subtract from scheme power for each bad sub trait target has
 	# clear all of the above 2 scheme modifiers, for recalc on milestones (if trait swap option chosen)
@@ -674,7 +675,7 @@ sub_select_random_good_sub_trait = {
 }
 
 # adds flagged replacement trait and removes removes flagged replaced trait
-# call on character
+# call on a character
 sub_add_and_remove_selected_sub_traits = {
 	# Add trait based on character flag sub_replacement_trait_[trait_name]
 	if = {
@@ -854,6 +855,129 @@ sub_add_and_remove_selected_sub_traits = {
 	if = {
 		limit = { has_character_flag = sub_replaced_trait_trusting }
 		remove_trait = trusting
+	}
+}
+
+########
+## Calculation Effects
+########
+
+# sets variables on scheme counting target's good/bad sub traits
+# call on a scheme
+sub_count_categorized_personality_traits = {
+	# Get lists of target's traits in each category
+	sub_list_good_sub_traits = yes
+	sub_list_bad_sub_traits = yes
+	sub_list_questionable_sub_traits = yes
+	sub_list_neutral_sub_traits = yes
+
+	set_variable = {
+		name = sub_num_good_sub_traits
+		value = 0
+	}
+	every_in_list = {
+		variable = sub_good_sub_traits
+		scope:scheme = {
+				change_variable = {
+				name = sub_num_good_sub_traits
+				add = 1
+			}
+		}
+	}
+	set_variable = {
+		name = sub_num_good_sub_traits_plus_one
+		value = {
+			value = scope:scheme.var:sub_num_good_sub_traits
+			add = 1
+		}
+	}
+	set_variable = {
+		name = sub_num_bad_sub_traits
+		value = 0
+	}
+	every_in_list = {
+		variable = sub_bad_sub_traits
+		scope:scheme = {
+				change_variable = {
+				name = sub_num_bad_sub_traits
+				add = 1
+			}
+		}
+	}
+	set_variable = {
+		name = sub_num_bad_sub_traits_plus_one
+		value = {
+			value = scope:scheme.var:sub_num_bad_sub_traits
+			add = 1
+		}
+	}
+}
+
+# sets flag for whether target is receptive or not to sub_train_obedience scheme
+# call on a scheme
+sub_set_train_obedience_receptiveness = {
+	if = {
+		limit = {
+			OR = {
+				# Amenable personality & doesn't dislike scheme owner
+				AND = {
+					var:sub_num_good_sub_traits = { compare_value > scope:scheme.var:sub_num_bad_sub_traits_plus_one }
+					scope:target = {
+						opinion = {
+							target = scope:owner
+							value >= neutral_opinion
+						}
+					}
+				}
+				# Somewhat amenable personality & likes scheme owner
+				AND = {
+					var:sub_num_good_sub_traits = { compare_value > scope:scheme.var:sub_num_bad_sub_traits}
+					scope:target = {
+						opinion = {
+							target = scope:owner
+							value >= medium_positive_opinion
+						}
+					}
+				}
+			}
+		}
+		scope:target = {
+			add_character_flag = sub_receptive_training_response
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				# Independent personality & doesn't really like scheme owner
+				AND = {
+					var:sub_num_bad_sub_traits = { compare_value > scope:scheme.var:sub_num_good_sub_traits_plus_one }
+					scope:target = {
+						opinion = {
+							target = scope:owner
+							value <= high_positive_opinion
+						}
+					}
+				}
+				# Somewhat independent personality & dislikes scheme owner
+				AND = {
+					var:sub_num_bad_sub_traits = { compare_value > scope:scheme.var:sub_num_good_sub_traits }
+					scope:target = {
+						opinion = {
+							target = scope:owner
+							value <= neutral_opinion
+						}
+					}
+				}
+			}
+		}
+		scope:target = {
+			add_character_flag = sub_unreceptive_training_response
+		}
+	}
+	else = {
+		scope:target = {
+			add_character_flag = sub_neutral_training_response
+		}
 	}
 }
 
@@ -1363,12 +1487,18 @@ sub_train_obedience_event_aftereffects = {
 		remove_character_flag = sub_replaced_trait_patient
 		remove_character_flag = sub_replaced_trait_temperate
 		remove_character_flag = sub_replaced_trait_trusting
+
+		# receptiveness to training
+		remove_character_flag = sub_receptive_training_response
+		remove_character_flag = sub_unreceptive_training_response
+		remove_character_flag = sub_neutral_training_response
 	}
 }
 
-# To get around a Jomini bug where it won't look for variable declarations in effects, the variable_lists
-# used in this scheme are initially created here. All of these values will get overridden later.
-# If this effect isn't used, the error log gets cluttered with 'could not find list' messages.
+# To get around a Jomini bug/"feature" where it won't look for variable declarations in effects
+# that use those variables, the variables used in this scheme are initially created here. All
+# of these values will get overridden later.
+# If this effect isn't used, the error log gets cluttered with 'could not find list'-type messages.
 # call on a scheme ONCE on_start
 sub_train_obedience_set_dummy_variables = {
 	add_to_variable_list = {
@@ -1386,5 +1516,21 @@ sub_train_obedience_set_dummy_variables = {
 	add_to_variable_list = {
 		name = sub_good_sub_traits
 		target = 0
+	}
+	set_variable = {
+		name = sub_num_good_sub_traits
+		value = 0
+	}
+	set_variable = {
+		name = sub_num_bad_sub_traits
+		value = 0
+	}
+	set_variable = {
+		name = sub_num_good_sub_traits_plus_one
+		value = 0
+	}
+	set_variable = {
+		name = sub_num_bad_sub_traits_plus_one
+		value = 0
 	}
 }

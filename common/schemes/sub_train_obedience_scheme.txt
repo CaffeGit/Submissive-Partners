@@ -113,6 +113,7 @@
 		}
 	}
 
+	# TBD: Add power/resistance modifiers to scheme based on traits & opinion
 	# trigger training start event
 	on_start = {
 		save_scope_as = scheme

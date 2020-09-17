@@ -19,6 +19,8 @@ namespace = sub_train_obedience_outcome
 # 0001: target died
 # 0002: relationship with target changed
 # 1000: scheme begins
+# 1001-1003: scheme begins reactions
+# 1500: Milestone 1
 # 2000: success
 
 ######################################################
@@ -61,7 +63,7 @@ sub_train_obedience_outcome.0002 = {
 # 1000-1999
 ######################################################
 
-# Begin scheme
+# Begin training
 sub_train_obedience_outcome.1000 = {
 	type = character_event
 	title = sub_train_obedience_outcome.1000.t
@@ -78,31 +80,50 @@ sub_train_obedience_outcome.1000 = {
 		exists = scope:scheme
 	}
 
-	# TBD: This option should be removed from the begin event after testing and put into milestones
-	# Also should check for neutral traits after questionable
 	immediate = {
 		scope:scheme = {
-			sub_select_random_new_good_sub_trait = yes
-			sub_select_random_replaced_trait = yes
+			sub_count_categorized_personality_traits = yes
+			sub_set_train_obedience_receptiveness = yes
 		}
 	}
 
 	# TBD: This option is really for milestone events, not begin
 	# TBD: Instead, use effects for deciding response type
+
 	option = {
-		scope:target = {
-			sub_add_and_remove_selected_sub_traits = yes
+		trigger = {
+			scope:target = { has_character_flag = sub_receptive_training_response }
 		}
 
-		name = "do trait swap"
+		name = sub_train_obedience_outcome.1000.a
+
+		# trigger_event = {
+		# 	on_action = sub_train_obedience_start_response
+		# }
 	}
 
 	option = {
-		name = sub_train_obedience_outcome.1000.a
-
-		trigger_event = {
-			on_action = sub_train_obedience_start_response
+		trigger = {
+			scope:target = { has_character_flag = sub_unreceptive_training_response }
 		}
+
+		name = sub_train_obedience_outcome.1000.b
+
+		# trigger_event = {
+		# 	on_action = sub_train_obedience_start_response
+		# }
+	}
+
+	option = {
+		trigger = {
+			scope:target = { has_character_flag = sub_neutral_training_response }
+		}
+
+		name = sub_train_obedience_outcome.1000.c
+
+		# trigger_event = {
+		# 	on_action = sub_train_obedience_start_response
+		# }
 	}
 
 	after = {
@@ -112,8 +133,51 @@ sub_train_obedience_outcome.1000 = {
 	}
 }
 
-# Training begin responses
+# Begin training responses
 sub_train_obedience_outcome.1001 = {}
+
+# Milestone 1
+sub_train_obedience_outcome.1500 = {
+	type = character_event
+	title = sub_train_obedience_outcome.1500.t
+	desc = sub_train_obedience_outcome.1500.desc
+
+	theme = seduce_scheme
+	left_portrait = scope:target
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+
+	trigger = {
+		exists = scope:scheme
+	}
+
+	immediate = {
+		scope:scheme = {
+			sub_select_random_new_good_sub_trait = yes
+			sub_select_random_replaced_trait = yes
+		}
+	}
+
+	option = {
+		scope:target = {
+			sub_add_and_remove_selected_sub_traits = yes
+		}
+
+		name = "do trait swap"
+	}
+
+	option = {
+		name = "ignore trait swap"
+	}
+
+	after = {
+		scope:scheme = {
+			sub_train_obedience_event_aftereffects = yes
+		}
+	}
+}
 
 ######################################################
 # SUCCESS EVENTS FOR OWNER
