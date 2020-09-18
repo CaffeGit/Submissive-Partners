@@ -7,3 +7,13 @@ sub_made_me_go_naked = {
 	opinion = -20
 	years = 1
 }
+
+sub_positive_training_start = {
+	opinion = 10
+	months = 6
+}
+
+sub_negative_training_start = {
+	opinion = -10
+	months = 6
+}

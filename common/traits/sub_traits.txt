@@ -7,6 +7,63 @@
 # 5690: sub_busty, which will be removed at some point now that carnalitas exists
 ###
 
+sub_subservient_1 = {
+	index = 5600
+
+	group = sub_subservient
+	level = 1
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_sub_subservient_1_desc
+			}
+			desc = trait_sub_subservient_1_character_desc
+		}
+	}
+}
+
+sub_subservient_2 = {
+	index = 5601
+
+	group = sub_subservient
+	level = 2
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_sub_subservient_2_desc
+			}
+			desc = trait_sub_subservient_2_character_desc
+		}
+	}
+}
+
+sub_subservient_3 = {
+	index = 5602
+
+	group = sub_subservient
+	level = 3
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_sub_subservient_3_desc
+			}
+			desc = trait_sub_subservient_3_character_desc
+		}
+	}
+}
+
 sub_subservient_4 = {
 	index = 5603
 

@@ -973,6 +973,7 @@ sub_count_categorized_personality_traits = {
 	sub_list_questionable_sub_traits = yes
 	sub_list_neutral_sub_traits = yes
 
+	# Set number of good/bad sub traits and corresponding scheme modifiers
 	set_variable = {
 		name = sub_num_good_sub_traits
 		value = 0
@@ -1019,6 +1020,51 @@ sub_count_categorized_personality_traits = {
 			add = 1
 		}
 	}
+
+	# Set scheme modifier(s) for any prior training
+	if = {
+		limit = {
+			scope:target = {
+				OR = {
+					has_trait = sub_subservient_1
+					has_trait = sub_subservient_2
+					has_trait = sub_subservient_3
+				}
+			}
+		}
+		scope:scheme = {
+			hidden_effect = {
+				add_scheme_modifier = { type = sub_training_milestone_scheme_power_1 }
+			}
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				OR = {
+					has_trait = sub_subservient_2
+					has_trait = sub_subservient_3
+				}
+			}
+		}
+		scope:scheme = {
+			hidden_effect = {
+				add_scheme_modifier = { type = sub_training_milestone_scheme_power_2 }
+			}
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = sub_subservient_3
+			}
+		}
+		scope:scheme = {
+			hidden_effect = {
+				add_scheme_modifier = { type = sub_training_milestone_scheme_power_3 }
+			}
+		}
+	}
 }
 
 # sets flag on target indicating receptiveness to sub_train_obedience scheme
@@ -1027,6 +1073,8 @@ sub_set_train_obedience_receptiveness = {
 	if = {
 		limit = {
 			OR = {
+				# Was previously trained
+				scope:target = { has_trait = sub_subservient }
 				# Amenable personality & doesn't dislike scheme owner
 				AND = {
 					var:sub_num_good_sub_traits = { compare_value > scope:scheme.var:sub_num_bad_sub_traits_plus_one }
@@ -1595,11 +1643,6 @@ sub_train_obedience_event_aftereffects = {
 		remove_character_flag = sub_replaced_trait_patient
 		remove_character_flag = sub_replaced_trait_temperate
 		remove_character_flag = sub_replaced_trait_trusting
-
-		# receptiveness to training
-		remove_character_flag = sub_receptive_training_response
-		remove_character_flag = sub_unreceptive_training_response
-		remove_character_flag = sub_neutral_training_response
 	}
 }
 
