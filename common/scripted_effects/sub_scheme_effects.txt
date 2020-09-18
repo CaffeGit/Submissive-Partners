@@ -1,15 +1,15 @@
 ﻿# scripted effects needed
 	# add to scheme power for each good sub trait target has
 	# subtract from scheme power for each bad sub trait target has
-	# clear all of the above 2 scheme modifiers, for recalc on milestones (if trait swap option chosen)
+	# choose which modifiers to add/subtract on trait swap
 
 ########
 ## Random Trait Selection Effects
 ########
 
-# selects a random good sub trait that target character doesn't have
+# selects a random good sub trait to be added that target character doesn't have
 # call on a scheme
-sub_select_random_good_sub_trait = {
+sub_select_random_new_good_sub_trait = {
 	# clear the list so it can be recalculated
 	if = {
 		limit = {
@@ -119,7 +119,7 @@ sub_select_random_good_sub_trait = {
 		}
 	}
 
-	# then choose from options and clear the list of options
+	# then choose from options
 	hidden_effect = {
 		random_list = {
 			10 = {
@@ -133,8 +133,6 @@ sub_select_random_good_sub_trait = {
 					add_character_flag = sub_replacement_trait_calm
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -146,8 +144,6 @@ sub_select_random_good_sub_trait = {
 					add_character_flag = sub_replacement_trait_compassionate
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -159,8 +155,6 @@ sub_select_random_good_sub_trait = {
 					add_character_flag = sub_replacement_trait_content
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -172,8 +166,6 @@ sub_select_random_good_sub_trait = {
 					add_character_flag = sub_replacement_trait_diligent
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -185,8 +177,6 @@ sub_select_random_good_sub_trait = {
 					add_character_flag = sub_replacement_trait_honest
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -198,8 +188,6 @@ sub_select_random_good_sub_trait = {
 					add_character_flag = sub_replacement_trait_humble
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -211,8 +199,6 @@ sub_select_random_good_sub_trait = {
 					add_character_flag = sub_replacement_trait_patient
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -224,8 +210,6 @@ sub_select_random_good_sub_trait = {
 					add_character_flag = sub_replacement_trait_temperate
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -236,6 +220,39 @@ sub_select_random_good_sub_trait = {
 				scope:target = {
 					add_character_flag = sub_replacement_trait_trusting
 				}
+			}
+		}
+	}
+}
+
+# selects a random sub trait to be removed from the worst valid category (bad > questionable > neutral > good)
+# call on a scheme
+sub_select_random_replaced_trait = {
+	sub_select_random_bad_sub_trait = yes
+	if = {
+		limit = {
+			variable_list_size = {
+				name = sub_bad_sub_traits
+				value <= 1
+			}
+		}
+		sub_select_random_questionable_sub_trait = yes
+		if = {
+			limit = {
+				variable_list_size = {
+					name = sub_questionable_sub_traits
+					value <= 1
+				}
+			}
+			sub_select_random_neutral_sub_trait = yes
+			if = {
+				limit = {
+					variable_list_size = {
+						name = sub_neutral_sub_traits
+						value <= 1
+					}
+				}
+				sub_select_random_good_sub_trait = yes		
 			}
 		}
 	}
@@ -261,8 +278,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_ambitious
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -274,8 +289,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_arrogant
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -287,8 +300,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_callous
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -300,8 +311,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_deceitful
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -313,8 +322,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_fickle
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -326,8 +333,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_gluttonous
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -339,8 +344,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_impatient
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -352,8 +355,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_lazy
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -365,8 +366,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_paranoid
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -378,8 +377,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_sadistic
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -391,8 +388,6 @@ sub_select_random_bad_sub_trait = {
 					add_character_flag = sub_replaced_trait_stubborn
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -420,7 +415,7 @@ sub_select_random_questionable_sub_trait = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
-						name = sub_list_questionable_sub_traits
+						name = sub_questionable_sub_traits
 						target = flag:arbitrary
 					}
 				}
@@ -428,12 +423,10 @@ sub_select_random_questionable_sub_trait = {
 					add_character_flag = sub_replaced_trait_arbitrary
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
-						name = sub_list_questionable_sub_traits
+						name = sub_questionable_sub_traits
 						target = flag:chaste
 					}
 				}
@@ -449,7 +442,7 @@ sub_select_random_questionable_sub_trait = {
 # call on a scheme
 sub_select_random_neutral_sub_trait = {
 	# get the list of options
-	sub_list_neutral_sub_traits = yes
+	sub_list_neutral_sub_traits = yes		
 
 	# then choose from options and clear the list of options
 	hidden_effect = {
@@ -465,8 +458,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_brave
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -478,8 +469,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_craven
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -491,8 +480,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_cynical
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -504,8 +491,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_generous
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -517,8 +502,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_greedy
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -530,8 +513,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_gregarious
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -543,8 +524,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_just
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -556,8 +535,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_lustful
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -569,8 +546,6 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_shy
 				}
 			}
-		}
-		random_list = {
 			10 = {
 				trigger = {
 					is_target_in_variable_list = {
@@ -582,6 +557,534 @@ sub_select_random_neutral_sub_trait = {
 					add_character_flag = sub_replaced_trait_zealous
 				}
 			}
+		}
+	}
+}
+
+# selects a random good sub trait that target character has
+# call on a scheme
+sub_select_random_good_sub_trait = {
+	# get the list of options
+	sub_list_good_sub_traits = yes
+
+	# then choose from options and clear the list of options
+	hidden_effect = {
+		random_list = {
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:calm
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_calm
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:compassionate
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_compassionate
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:content
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_content
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:diligent
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_diligent
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:honest
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_honest
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:humble
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_humble
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:patient
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_patient
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:temperate
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_temperate
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
+						target = flag:trusting
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_trusting
+				}
+			}
+		}
+	}
+}
+
+# adds flagged replacement trait and removes removes flagged replaced trait
+# call on a character
+sub_add_and_remove_selected_sub_traits = {
+	# Add trait based on character flag sub_replacement_trait_[trait_name]
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_calm }
+		add_trait = calm
+	}
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_compassionate }
+		add_trait = compassionate
+	}
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_content }
+		add_trait = content
+	}
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_diligent }
+		add_trait = diligent
+	}
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_honest }
+		add_trait = honest
+	}
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_humble }
+		add_trait = humble
+	}
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_patient }
+		add_trait = patient
+	}
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_temperate }
+		add_trait = temperate
+	}
+	if = {
+		limit = { has_character_flag = sub_replacement_trait_trusting }
+		add_trait = trusting
+	}
+
+	# Remove trait based on character flag sub_replaced_trait_[trait_name]
+
+	# bad traits
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_ambitious }
+		remove_trait = ambitious
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_arrogant }
+		remove_trait = arrogant
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_callous }
+		remove_trait = callous
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_deceitful }
+		remove_trait = deceitful
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_fickle }
+		remove_trait = fickle
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_gluttonous }
+		remove_trait = gluttonous
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_impatient }
+		remove_trait = impatient
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_lazy }
+		remove_trait = lazy
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_paranoid }
+		remove_trait = paranoid
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_sadistic }
+		remove_trait = sadistic
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_stubborn }
+		remove_trait = stubborn
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_wrathful }
+		remove_trait = wrathful
+	}
+
+	# questionable traits
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_arbitrary }
+		remove_trait = arbitrary
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_chaste }
+		remove_trait = chaste
+	}
+
+	# neutral traits
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_brave }
+		remove_trait = brave
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_craven }
+		remove_trait = craven
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_cynical }
+		remove_trait = cynical
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_generous }
+		remove_trait = generous
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_greedy }
+		remove_trait = greedy
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_gregarious }
+		remove_trait = gregarious
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_just }
+		remove_trait = just
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_lustful }
+		remove_trait = lustful
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_shy }
+		remove_trait = shy
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_zealous }
+		remove_trait = zealous
+	}
+
+	# good traits
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_calm }
+		remove_trait = calm
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_compassionate }
+		remove_trait = compassionate
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_content }
+		remove_trait = content
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_diligent }
+		remove_trait = diligent
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_honest }
+		remove_trait = honest
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_humble }
+		remove_trait = humble
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_patient }
+		remove_trait = patient
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_temperate }
+		remove_trait = temperate
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_trusting }
+		remove_trait = trusting
+	}
+}
+
+########
+## Scheme Effects
+########
+
+# (re)calcs modifiers to scheme power/resistance based on opinion
+# call on a scheme
+sub_set_scheme_opinion_modifier = {
+	remove_scheme_modifier = sub_highest_pos_opinion_scheme_power
+	remove_scheme_modifier = sub_high_pos_opinion_scheme_power
+	remove_scheme_modifier = sub_medium_pos_opinion_scheme_power
+	remove_scheme_modifier = sub_low_pos_opinion_scheme_power
+	remove_scheme_modifier = sub_highest_neg_opinion_scheme_resistance
+	remove_scheme_modifier = sub_high_neg_opinion_scheme_resistance
+	remove_scheme_modifier = sub_medium_neg_opinion_scheme_resistance
+	remove_scheme_modifier = sub_low_neg_opinion_scheme_resistance
+	
+	if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value >= very_high_positive_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_highest_pos_opinion_scheme_power }
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value >= high_positive_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_high_pos_opinion_scheme_power}
+	 }
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value >= medium_positive_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_medium_pos_opinion_scheme_power} 
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value >= low_positive_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_low_pos_opinion_scheme_power}
+	} 
+
+	if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value <= very_high_negative_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_highest_neg_opinion_scheme_resistance}
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value <= high_negative_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_high_neg_opinion_scheme_resistance}
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value <= medium_negative_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_medium_neg_opinion_scheme_resistance}
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value <= low_negative_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_low_neg_opinion_scheme_resistance}
+	}
+}
+
+# sets variables and modifiers on scheme counting target's good/bad sub traits
+# call on a scheme
+sub_count_categorized_personality_traits = {
+	# Get lists of target's traits in each category
+	sub_list_good_sub_traits = yes
+	sub_list_bad_sub_traits = yes
+	sub_list_questionable_sub_traits = yes
+	sub_list_neutral_sub_traits = yes
+
+	set_variable = {
+		name = sub_num_good_sub_traits
+		value = 0
+	}
+	every_in_list = {
+		variable = sub_good_sub_traits
+		scope:scheme = {
+			change_variable = {
+				name = sub_num_good_sub_traits
+				add = 1
+			}
+			hidden_effect = {
+				add_scheme_modifier = { type = sub_positive_trait_scheme_power }
+			}
+		}
+	}
+	set_variable = {
+		name = sub_num_good_sub_traits_plus_one
+		value = {
+			value = scope:scheme.var:sub_num_good_sub_traits
+			add = 1
+		}
+	}
+	set_variable = {
+		name = sub_num_bad_sub_traits
+		value = 0
+	}
+	every_in_list = {
+		variable = sub_bad_sub_traits
+		scope:scheme = {
+			change_variable = {
+				name = sub_num_bad_sub_traits
+				add = 1
+			}
+			hidden_effect = {
+				add_scheme_modifier = { type = sub_negative_trait_scheme_resistance }
+			}
+		}
+	}
+	set_variable = {
+		name = sub_num_bad_sub_traits_plus_one
+		value = {
+			value = scope:scheme.var:sub_num_bad_sub_traits
+			add = 1
+		}
+	}
+}
+
+# sets flag on target indicating receptiveness to sub_train_obedience scheme
+# call on a scheme
+sub_set_train_obedience_receptiveness = {
+	if = {
+		limit = {
+			OR = {
+				# Amenable personality & doesn't dislike scheme owner
+				AND = {
+					var:sub_num_good_sub_traits = { compare_value > scope:scheme.var:sub_num_bad_sub_traits_plus_one }
+					scope:target = {
+						opinion = {
+							target = scope:owner
+							value >= neutral_opinion
+						}
+					}
+				}
+				# Somewhat amenable personality & likes scheme owner
+				AND = {
+					var:sub_num_good_sub_traits = { compare_value > scope:scheme.var:sub_num_bad_sub_traits}
+					scope:target = {
+						opinion = {
+							target = scope:owner
+							value >= medium_positive_opinion
+						}
+					}
+				}
+			}
+		}
+		scope:target = {
+			add_character_flag = sub_receptive_training_response
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				# Independent personality & doesn't really like scheme owner
+				AND = {
+					var:sub_num_bad_sub_traits = { compare_value > scope:scheme.var:sub_num_good_sub_traits_plus_one }
+					scope:target = {
+						opinion = {
+							target = scope:owner
+							value <= high_positive_opinion
+						}
+					}
+				}
+				# Somewhat independent personality & dislikes scheme owner
+				AND = {
+					var:sub_num_bad_sub_traits = { compare_value > scope:scheme.var:sub_num_good_sub_traits }
+					scope:target = {
+						opinion = {
+							target = scope:owner
+							value <= neutral_opinion
+						}
+					}
+				}
+			}
+		}
+		scope:target = {
+			add_character_flag = sub_unreceptive_training_response
+		}
+	}
+	else = {
+		scope:target = {
+			add_character_flag = sub_neutral_training_response
 		}
 	}
 }
@@ -599,6 +1102,12 @@ sub_list_good_sub_traits = {
 			has_variable_list = sub_good_sub_traits
 		}
 		clear_variable_list = sub_good_sub_traits
+	}
+
+	# CK3 errors if you check nonexistent lists for size, so throw something random in there to start
+	add_to_variable_list = {
+		name = sub_good_sub_traits
+		target = 0
 	}
 
 	# fill the list
@@ -712,6 +1221,12 @@ sub_list_bad_sub_traits = {
 			has_variable_list = sub_bad_sub_traits
 		}
 		clear_variable_list = sub_bad_sub_traits
+	}
+
+	# CK3 errors if you check nonexistent lists for size, so throw something random in there to start
+	add_to_variable_list = {
+		name = sub_bad_sub_traits
+		target = 0
 	}
 
 	# fill the list
@@ -860,6 +1375,12 @@ sub_list_questionable_sub_traits = {
 		clear_variable_list = sub_questionable_sub_traits
 	}
 
+	# CK3 errors if you check nonexistent lists for size, so throw something random in there to start
+	add_to_variable_list = {
+		name = sub_questionable_sub_traits
+		target = 0
+	}
+
 	# fill the list
 	if = {
 		limit = {
@@ -894,6 +1415,12 @@ sub_list_neutral_sub_traits = {
 			has_variable_list = sub_neutral_sub_traits
 		}
 		clear_variable_list = sub_neutral_sub_traits
+	}
+
+	# CK3 errors if you check nonexistent lists for size, so throw something random in there to start
+	add_to_variable_list = {
+		name = sub_neutral_sub_traits
+		target = 0
 	}
 
 	# fill the list
@@ -1015,7 +1542,7 @@ sub_list_neutral_sub_traits = {
 
 # clean temporary character flags after they have been used
 # call on a scheme
-sub_scheme_train_obedience_event_aftereffects = {
+sub_train_obedience_event_aftereffects = {
 	scope:target = {
 		# replacement traits
 		remove_character_flag = sub_replacement_trait_calm
@@ -1057,5 +1584,61 @@ sub_scheme_train_obedience_event_aftereffects = {
 		remove_character_flag = sub_replaced_trait_lustful
 		remove_character_flag = sub_replaced_trait_shy
 		remove_character_flag = sub_replaced_trait_zealous
+
+		# good replaced traits
+		remove_character_flag = sub_replaced_trait_calm
+		remove_character_flag = sub_replaced_trait_compassionate
+		remove_character_flag = sub_replaced_trait_content
+		remove_character_flag = sub_replaced_trait_diligent
+		remove_character_flag = sub_replaced_trait_honest
+		remove_character_flag = sub_replaced_trait_humble
+		remove_character_flag = sub_replaced_trait_patient
+		remove_character_flag = sub_replaced_trait_temperate
+		remove_character_flag = sub_replaced_trait_trusting
+
+		# receptiveness to training
+		remove_character_flag = sub_receptive_training_response
+		remove_character_flag = sub_unreceptive_training_response
+		remove_character_flag = sub_neutral_training_response
+	}
+}
+
+# To get around a Jomini bug/"feature" where it won't look for variable declarations in effects
+# that use those variables, the variables used in this scheme are initially created here. All
+# of these values will get overridden later.
+# If this effect isn't used, the error log gets cluttered with 'could not find list'-type messages.
+# call on a scheme ONCE on_start
+sub_train_obedience_set_dummy_variables = {
+	add_to_variable_list = {
+		name = sub_bad_sub_traits
+		target = 0
+	}
+	add_to_variable_list = {
+		name = sub_questionable_sub_traits
+		target = 0
+	}
+	add_to_variable_list = {
+		name = sub_neutral_sub_traits
+		target = 0
+	}
+	add_to_variable_list = {
+		name = sub_good_sub_traits
+		target = 0
+	}
+	set_variable = {
+		name = sub_num_good_sub_traits
+		value = 0
+	}
+	set_variable = {
+		name = sub_num_bad_sub_traits
+		value = 0
+	}
+	set_variable = {
+		name = sub_num_good_sub_traits_plus_one
+		value = 0
+	}
+	set_variable = {
+		name = sub_num_bad_sub_traits_plus_one
+		value = 0
 	}
 }

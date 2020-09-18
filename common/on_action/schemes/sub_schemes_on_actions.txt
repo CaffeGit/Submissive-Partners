@@ -10,5 +10,27 @@
 
 # Select target's response based on traits and opinion of player
 sub_train_obedience_start_response = {
+	first_valid = {
+		sub_train_obedience_outcome.1001
+		sub_train_obedience_outcome.1002
+		sub_train_obedience_outcome.1003
+	}
+}
 
+sub_train_obedience_milestone_1 = {
+	events = {
+		sub_train_obedience_outcome.1500
+	}
+}
+
+sub_train_obedience_milestone_2= {
+	events = {
+		sub_train_obedience_outcome.1501
+	}
+}
+
+sub_train_obedience_milestone_3 = {
+	events = {
+		sub_train_obedience_outcome.1502
+	}
 }
