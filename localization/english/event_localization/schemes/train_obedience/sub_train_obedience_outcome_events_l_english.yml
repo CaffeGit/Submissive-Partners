@@ -9,11 +9,38 @@
 
  sub_train_obedience_outcome.1000.t: "A Modest Proposal"
  sub_train_obedience_outcome.1000.desc: "You summon [target.GetTitledFirstName] to your chambers. Ever since she became your [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('target') )], you've wanted to talk with her about taking your relationship in a new direction, and you've decided there's no sense in waiting any longer. You're just not sure how she'll react to the idea.\n\nThe two of you talk for a long time, late into the night- about love, loyalty, and trust. About what you each want from life, and from each other. Finally, you decide that a better opportunity won't be presenting itself anytime soon.\n\nYou watch her carefully as you you give voice to the idea that's been stirring in the back of your mind all night. What you really want is for her to be more... obedient. More submissive. And you want to show her how."
- sub_train_obedience_outcome.1000.a: "Positive option"
- sub_train_obedience_outcome.1000.b: "Negative option"
- sub_train_obedience_outcome.1000.c: "Netural option"
+ sub_train_obedience_outcome.1000.a: "Wait for her response"
+ sub_train_obedience_outcome.1000.b: "Wait for her response"
+ sub_train_obedience_outcome.1000.c: "Wait for her response"
 
+ sub_train_obedience_outcome.1001.t: "A Modest Proposal"
+ sub_train_obedience_outcome.1001.desc: "[target.GetTitledFirstName] sits quite still and listens intently to every word you say. To your delight, she seems more than amenable to your suggestion. "Of course, My [ROOT.Char.Custom('LadyLordWomanMan')]! Had I only known earlier that was what you wanted..." She looks aside, unable to meet your gaze, and you see a slight blush on her cheeks as she stops herself from finishing her sentence. "In any case, I would love for you to show me how.\"\n\nYou suggest that the best way to show her would be for her to come back here a few nights a week for 'lessons.' You remind her of your conversation earlier- as long as you both trust each other, she has nothing to be afraid of. You brush your hand over her cheek with approval, making [target.GetShortUIName] smile- she will learn fast, you are sure of it."
+ sub_train_obedience_outcome.1001.a: "You couldn't have asked for it to go better"
+
+ sub_train_obedience_outcome.1002.t: "A Modest Proposal"
+ sub_train_obedience_outcome.1002.desc: "[target.GetTitledFirstName] listens to you with a frown, and an awkward silence fills the room when you're done speaking. This was clearly not what she had in mind for this relationship. "Are you finished?" she eventually asks, her tone much colder now during your earlier conversation. "I suppose I could try. If that was what you wanted though, you would probably have been better off with a different [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('target') )]."\n\nYou sigh, sorely wishing you hadn't mentioned anything at all. [target.GetTitledFirstName] doesn't seem angry, at least- just uninterested. Nonetheless, you feel committed, and continue with your original plan, proposing that she come back here several nights a week for 'lessons.' "As you wish, my [ROOT.Char.Custom('LadyLordWomanMan')]," she responds with a hint of sarcasm in her voice. You hope that eventually she'll be saying those same words in earnest, though you realize now that may take some time."
+ sub_train_obedience_outcome.1002.a: "Things will improve"
+ sub_train_obedience_outcome.1002.b: "Nevermind, this was a bad idea"
+
+ sub_train_obedience_outcome.1003.t: "A Modest Proposal"
+ sub_train_obedience_outcome.1003.desc: "[target.GetTitledFirstName] seems a little taken aback, a mixture of confusion and concern on her face. After a long pause, you ask whether that's something she might be open to. "I don't know," she responds. "But I'm willing to try, if that's really something that you want..." She sounds uncertain, but when you meet her gaze you see reassurance in her eyes. She just needs a guiding hand to figure out how she feels about this. Specifically, your guiding hand.\n\nYou ask her to come back here a few nights a week for 'lessons,' and remind her of your conversation earlier- as long as you both trust each other, she has nothing to be afraid of. [target.GetShortUIName] nods, looking much more confident than she did a few minutes ago, and departs for now. Her training has begun."
+ sub_train_obedience_outcome.1003.a: "You can hardly wait"
+
+ sub_train_obedience_outcome.1500.t: "TBD"
+ sub_train_obedience_outcome.1500.desc: "TBD"
+ sub_train_obedience_outcome.1500.a: "Do trait swap"
+ sub_train_obedience_outcome.1500.a: "Ignore trait swap"
+
+ sub_train_obedience_outcome.1501.t: "TBD"
+ sub_train_obedience_outcome.1501.desc: "TBD"
+ sub_train_obedience_outcome.1501.a: "Do trait swap"
+ sub_train_obedience_outcome.1501.a: "Ignore trait swap"
+
+ sub_train_obedience_outcome.1502.t: "TBD"
+ sub_train_obedience_outcome.1502.desc: "TBD"
+ sub_train_obedience_outcome.1502.a: "Do trait swap"
+ sub_train_obedience_outcome.1502.a: "Ignore trait swap"
 
  sub_train_obedience_outcome.2000.t: "TBD"
  sub_train_obedience_outcome.2000.desc: "TBD"
- sub_train_obedience_outcome.2000.a: "TBD"
+ sub_train_obedience_outcome.2000.a: "Finish Training"

@@ -1,8 +1,7 @@
 ﻿# scripted effects needed
-	# calc for which beginning
 	# add to scheme power for each good sub trait target has
 	# subtract from scheme power for each bad sub trait target has
-	# clear all of the above 2 scheme modifiers, for recalc on milestones (if trait swap option chosen)
+	# choose which modifiers to add/subtract on trait swap
 
 ########
 ## Random Trait Selection Effects
@@ -859,10 +858,113 @@ sub_add_and_remove_selected_sub_traits = {
 }
 
 ########
-## Calculation Effects
+## Scheme Effects
 ########
 
-# sets variables on scheme counting target's good/bad sub traits
+# (re)calcs modifiers to scheme power/resistance based on opinion
+# call on a scheme
+sub_set_scheme_opinion_modifier = {
+	remove_scheme_modifier = sub_highest_pos_opinion_scheme_power
+	remove_scheme_modifier = sub_high_pos_opinion_scheme_power
+	remove_scheme_modifier = sub_medium_pos_opinion_scheme_power
+	remove_scheme_modifier = sub_low_pos_opinion_scheme_power
+	remove_scheme_modifier = sub_highest_neg_opinion_scheme_resistance
+	remove_scheme_modifier = sub_high_neg_opinion_scheme_resistance
+	remove_scheme_modifier = sub_medium_neg_opinion_scheme_resistance
+	remove_scheme_modifier = sub_low_neg_opinion_scheme_resistance
+	
+	if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value >= very_high_positive_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_highest_pos_opinion_scheme_power }
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value >= high_positive_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_high_pos_opinion_scheme_power}
+	 }
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value >= medium_positive_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_medium_pos_opinion_scheme_power} 
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value >= low_positive_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_low_pos_opinion_scheme_power}
+	} 
+
+	if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value <= very_high_negative_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_highest_neg_opinion_scheme_resistance}
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value <= high_negative_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_high_neg_opinion_scheme_resistance}
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value <= medium_negative_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_medium_neg_opinion_scheme_resistance}
+	}
+	else_if = {
+		limit = {
+			scope:target = {
+				opinion = {
+					target = scope:owner
+					value <= low_negative_opinion
+				}
+			}
+		}
+		add_scheme_modifier = { type = sub_low_neg_opinion_scheme_resistance}
+	}
+}
+
+# sets variables and modifiers on scheme counting target's good/bad sub traits
 # call on a scheme
 sub_count_categorized_personality_traits = {
 	# Get lists of target's traits in each category
@@ -878,9 +980,12 @@ sub_count_categorized_personality_traits = {
 	every_in_list = {
 		variable = sub_good_sub_traits
 		scope:scheme = {
-				change_variable = {
+			change_variable = {
 				name = sub_num_good_sub_traits
 				add = 1
+			}
+			hidden_effect = {
+				add_scheme_modifier = { type = sub_positive_trait_scheme_power }
 			}
 		}
 	}
@@ -898,9 +1003,12 @@ sub_count_categorized_personality_traits = {
 	every_in_list = {
 		variable = sub_bad_sub_traits
 		scope:scheme = {
-				change_variable = {
+			change_variable = {
 				name = sub_num_bad_sub_traits
 				add = 1
+			}
+			hidden_effect = {
+				add_scheme_modifier = { type = sub_negative_trait_scheme_resistance }
 			}
 		}
 	}
@@ -913,7 +1021,7 @@ sub_count_categorized_personality_traits = {
 	}
 }
 
-# sets flag for whether target is receptive or not to sub_train_obedience scheme
+# sets flag on target indicating receptiveness to sub_train_obedience scheme
 # call on a scheme
 sub_set_train_obedience_receptiveness = {
 	if = {
