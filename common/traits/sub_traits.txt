@@ -13,6 +13,12 @@ sub_subservient_1 = {
 	group = sub_subservient
 	level = 1
 
+	diplomacy = 1
+	prowess = -1
+
+	ai_compassion = 10
+	ai_vengefulness = -10
+
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -32,6 +38,15 @@ sub_subservient_2 = {
 	group = sub_subservient
 	level = 2
 
+	diplomacy = 2
+	intrigue = -1
+	prowess = -1
+
+	personal_scheme_power_mult = -0.2
+
+	ai_compassion = 20
+	ai_vengefulness = -20
+
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -50,6 +65,20 @@ sub_subservient_3 = {
 
 	group = sub_subservient
 	level = 3
+
+	diplomacy = 3
+	learning = 1
+	intrigue = -1
+	prowess = -2
+
+	fertility = 0.1
+
+	opinion_of_liege = 10
+
+	personal_scheme_power_mult = -0.5
+
+	ai_compassion = 60
+	ai_vengefulness = -60
 
 	desc = {
 		first_valid = {
@@ -97,11 +126,25 @@ sub_subservient_4 = {
 	}
 }
 
-sub_clothing_rule_4 = {
-	index = 5607
+sub_clothing_rule_1 = { # placeholder trait
+	index = 5604
 
 	group = sub_clothing_rules
-	level = 4
+	level = 1
+}
+
+sub_clothing_rule_2 = { # placeholder trait
+	index = 5605
+
+	group = sub_clothing_rules
+	level = 2
+}
+
+sub_clothing_rule_3 = {
+	index = 5606
+
+	group = sub_clothing_rules
+	level = 3
 
 	intrigue = 2
 	prowess = -5
@@ -112,6 +155,13 @@ sub_clothing_rule_4 = {
 
 	monthly_dread = -10
 	dread_loss_mult = 5
+}
+
+sub_clothing_rule_4 = { # placeholder trait
+	index = 5607
+
+	group = sub_clothing_rules
+	level = 4
 }
 
 sub_chastity_rule_1 = {

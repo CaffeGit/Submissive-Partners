@@ -13,6 +13,9 @@
 
  START_SUB_TRAINING: "Begin Training"
 
+ # Triggers
+ is_scheming_against: "Already scheming against this character"
+
  # Toasts
  sub_accept_order: "Of course, My Lord."
  sub_train_obedience_interaction_toast: "Obedience Training"

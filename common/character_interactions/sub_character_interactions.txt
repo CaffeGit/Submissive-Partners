@@ -15,7 +15,7 @@ sub_make_nude_interaction = {
 	is_shown = {
 		scope:recipient = {
 			AND = {
-				NOT = { has_trait = sub_clothing_rule_4 }
+				NOT = { has_trait = sub_clothing_rule_3 }
 				is_adult = yes
 				is_female = yes
 				OR = {
@@ -34,7 +34,7 @@ sub_make_nude_interaction = {
 
 	on_accept = {
 		scope:recipient = {
-			add_trait = sub_clothing_rule_4
+			add_trait = sub_clothing_rule_3
 			add_opinion = {
 				modifier = sub_made_me_go_naked
 				target = scope:actor
@@ -59,11 +59,11 @@ sub_undo_nude_interaction = {
 
 	auto_accept = yes
 	is_shown = {
-    	scope:recipient = { has_trait = sub_clothing_rule_4 }
+    	scope:recipient = { has_trait = sub_clothing_rule_3 }
 	}
 
 	on_accept = {
-		scope:recipient = { remove_trait = sub_clothing_rule_4 }
+		scope:recipient = { remove_trait = sub_clothing_rule_3 }
 
 		scope:actor = {
 			send_interface_toast = {

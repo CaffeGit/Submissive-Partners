@@ -1070,6 +1070,13 @@ sub_count_categorized_personality_traits = {
 # sets flag on target indicating receptiveness to sub_train_obedience scheme
 # call on a scheme
 sub_set_train_obedience_receptiveness = {
+	# Remove flags that may be left over from previous scheme(s)
+	scope:target = {
+		remove_character_flag = sub_receptive_training_response
+		remove_character_flag = sub_unreceptive_training_response
+		remove_character_flag = sub_neutral_training_response
+	}
+
 	if = {
 		limit = {
 			OR = {
