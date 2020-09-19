@@ -4,7 +4,6 @@
 # 5600-5603: sub_subservient_1-4
 # 5604-5607: sub_clothing_rule_1-4, may not all get used
 # 5608-5611: sub_chastity_rule_1-4
-# 5690: sub_busty, which will be removed at some point now that carnalitas exists
 ###
 
 sub_subservient_1 = {
@@ -302,23 +301,5 @@ sub_chastity_rule_4 = {
 		celibate = @pos_compat_high
 		sub_chastity_rule_4 = @pos_compat_medium
 		chaste = @pos_compat_medium
-	}
-}
-
-#######
-## Experimental Section: unlikely to survive to 1.0
-#######
-
-sub_busty = {
-	index = 5690
-
-	dna_modifiers = {
-		morph = {
-			mode = replace
-
-			gene = gene_bs_bust
-			template = bust_shape_3_full
-			value = 1.0
-		}
 	}
 }

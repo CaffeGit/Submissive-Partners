@@ -8,7 +8,7 @@
 
 sub_training_milestone_scheme_power_1 = {
 	icon = intrigue_positive
-	scheme_power = 10
+	scheme_power = 20
 }
 
 sub_training_milestone_scheme_power_2 = {

@@ -329,6 +329,10 @@ sub_train_obedience_outcome.1501 = {
 				remove_trait = sub_subservient_1
 			}
 			add_trait = sub_subservient_2
+			add_opinion = {
+				modifier = sub_positive_training_start
+				target = scope:owner
+			}
 		}
 	}
 
@@ -388,6 +392,10 @@ sub_train_obedience_outcome.1502 = {
 				remove_trait = sub_subservient_2
 			}
 			add_trait = sub_subservient_3
+			add_opinion = {
+				modifier = sub_positive_training_start
+				target = scope:owner
+			}
 		}
 	}
 
@@ -437,7 +445,14 @@ sub_train_obedience_outcome.2000 = {
 	immediate = {
 		play_music_cue = "mx_cue_seduction"
 		scope:target = {
+			hidden_effect = {
+				remove_trait = sub_subservient_3
+			}
 			add_trait = sub_subservient_4
+			if = {
+				limit = { can_set_relation_dominant_trigger = { CHARACTER = scope:owner } }
+				set_relation_dominant = scope:owner
+			}
 			add_opinion = {
 				modifier = sub_subservient_to_master
 				target = scope:owner
@@ -451,6 +466,10 @@ sub_train_obedience_outcome.2000 = {
 			add_hook = {
 				type = loyalty_hook
 				target = scope:target
+			}
+			if = {
+				limit = { can_set_relation_submissive_trigger = { CHARACTER = scope:target } }
+				set_relation_submissive = scope:target
 			}
 			add_character_modifier = {
 				modifier = sub_recent_training_modifier
