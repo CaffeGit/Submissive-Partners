@@ -257,8 +257,8 @@ sub_train_obedience_outcome.1500 = {
 
 	immediate = {
 		scope:scheme = {
-			sub_select_random_new_good_sub_trait = yes
 			sub_select_random_replaced_trait = yes
+			sub_select_random_replacement_trait = yes
 			add_scheme_modifier = { type = sub_training_milestone_scheme_power_1 }
 		}
 		scope:target = {
@@ -320,8 +320,8 @@ sub_train_obedience_outcome.1501 = {
 
 	immediate = {
 		scope:scheme = {
-			sub_select_random_new_good_sub_trait = yes
 			sub_select_random_replaced_trait = yes
+			sub_select_random_replacement_trait = yes
 			add_scheme_modifier = { type = sub_training_milestone_scheme_power_2 }
 		}
 		scope:target = {
@@ -383,8 +383,8 @@ sub_train_obedience_outcome.1502 = {
 
 	immediate = {
 		scope:scheme = {
-			sub_select_random_new_good_sub_trait = yes
 			sub_select_random_replaced_trait = yes
+			sub_select_random_replacement_trait = yes
 			add_scheme_modifier = { type = sub_training_milestone_scheme_power_3 }
 		}
 		scope:target = {

@@ -9,7 +9,7 @@
 
 # selects a random good sub trait to be added that target character doesn't have
 # call on a scheme
-sub_select_random_new_good_sub_trait = {
+sub_select_random_replacement_trait = {
 	# clear the list so it can be recalculated
 	if = {
 		limit = {
@@ -22,7 +22,10 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = calm }
+				AND = {
+					NOT = { has_trait = calm }
+					NOT = { has_character_flag = sub_replaced_trait_wrathful }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -33,7 +36,11 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = compassionate }
+				AND = {
+					NOT = { has_trait = compassionate }
+					NOT = { has_character_flag = sub_replaced_trait_callous }
+					NOT = { has_character_flag = sub_replaced_trait_sadistic }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -44,7 +51,10 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = content }
+				AND = {
+					NOT = { has_trait = content }
+					NOT = { has_character_flag = sub_replaced_trait_ambitious }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -55,7 +65,10 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = diligent }
+				AND = {
+					NOT = { has_trait = diligent }
+					NOT = { has_character_flag = sub_replaced_trait_lazy }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -66,7 +79,24 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = honest }
+				AND = {
+					NOT = { has_trait = forgiving }
+					NOT = { has_character_flag = sub_replaced_trait_vengeful }
+				}
+			}
+		}
+		add_to_variable_list = {
+			name = sub_replacement_trait_option
+			target = flag:forgiving
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				AND = {
+					NOT = { has_trait = honest }
+					NOT = { has_character_flag = sub_replaced_trait_deceitful }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -77,7 +107,10 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = humble }
+				AND = {
+					NOT = { has_trait = humble }
+					NOT = { has_character_flag = sub_replaced_trait_arrogant }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -88,7 +121,10 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = patient }
+				AND = {
+					NOT = { has_trait = patient }
+					NOT = { has_character_flag = sub_replaced_trait_impatient }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -99,7 +135,10 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = temperate }
+				AND = {
+					NOT = { has_trait = temperate }
+					NOT = { has_character_flag = sub_replaced_trait_gluttonous }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -110,7 +149,10 @@ sub_select_random_new_good_sub_trait = {
 	if = {
 		limit = {
 			scope:target = {
-				NOT = { has_trait = trusting }
+				AND = {
+					NOT = { has_trait = trusting }
+					NOT = { has_character_flag = sub_replaced_trait_paranoid }
+				}
 			}
 		}
 		add_to_variable_list = {
@@ -392,6 +434,17 @@ sub_select_random_bad_sub_trait = {
 				trigger = {
 					is_target_in_variable_list = {
 						name = sub_bad_sub_traits
+						target = flag:vengeful
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_vengeful
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_bad_sub_traits
 						target = flag:wrathful
 					}
 				}
@@ -618,6 +671,17 @@ sub_select_random_good_sub_trait = {
 				trigger = {
 					is_target_in_variable_list = {
 						name = sub_good_sub_traits
+						target = flag:forgiving
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replaced_trait_forgiving
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_good_sub_traits
 						target = flag:honest
 					}
 				}
@@ -694,6 +758,10 @@ sub_add_and_remove_selected_sub_traits = {
 		add_trait = diligent
 	}
 	if = {
+		limit = { has_character_flag = sub_replacement_trait_forgiving }
+		add_trait = forgiving
+	}
+	if = {
 		limit = { has_character_flag = sub_replacement_trait_honest }
 		add_trait = honest
 	}
@@ -759,6 +827,10 @@ sub_add_and_remove_selected_sub_traits = {
 	}
 	if = {
 		limit = { has_character_flag = sub_replaced_trait_stubborn }
+		remove_trait = stubborn
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_vengeful }
 		remove_trait = stubborn
 	}
 	if = {
@@ -1213,6 +1285,17 @@ sub_list_good_sub_traits = {
 	if = {
 		limit = {
 			scope:target = {
+				has_trait = forgiving
+			}
+		}
+		add_to_variable_list = {
+			name = sub_good_sub_traits
+			target = flag:forgiving
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
 				has_trait = honest
 			}
 		}
@@ -1404,6 +1487,17 @@ sub_list_bad_sub_traits = {
 		add_to_variable_list = {
 			name = sub_bad_sub_traits
 			target = flag:stubborn
+		}
+	}
+	if = {
+		limit = {
+			scope:target = {
+				has_trait = vengeful
+			}
+		}
+		add_to_variable_list = {
+			name = sub_bad_sub_traits
+			target = flag:vengeful
 		}
 	}
 	if = {
@@ -1604,6 +1698,7 @@ sub_train_obedience_event_aftereffects = {
 		remove_character_flag = sub_replacement_trait_compassionate
 		remove_character_flag = sub_replacement_trait_content
 		remove_character_flag = sub_replacement_trait_diligent
+		remove_character_flag = sub_replacement_trait_forgiving
 		remove_character_flag = sub_replacement_trait_honest
 		remove_character_flag = sub_replacement_trait_humble
 		remove_character_flag = sub_replacement_trait_patient
@@ -1622,6 +1717,7 @@ sub_train_obedience_event_aftereffects = {
 		remove_character_flag = sub_replaced_trait_paranoid
 		remove_character_flag = sub_replaced_trait_sadistic
 		remove_character_flag = sub_replaced_trait_stubborn
+		remove_character_flag = sub_replaced_trait_vengeful
 		remove_character_flag = sub_replaced_trait_wrathful
 
 		# questionable replaced traits

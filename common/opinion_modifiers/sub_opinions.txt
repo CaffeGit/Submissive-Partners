@@ -1,6 +1,6 @@
 ﻿sub_subservient_to_master = {
 	opinion = 100
-	years = 100
+	years = 200
 }
 
 sub_made_me_go_naked = {

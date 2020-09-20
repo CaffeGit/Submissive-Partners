@@ -93,7 +93,10 @@ sub_rules.0001 = {
 
 		trigger = {
 			scope:recipient = {
-				has_trait = sub_subservient_4
+				has_opinion_modifier = {
+					target = scope:actor
+					modifier = sub_subservient_to_master
+				}
 			}
 		}
 
@@ -119,7 +122,10 @@ sub_rules.0001 = {
 
 		trigger = {
 			scope:recipient = {
-				has_trait = sub_subservient_4
+				has_opinion_modifier = {
+					target = scope:actor
+					modifier = sub_subservient_to_master
+				}
 			}
 		}
 

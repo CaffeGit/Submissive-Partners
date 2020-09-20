@@ -22,14 +22,23 @@ sub_make_nude_interaction = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient_4
+					has_relation_dominant = scope:actor
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
 				}
 			}
 		}
 	}
 
 	is_valid_showing_failures_only = {
-		scope:recipient = { has_trait = sub_subservient_4 }
+		scope:recipient = {
+			has_opinion_modifier = {
+				target = scope:actor
+				modifier = sub_subservient_to_master
+			}
+		}
 	}
 
 	on_accept = {
@@ -93,7 +102,11 @@ sub_chastity_rules_interaction = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient
+					has_relation_dominant = scope:actor
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
 				}
 			}
 		}
@@ -131,7 +144,11 @@ sub_show_pose_interaction = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient
+					has_relation_dominant = scope:actor
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
 				}
 			}
 		}
@@ -173,13 +190,19 @@ sub_train_obedience_interaction = {
 	is_shown = {
 		scope:recipient = {
 			AND = {
-				NOT = { has_trait = sub_subservient_4 }
+				NOT = {
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
+				}
 				is_adult = yes
 				is_female = yes
 				OR = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
+					has_relation_dominant = scope:actor
 				}
 			}
 		}
@@ -244,6 +267,11 @@ sub_set_training_interaction = {
 	# 				is_consort_of = scope:actor
 	# 				has_relation_lover = scope:actor
 	# 				has_relation_soulmate = scope:actor
+	# 				has_relation_dominant = scope:actor
+	# 				has_opinion_modifier = {
+	# 					target = scope:actor
+	# 					modifier = sub_subservient_to_master
+	# 				}
 	# 			}
 	# 		}
 	# 	}
@@ -286,7 +314,11 @@ sub_make_busty_interaction = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient
+					has_relation_dominant = scope:actor
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
 				}
 			}
 		}
