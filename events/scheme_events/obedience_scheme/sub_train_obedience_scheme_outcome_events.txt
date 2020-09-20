@@ -28,33 +28,33 @@ namespace = sub_train_obedience_outcome
 # 0000-0999
 ######################################################
 
-# Target died
-sub_train_obedience_outcome.0001 = {
-	type = character_event
-	title = sub_train_obedience_outcome.0002.t
-	desc = sub_train_obedience_outcome.0002.desc
-
-	theme = seduce_scheme
-	left_portrait = scope:target
-	#No scheme, no widget
-
-	option = {
-		name = sub_train_obedience_outcome.0002.a
-	}
-}
-
 # No more valid relation with target
-sub_train_obedience_outcome.0002 = {
+sub_train_obedience_outcome.0001 = {
 	type = character_event
 	title = sub_train_obedience_outcome.0001.t
 	desc = sub_train_obedience_outcome.0001.desc
 
 	theme = seduce_scheme
-	left_portrait = scope:target
+	right_portrait = scope:target
 	#No scheme, no widget
 
 	option = {
 		name = sub_train_obedience_outcome.0001.a
+	}
+}
+
+# Target died
+sub_train_obedience_outcome.0002 = {
+	type = character_event
+	title = sub_train_obedience_outcome.0002.t
+	desc = sub_train_obedience_outcome.0002.desc
+
+	theme = seduce_scheme
+	right_portrait = scope:target
+	#No scheme, no widget
+
+	option = {
+		name = sub_train_obedience_outcome.0002.a
 	}
 }
 
@@ -70,7 +70,7 @@ sub_train_obedience_outcome.1000 = {
 	desc = sub_train_obedience_outcome.1000.desc
 
 	theme = seduce_scheme
-	left_portrait = scope:target
+	right_portrait = scope:target
 	widget = {
 		gui = "event_window_widget_scheme"
 		container = "custom_widgets_container"
@@ -134,6 +134,13 @@ sub_train_obedience_outcome.1001 = {
 		scope:owner = {
 			add_stress = -20
 		}
+
+		scope:target = {
+			add_opinion = {
+				modifier = sub_positive_training_start
+				target = scope:owner
+			}
+		}
 	}
 }
 
@@ -165,6 +172,13 @@ sub_train_obedience_outcome.1002 = {
 
 		scope:owner = {
 			add_stress = 20
+		}
+
+		scope:target = {
+			add_opinion = {
+				modifier = sub_negative_training_start
+				target = scope:owner
+			}
 		}
 	}
 
@@ -210,12 +224,27 @@ sub_train_obedience_outcome.1003 = {
 sub_train_obedience_outcome.1500 = {
 	type = character_event
 	title = sub_train_obedience_outcome.1500.t
-	desc = sub_train_obedience_outcome.1500.desc
+	# desc = sub_train_obedience_outcome.1500.desc
+	desc = {
+		desc = sub_train_obedience_outcome.1500.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:target = { has_character_flag = sub_receptive_training_response } }
+				desc = sub_train_obedience_outcome.1500.pos_response.desc
+			}
+			triggered_desc = {
+				trigger = { scope:target = { has_character_flag = sub_unreceptive_training_response } }
+				desc = sub_train_obedience_outcome.1500.neg_response.desc
+			}
+			# should have a neutral flag, but leave as fallback
+			desc = sub_train_obedience_outcome.1500.neutral_response.desc
+		}
+		desc = sub_train_obedience_outcome.1500.trait_swap.desc
+	}
 
 	theme = seduce_scheme
 	right_portrait = {
 		character = scope:target
-		animation = admiration
 	}
 	widget = {
 		gui = "event_window_widget_scheme"
@@ -228,9 +257,12 @@ sub_train_obedience_outcome.1500 = {
 
 	immediate = {
 		scope:scheme = {
-			sub_select_random_new_good_sub_trait = yes
 			sub_select_random_replaced_trait = yes
+			sub_select_random_replacement_trait = yes
 			add_scheme_modifier = { type = sub_training_milestone_scheme_power_1 }
+		}
+		scope:target = {
+			add_trait = sub_subservient_1
 		}
 	}
 
@@ -260,12 +292,22 @@ sub_train_obedience_outcome.1500 = {
 sub_train_obedience_outcome.1501 = {
 	type = character_event
 	title = sub_train_obedience_outcome.1501.t
-	desc = sub_train_obedience_outcome.1501.desc
+	desc = {
+		desc = sub_train_obedience_outcome.1501.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:target = { has_character_flag = sub_unreceptive_training_response } }
+				desc = sub_train_obedience_outcome.1501.neg_response.desc
+			}
+			desc = sub_train_obedience_outcome.1501.pos_response.desc
+		}
+		desc = sub_train_obedience_outcome.1501.trait_swap.desc
+	}
 
 	theme = seduce_scheme
 	right_portrait = {
 		character = scope:target
-		animation = admiration
+		animation = personality_content
 	}
 	widget = {
 		gui = "event_window_widget_scheme"
@@ -278,9 +320,19 @@ sub_train_obedience_outcome.1501 = {
 
 	immediate = {
 		scope:scheme = {
-			sub_select_random_new_good_sub_trait = yes
 			sub_select_random_replaced_trait = yes
+			sub_select_random_replacement_trait = yes
 			add_scheme_modifier = { type = sub_training_milestone_scheme_power_2 }
+		}
+		scope:target = {
+			hidden_effect = {
+				remove_trait = sub_subservient_1
+			}
+			add_trait = sub_subservient_2
+			add_opinion = {
+				modifier = sub_positive_training_start
+				target = scope:owner
+			}
 		}
 	}
 
@@ -310,12 +362,15 @@ sub_train_obedience_outcome.1501 = {
 sub_train_obedience_outcome.1502 = {
 	type = character_event
 	title = sub_train_obedience_outcome.1502.t
-	desc = sub_train_obedience_outcome.1502.desc
+	desc = {
+		desc = sub_train_obedience_outcome.1502.desc
+		desc = sub_train_obedience_outcome.1502.trait_swap.desc
+	}
 
 	theme = seduce_scheme
 	right_portrait = {
 		character = scope:target
-		animation = admiration
+		animation = ecstasy
 	}
 	widget = {
 		gui = "event_window_widget_scheme"
@@ -328,9 +383,19 @@ sub_train_obedience_outcome.1502 = {
 
 	immediate = {
 		scope:scheme = {
-			sub_select_random_new_good_sub_trait = yes
 			sub_select_random_replaced_trait = yes
+			sub_select_random_replacement_trait = yes
 			add_scheme_modifier = { type = sub_training_milestone_scheme_power_3 }
+		}
+		scope:target = {
+			hidden_effect = {
+				remove_trait = sub_subservient_2
+			}
+			add_trait = sub_subservient_3
+			add_opinion = {
+				modifier = sub_positive_training_start
+				target = scope:owner
+			}
 		}
 	}
 
@@ -367,7 +432,10 @@ sub_train_obedience_outcome.2000 = {
 	desc = sub_train_obedience_outcome.2000.desc
 
 	theme = seduce_scheme
-	left_portrait = scope:target
+	right_portrait = {
+		character = scope:target
+		animation = admiration
+	}
 	widget = {
 		gui = "event_window_widget_scheme"
 		container = "custom_widgets_container"
@@ -377,16 +445,31 @@ sub_train_obedience_outcome.2000 = {
 	immediate = {
 		play_music_cue = "mx_cue_seduction"
 		scope:target = {
+			hidden_effect = {
+				remove_trait = sub_subservient_3
+			}
 			add_trait = sub_subservient_4
+			if = {
+				limit = { can_set_relation_dominant_trigger = { CHARACTER = scope:owner } }
+				set_relation_dominant = scope:owner
+			}
 			add_opinion = {
 				modifier = sub_subservient_to_master
 				target = scope:owner
+			}
+			add_character_flag = {
+				flag = is_naked
+				days = 180
 			}
 		}
 		scope:owner = {
 			add_hook = {
 				type = loyalty_hook
 				target = scope:target
+			}
+			if = {
+				limit = { can_set_relation_submissive_trigger = { CHARACTER = scope:target } }
+				set_relation_submissive = scope:target
 			}
 			add_character_modifier = {
 				modifier = sub_recent_training_modifier
@@ -405,6 +488,9 @@ sub_train_obedience_outcome.2000 = {
 			scope:scheme = {
 				end_scheme = yes
 			}
+		}
+		scope:target = {
+			remove_character_flag = is_naked
 		}
 	}
 }

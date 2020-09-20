@@ -12,8 +12,6 @@ sub_rules.0001 = {
 		animation = personality_coward
 	}
 
-	# TBD
-	# When different levels of sub_subservient are implemented, make options b-d available at different levels
 	option = {
 		name = sub_rules.0001.a
 		scope:recipient = {
@@ -38,6 +36,11 @@ sub_rules.0001 = {
 
 	option = {
 		name = sub_rules.0001.b
+
+		trigger = {
+			scope:recipient = { has_trait = sub_subservient }
+		}
+
 		scope:recipient = {
 			if = {
 				limit = { has_trait = sub_chastity_rule_2 }
@@ -57,6 +60,17 @@ sub_rules.0001 = {
 
 	option = {
 		name = sub_rules.0001.c
+
+		trigger = {
+			scope:recipient = {
+				OR = {
+					has_trait = sub_subservient_2
+					has_trait = sub_subservient_3
+					has_trait = sub_subservient_4
+				}
+			}
+		}
+
 		scope:recipient = {
 			if = {
 				limit = { has_trait = sub_chastity_rule_1 }
@@ -76,6 +90,16 @@ sub_rules.0001 = {
 
 	option = {
 		name = sub_rules.0001.d
+
+		trigger = {
+			scope:recipient = {
+				has_opinion_modifier = {
+					target = scope:actor
+					modifier = sub_subservient_to_master
+				}
+			}
+		}
+
 		scope:recipient = {
 			if = {
 				limit = { has_trait = sub_chastity_rule_1 }
@@ -95,6 +119,16 @@ sub_rules.0001 = {
 
 	option = {
 		name = sub_rules.0001.e
+
+		trigger = {
+			scope:recipient = {
+				has_opinion_modifier = {
+					target = scope:actor
+					modifier = sub_subservient_to_master
+				}
+			}
+		}
+
 		scope:recipient = {
 			if = {
 				limit = { has_trait = sub_chastity_rule_1 }

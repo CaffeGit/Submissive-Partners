@@ -122,11 +122,6 @@
 
 	}
 
-	# TBD
-	# Since scheme can be cancelled and restarted, milestones should first check
-	# for presence of subservient_1-3
-
-	# Also need to recalc scheme power/resistance, since it's being done with modifiers
 	on_monthly = {
 		save_scope_as = scheme
 		scheme_owner = { save_scope_as = owner }
@@ -141,11 +136,6 @@
 			limit = {
 				scheme_progress >= 2
 				NOT = { has_scheme_modifier = sub_training_milestone_scheme_power_1 }
-				# NOT = {
-				# 	scope:target = {
-				# 		has_trait = subservient_1
-				# 	}
-				# }
 			}
 			scheme_owner = {
 				trigger_event = { on_action = sub_train_obedience_milestone_1 }
@@ -155,13 +145,8 @@
 		# Milestone 2 event
 		if = {
 			limit = {
-				scheme_progress >= 5
+				scheme_progress >= 4
 				NOT = { has_scheme_modifier = sub_training_milestone_scheme_power_2 }
-				# NOT = {
-				# 	scope:target = {
-				# 		has_trait = subservient_2
-				# 	}
-				# }
 			}
 			scheme_owner = {
 				trigger_event = { on_action = sub_train_obedience_milestone_2 }
@@ -170,13 +155,8 @@
 		# Milestone 3 event
 		if = {
 			limit = {
-				scheme_progress >= 8
+				scheme_progress >= 7
 				NOT = { has_scheme_modifier = sub_training_milestone_scheme_power_3 }
-				# NOT = {
-				# 	scope:target = {
-				# 		has_trait = subservient_3
-				# 	}
-				# }
 			}
 			scheme_owner = {
 				trigger_event = { on_action = sub_train_obedience_milestone_3 }

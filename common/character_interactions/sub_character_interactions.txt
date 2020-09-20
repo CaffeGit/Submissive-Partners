@@ -15,26 +15,35 @@ sub_make_nude_interaction = {
 	is_shown = {
 		scope:recipient = {
 			AND = {
-				NOT = { has_trait = sub_clothing_rule_4 }
+				NOT = { has_trait = sub_clothing_rule_3 }
 				is_adult = yes
 				is_female = yes
 				OR = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient_4
+					has_relation_dominant = scope:actor
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
 				}
 			}
 		}
 	}
 
 	is_valid_showing_failures_only = {
-		scope:recipient = { has_trait = sub_subservient_4 }
+		scope:recipient = {
+			has_opinion_modifier = {
+				target = scope:actor
+				modifier = sub_subservient_to_master
+			}
+		}
 	}
 
 	on_accept = {
 		scope:recipient = {
-			add_trait = sub_clothing_rule_4
+			add_trait = sub_clothing_rule_3
 			add_opinion = {
 				modifier = sub_made_me_go_naked
 				target = scope:actor
@@ -59,11 +68,11 @@ sub_undo_nude_interaction = {
 
 	auto_accept = yes
 	is_shown = {
-    	scope:recipient = { has_trait = sub_clothing_rule_4 }
+    	scope:recipient = { has_trait = sub_clothing_rule_3 }
 	}
 
 	on_accept = {
-		scope:recipient = { remove_trait = sub_clothing_rule_4 }
+		scope:recipient = { remove_trait = sub_clothing_rule_3 }
 
 		scope:actor = {
 			send_interface_toast = {
@@ -93,7 +102,11 @@ sub_chastity_rules_interaction = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient
+					has_relation_dominant = scope:actor
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
 				}
 			}
 		}
@@ -131,7 +144,11 @@ sub_show_pose_interaction = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient
+					has_relation_dominant = scope:actor
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
 				}
 			}
 		}
@@ -173,13 +190,19 @@ sub_train_obedience_interaction = {
 	is_shown = {
 		scope:recipient = {
 			AND = {
-				NOT = { has_trait = sub_subservient_4 }
+				NOT = {
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
+				}
 				is_adult = yes
 				is_female = yes
 				OR = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
+					has_relation_dominant = scope:actor
 				}
 			}
 		}
@@ -244,6 +267,11 @@ sub_set_training_interaction = {
 	# 				is_consort_of = scope:actor
 	# 				has_relation_lover = scope:actor
 	# 				has_relation_soulmate = scope:actor
+	# 				has_relation_dominant = scope:actor
+	# 				has_opinion_modifier = {
+	# 					target = scope:actor
+	# 					modifier = sub_subservient_to_master
+	# 				}
 	# 			}
 	# 		}
 	# 	}
@@ -280,13 +308,17 @@ sub_make_busty_interaction = {
 	is_shown = {
 		scope:recipient = {
 			AND = {
-				NOT = { has_trait = sub_busty }
+				NOT = { has_trait = tits_big_3 }
 				is_female = yes
 				OR = {
 					is_consort_of = scope:actor
 					has_relation_lover = scope:actor
 					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient
+					has_relation_dominant = scope:actor
+					has_opinion_modifier = {
+						target = scope:actor
+						modifier = sub_subservient_to_master
+					}
 				}
 			}
 		}
@@ -297,42 +329,7 @@ sub_make_busty_interaction = {
 	}
 
 	on_accept = {
-		scope:recipient = { add_trait = sub_busty }
-
-		scope:actor = {
-			send_interface_toast = {
-				title = sub_breast_enhancement_order
-				right_icon = scope:recipient
-			}
-		}
-	}
-}
-
-sub_undo_busty_interaction = {
-	category = interaction_category_friendly
-	common_interaction = no
-	interface_priority = 100
-
-	desc = sub_undo_busty_interaction_desc
-
-	auto_accept = yes
-
-	is_shown = {
-		scope:recipient = {
-			AND = {
-				has_trait = sub_busty
-				OR = {
-					is_consort_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_soulmate = scope:actor
-					has_trait = sub_subservient
-				}
-			}
-		}
-	}
-
-	on_accept = {
-		scope:recipient = { remove_trait = sub_busty }
+		scope:recipient = { add_trait = tits_big_3 }
 
 		scope:actor = {
 			send_interface_toast = {

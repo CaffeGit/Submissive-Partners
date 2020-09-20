@@ -35,12 +35,12 @@ sub_negative_trait_scheme_resistance = {
 
 sub_highest_pos_opinion_scheme_power = {
 	icon = intrigue_positive
-	scheme_power = 50
+	scheme_power = 40
 }
 
 sub_high_pos_opinion_scheme_power = {
 	icon = intrigue_positive
-	scheme_power = 40
+	scheme_power = 30
 }
 
 sub_medium_pos_opinion_scheme_power = {
@@ -55,12 +55,12 @@ sub_low_pos_opinion_scheme_power = {
 
 sub_highest_neg_opinion_scheme_resistance = {
 	icon = intrigue_negative
-	scheme_resistance = 50
+	scheme_resistance = 40
 }
 
 sub_high_neg_opinion_scheme_resistance = {
 	icon = intrigue_negative
-	scheme_resistance = 40
+	scheme_resistance = 30
 }
 
 sub_medium_neg_opinion_scheme_resistance = {
