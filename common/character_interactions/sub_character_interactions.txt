@@ -184,6 +184,52 @@ sub_train_obedience_interaction = {
 	}
 }
 
+# Start sub_train_obedience scheme
+sub_train_obedience_accelerated_interaction = {
+	category = interaction_category_friendly
+
+	common_interaction = yes
+	interface_priority = 150
+
+	auto_accept = yes
+	ignores_pending_interaction_block = yes
+
+	desc = sub_train_obedience_accelerated_interaction_desc
+
+	is_shown = {
+		scope:recipient = {
+			sub_can_be_accelerated_obedience_trained_trigger = { DOMINANT = scope:actor }
+		}
+	}
+
+	is_valid = {
+		scope:actor = { is_ai = no }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			is_adult = yes
+		}
+	}
+
+	on_accept = {
+		sub_train_obedience_success_effect = {
+			DOMINANT = scope:actor
+			SUBMISSIVE = scope:recipient
+		}
+		scope:actor = {
+			hidden_effect = {
+				send_interface_toast = {
+					title = sub_train_obedience_accelerated_interaction_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+				}
+			}
+		}
+	}
+}
+
+
 # TBD: Add loc and actual options, then uncomment is_shown and is_valid_showing_failures_only
 # Spawn window to choose training
 sub_set_training_interaction = {

@@ -1,3 +1,30 @@
 ﻿sub_train_obedience_success_effect = {
-	
+	$SUBMISSIVE$ = {
+		hidden_effect = {
+			remove_trait = sub_subservient_3
+		}
+		add_trait = sub_subservient_4
+		if = {
+			limit = { can_set_relation_dominant_trigger = { CHARACTER = $DOMINANT$ } }
+			set_relation_dominant = $DOMINANT$
+		}
+		add_opinion = {
+			modifier = sub_subservient_to_master
+			target = $DOMINANT$
+		}
+	}
+	$DOMINANT$ = {
+		add_hook = {
+			type = loyalty_hook
+			target = $SUBMISSIVE$
+		}
+		if = {
+			limit = { can_set_relation_submissive_trigger = { CHARACTER = $SUBMISSIVE$ } }
+			set_relation_submissive = $SUBMISSIVE$
+		}
+		add_character_modifier = {
+			modifier = sub_recent_training_modifier
+			years = 5
+		}
+	}
 }

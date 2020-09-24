@@ -444,36 +444,14 @@ sub_train_obedience_outcome.2000 = {
 
 	immediate = {
 		play_music_cue = "mx_cue_seduction"
+		sub_train_obedience_success_effect = {
+			DOMINANT = scope:owner
+			SUBMISSIVE = scope:target
+		}
 		scope:target = {
-			hidden_effect = {
-				remove_trait = sub_subservient_3
-			}
-			add_trait = sub_subservient_4
-			if = {
-				limit = { can_set_relation_dominant_trigger = { CHARACTER = scope:owner } }
-				set_relation_dominant = scope:owner
-			}
-			add_opinion = {
-				modifier = sub_subservient_to_master
-				target = scope:owner
-			}
 			add_character_flag = {
 				flag = is_naked
 				days = 180
-			}
-		}
-		scope:owner = {
-			add_hook = {
-				type = loyalty_hook
-				target = scope:target
-			}
-			if = {
-				limit = { can_set_relation_submissive_trigger = { CHARACTER = scope:target } }
-				set_relation_submissive = scope:target
-			}
-			add_character_modifier = {
-				modifier = sub_recent_training_modifier
-				years = 5
 			}
 		}
 	}
