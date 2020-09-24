@@ -212,6 +212,17 @@ sub_select_random_replacement_trait = {
 				trigger = {
 					is_target_in_variable_list = {
 						name = sub_replacement_trait_option
+						target = flag:forgiving
+					}
+				}
+				scope:target = {
+					add_character_flag = sub_replacement_trait_forgiving
+				}
+			}
+			10 = {
+				trigger = {
+					is_target_in_variable_list = {
+						name = sub_replacement_trait_option
 						target = flag:honest
 					}
 				}
@@ -831,7 +842,7 @@ sub_add_and_remove_selected_sub_traits = {
 	}
 	if = {
 		limit = { has_character_flag = sub_replaced_trait_vengeful }
-		remove_trait = stubborn
+		remove_trait = vengeful
 	}
 	if = {
 		limit = { has_character_flag = sub_replaced_trait_wrathful }
@@ -906,6 +917,10 @@ sub_add_and_remove_selected_sub_traits = {
 	if = {
 		limit = { has_character_flag = sub_replaced_trait_diligent }
 		remove_trait = diligent
+	}
+	if = {
+		limit = { has_character_flag = sub_replaced_trait_forgiving }
+		remove_trait = forgiving
 	}
 	if = {
 		limit = { has_character_flag = sub_replaced_trait_honest }
