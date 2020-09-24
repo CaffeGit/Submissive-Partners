@@ -16,28 +16,14 @@ sub_make_nude_interaction = {
 		scope:recipient = {
 			AND = {
 				NOT = { has_trait = sub_clothing_rule_3 }
-				is_adult = yes
-				is_female = yes
-				OR = {
-					is_consort_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_soulmate = scope:actor
-					has_relation_dominant = scope:actor
-					has_opinion_modifier = {
-						target = scope:actor
-						modifier = sub_subservient_to_master
-					}
-				}
+				sub_show_sub_interactions_trigger = yes
 			}
 		}
 	}
 
 	is_valid_showing_failures_only = {
 		scope:recipient = {
-			has_opinion_modifier = {
-				target = scope:actor
-				modifier = sub_subservient_to_master
-			}
+			sub_has_obedience_modifier_trigger = yes
 		}
 	}
 
@@ -95,20 +81,7 @@ sub_chastity_rules_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			AND = {
-				is_adult = yes
-				is_female = yes
-				OR = {
-					is_consort_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_soulmate = scope:actor
-					has_relation_dominant = scope:actor
-					has_opinion_modifier = {
-						target = scope:actor
-						modifier = sub_subservient_to_master
-					}
-				}
-			}
+			sub_show_sub_interactions_trigger = yes
 		}
 	}
 
@@ -137,20 +110,7 @@ sub_show_pose_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			AND = {
-				is_adult = yes
-				is_female = yes
-				OR = {
-					is_consort_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_soulmate = scope:actor
-					has_relation_dominant = scope:actor
-					has_opinion_modifier = {
-						target = scope:actor
-						modifier = sub_subservient_to_master
-					}
-				}
-			}
+			sub_show_sub_interactions_trigger = yes
 		}
 	}
 
@@ -189,22 +149,7 @@ sub_train_obedience_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			AND = {
-				NOT = {
-					has_opinion_modifier = {
-						target = scope:actor
-						modifier = sub_subservient_to_master
-					}
-				}
-				is_adult = yes
-				is_female = yes
-				OR = {
-					is_consort_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_soulmate = scope:actor
-					has_relation_dominant = scope:actor
-				}
-			}
+			sub_can_be_obedience_trained_interaction_trigger = yes
 		}
 	}
 
@@ -311,14 +256,8 @@ sub_make_busty_interaction = {
 				NOT = { has_trait = tits_big_3 }
 				is_female = yes
 				OR = {
-					is_consort_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_soulmate = scope:actor
-					has_relation_dominant = scope:actor
-					has_opinion_modifier = {
-						target = scope:actor
-						modifier = sub_subservient_to_master
-					}
+					sub_has_sub_relation_trigger = yes
+					sub_has_obedience_modifier_trigger = yes
 				}
 			}
 		}
