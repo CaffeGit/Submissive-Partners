@@ -1,9 +1,4 @@
-﻿# scripted effects needed
-	# add to scheme power for each good sub trait target has
-	# subtract from scheme power for each bad sub trait target has
-	# choose which modifiers to add/subtract on trait swap
-
-########
+﻿########
 ## Random Trait Selection Effects
 ########
 
@@ -1229,6 +1224,18 @@ sub_set_train_obedience_receptiveness = {
 			add_character_flag = sub_neutral_training_response
 		}
 	}
+}
+
+# permanent effects of scheme success for target
+# call on a character
+sub_train_obedience_target_success_effect = {
+
+}
+
+# permanent effects of scheme success for owner
+# call on a character
+sub_train_obedience_target_success_effect = {
+	
 }
 
 ########

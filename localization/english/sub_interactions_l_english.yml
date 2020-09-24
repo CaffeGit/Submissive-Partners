@@ -8,6 +8,8 @@
  sub_show_pose_interaction_desc: "Have [recipient.GetFirstNameNoTooltip] strike some poses."
  sub_chastity_rules_interaction: "Set Chastity Rules"
  sub_chastity_rules_interaction_desc: "Decide how often [recipient.GetShortUINameNoTooltip] is allowed orgasms, or lock her up in chastity to prevent pregnancy entirely."
+ sub_train_obedience_accelerated_interaction: "Rapid Obedience Training"
+ sub_train_obedience_accelerated_interaction_desc: "Since [recipient.GetShortUINameNoTooltip] has already been superbly trained, it will be trivial to earn her loyalty."
 
  START_SUB_TRAINING: "Begin Training"
 
@@ -15,8 +17,9 @@
  is_scheming_against: "I am already scheming against [target.GetShortUINameNoTooltip]"
 
  # Toasts
- sub_accept_order: "Of course, My [actor.Custom('LadyLordWomanMan')|U]."
+ sub_accept_order: ""Of course, My [actor.Custom('LadyLordWomanMan')|U]""
  sub_train_obedience_interaction_toast: "Obedience Training"
+ sub_train_obedience_accelerated_interaction_toast: "[recipient.GetFirstNameNoTooltip] professes her loyalty"
 
  # Debugging/Testing
  sub_make_busty_interaction: "Breast Enhancement"
