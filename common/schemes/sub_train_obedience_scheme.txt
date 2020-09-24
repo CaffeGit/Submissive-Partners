@@ -16,14 +16,7 @@
 		is_ai = no
 		is_adult = yes
 		scope:target = {
-			NOT = { has_trait = sub_subservient_4 }
-			is_adult = yes
-			is_female = yes
-			OR = {
-				is_consort_of = scope:owner
-				has_relation_lover = scope:owner
-				has_relation_soulmate = scope:owner
-			}
+			sub_can_be_obedience_trained_scheme_trigger = yes
 		}
 	}
 
@@ -69,6 +62,7 @@
 						is_consort_of = scope:scheme.scheme_target
 						has_relation_lover = scope:scheme.scheme_target
 						has_relation_soulmate = scope:scheme.scheme_target
+						has_relation_submissive = scope:scheme.scheme_target
 					}
 				}
 			}

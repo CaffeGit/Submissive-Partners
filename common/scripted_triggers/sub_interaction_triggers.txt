@@ -1,0 +1,42 @@
+﻿sub_has_sub_relation_trigger = {
+	OR = {
+		is_consort_of = scope:actor
+		has_relation_lover = scope:actor
+		has_relation_soulmate = scope:actor
+		has_relation_dominant = scope:actor
+	}
+}
+
+sub_has_obedience_modifier_trigger = {
+	has_opinion_modifier = {
+		target = scope:actor
+		modifier = sub_subservient_to_master
+	}
+}
+
+sub_can_be_trained_interaction_trigger = {
+	AND = {
+		is_adult = yes
+		is_female = yes
+		sub_has_sub_relation_trigger = yes
+	}
+}
+
+sub_can_be_obedience_trained_interaction_trigger = {
+	AND = {
+		sub_can_be_trained_interaction_trigger = yes
+		NOT = { sub_has_obedience_modifier_trigger = yes }
+		NOT = { has_trait = sub_subservient_4 }
+	}
+}
+
+sub_show_sub_interactions_trigger = {
+	AND = {
+		is_adult = yes
+		is_female = yes
+		OR = {
+			sub_has_sub_relation_trigger = yes
+			sub_has_obedience_modifier_trigger = yes
+		}
+	}
+}
