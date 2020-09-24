@@ -1,0 +1,3 @@
+﻿sub_train_obedience_success_effect = {
+	
+}

@@ -16,14 +16,14 @@ sub_make_nude_interaction = {
 		scope:recipient = {
 			AND = {
 				NOT = { has_trait = sub_clothing_rule_3 }
-				sub_show_sub_interactions_trigger = yes
+				sub_show_sub_interactions_trigger = { DOMINANT = scope:actor }
 			}
 		}
 	}
 
 	is_valid_showing_failures_only = {
 		scope:recipient = {
-			sub_has_obedience_modifier_trigger = yes
+			sub_has_obedience_modifier_trigger = { DOMINANT = scope:actor }
 		}
 	}
 
@@ -81,7 +81,7 @@ sub_chastity_rules_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			sub_show_sub_interactions_trigger = yes
+			sub_show_sub_interactions_trigger = { DOMINANT = scope:actor }
 		}
 	}
 
@@ -110,7 +110,7 @@ sub_show_pose_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			sub_show_sub_interactions_trigger = yes
+			sub_show_sub_interactions_trigger = { DOMINANT = scope:actor }
 		}
 	}
 
@@ -149,7 +149,7 @@ sub_train_obedience_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			sub_can_be_obedience_trained_interaction_trigger = yes
+			sub_can_be_obedience_trained_trigger = { DOMINANT = scope:actor }
 		}
 	}
 
@@ -256,8 +256,8 @@ sub_make_busty_interaction = {
 				NOT = { has_trait = tits_big_3 }
 				is_female = yes
 				OR = {
-					sub_has_sub_relation_trigger = yes
-					sub_has_obedience_modifier_trigger = yes
+					sub_has_sub_relation_trigger = { DOMINANT = scope:actor }
+					sub_has_obedience_modifier_trigger = { DOMINANT = scope:actor }
 				}
 			}
 		}
