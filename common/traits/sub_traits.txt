@@ -145,6 +145,8 @@ sub_clothing_rule_3 = {
 	group = sub_clothing_rules
 	level = 3
 
+	flag = is_naked
+
 	intrigue = 2
 	prowess = -5
 

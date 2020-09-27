@@ -135,6 +135,8 @@ sub_show_pose_interaction = {
 sub_train_obedience_interaction = {
 	category = interaction_category_friendly
 
+	# icon = "gfx/interface/icons/character_interactions/sub_friendly_interaction.dds"
+
 	common_interaction = yes
 	interface_priority = 150
 
