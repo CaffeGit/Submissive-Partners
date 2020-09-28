@@ -3,6 +3,35 @@
 #######
 
 # Set Clothing Rules
+sub_clothing_rules_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	interface_priority = 96
+
+	desc = sub_clothing_rules_interaction_desc
+
+	auto_accept = yes
+
+	is_shown = {
+		scope:recipient = {
+			sub_show_sub_interactions_trigger = { DOMINANT = scope:actor }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = { has_trait = sub_subservient }
+	}
+
+	on_accept = {
+		scope:actor = {
+			trigger_event = {
+				on_action = sub_set_clothing_rules
+			}
+		}
+	}
+}
+
+
 sub_make_nude_interaction = {
 	category = interaction_category_friendly
 	common_interaction = yes
@@ -226,8 +255,9 @@ sub_train_obedience_interaction = {
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			is_adult = yes
-			NOT = {
-				is_scheming_against = { target = scope:recipient }
+			can_start_scheme = {
+				type = sway
+				target = scope:recipient
 			}
 		}
 	}

@@ -26,5 +26,5 @@
  trait_sub_chastity_rule_3_desc: "Forbidden from touching herself in any way, and only allowed orgasms as the rarest of treats, this character constantly rubs hers legs together subconsciously and struggles to think about anything other than sex."
  trait_sub_chastity_rule_3_character_desc: "Forbidden from touching herself in any way, and only allowed orgasms as the rarest of treats, [ROOT.GetCharacter.GetFirstNameNoTooltip] constantly rubs hers legs together subconsciously and struggles to think about anything other than sex."
  trait_sub_chastity_rule_4: "Locked In Chastity"
- trait_sub_chastity_rule_4_desc: "This character has been locked in a chastity belt. Only her Master's mercy can free her pussy from its prison."
- trait_sub_chastity_rule_4_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] has been locked in a chastity belt. Only her Master's mercy can free her pussy from its prison."
+ trait_sub_chastity_rule_4_desc: "This character has been locked in a chastity belt. Only her [GetPlayer.Custom('SubMasterMistress')|U]'s mercy can free her pussy from its prison."
+ trait_sub_chastity_rule_4_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] has been locked in a chastity belt. Only her [GetPlayer.Custom('SubMasterMistress')|U]'s mercy can free her pussy from its prison."

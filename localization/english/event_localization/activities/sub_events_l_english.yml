@@ -1,13 +1,13 @@
 ﻿l_english:
  sub_pose.0001.t: "Putting On A Show"
- sub_pose.0001.desc.short: ""What do you desire, My Lord?""
- sub_pose.0002.desc.short: ""I was hoping you would say that, My Lord. Perhaps when you're satisfied with my little show, we could move to the bed?""
- sub_pose.0003.desc.short: ""Yes, a little... but you can look all you want, Master. Your pleasure is more important than my modesty.""
- sub_pose.0004.desc.short: ""I will do my best, My Lord, but having you watching me is very... distracting. Does this pose please you?""
- sub_pose.0005.desc.short: ""Oh...! H-how long have you had handcuffs in here?! And m-more importantly, how long are you going to keep me locked up like this...?""
+ sub_pose.0001.desc.short: ""What do you desire, [actor.Custom('SubMasterMistress')|U]?""
+ sub_pose.0002.desc.short: ""I was hoping you would say that, [actor.Custom('SubMasterMistress')|U]. Perhaps when you're satisfied with my little show, we could move to the bed?""
+ sub_pose.0003.desc.short: ""Yes, a little... but you can look all you want, [actor.Custom('SubMasterMistress')|U]. Your pleasure is more important than my modesty.""
+ sub_pose.0004.desc.short: ""I will do my best, [actor.Custom('SubMasterMistress')|U], but having you watching me is very... distracting. Does this pose please you?""
+ sub_pose.0005.desc.short: ""Oh...! H-how long have you had shackles in here?! And m-more importantly, how long are you going to keep me locked up like this...?""
 
  sub_pose.0001.a: "Actually the first pose was fine."
- sub_pose.0001.b: "How about a little flirting?"
+ sub_pose.0001.b: "You look stunning."
  sub_pose.0001.c: "Getting embarrassed at all?"
  sub_pose.0001.d: "Just try to look natural."
  sub_pose.0001.e: "Actually, I think you'd look best chained up!"
@@ -22,3 +22,12 @@
  sub_rules.0001.d: "Orgasms? Never! In fact, a no-touch rule is what she needs."
  sub_rules.0001.e: "Lock her in a chastity belt. No orgasms, no touching, and no chance of pregnancy."
  sub_rules.0001.f: "Nevermind."
+
+ sub_rules.0002.t: "Changing Clothing Rules"
+ sub_rules.0002.desc.short: "You consider the different rules you could set for [recipient.GetFirstNameNoTooltip]'s clothing."
+
+ sub_rules.0002.a: "Remove all restrictions on her orgasms."
+ sub_rules.0002.b: "Occasional orgasm denial will do her good."
+ sub_rules.0002.c: "Keep her denied. Perhaps a few orgasms a year, if she behaves."
+ sub_rules.0002.d: "Orgasms? Never! In fact, a no-touch rule is what she needs."
+ sub_rules.0002.e: "Nevermind."

@@ -1,6 +1,6 @@
 ﻿namespace = sub_rules
 
-#Set Chastity Rules
+# Set Chastity Rules
 sub_rules.0001 = {
 	type = character_event
 	title = sub_rules.0001.t
@@ -148,5 +148,111 @@ sub_rules.0001 = {
 
 	option = {
 		name = sub_rules.0001.f
+	}
+}
+
+# Set Clothing Rules
+sub_rules.0002 = {
+	type = character_event
+	title = sub_rules.0002.t
+	desc = sub_rules.0002.desc.short
+	theme = marriage
+
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_coward
+	}
+
+	option = {
+		name = sub_rules.0002.a
+		scope:recipient = {
+			if = {
+				limit = { has_trait = sub_clothing_rule_1 }
+				remove_trait = sub_clothing_rule_1
+			}
+			if = {
+				limit = { has_trait = sub_clothing_rule_2 }
+				remove_trait = sub_clothing_rule_2
+			}
+			if = {
+				limit = { has_trait = sub_clothing_rule_3 }
+				remove_trait = sub_clothing_rule_3
+			}
+		}
+	}
+
+	option = {
+		name = sub_rules.0002.b
+
+		trigger = {
+			scope:recipient = { has_trait = sub_subservient }
+		}
+
+		scope:recipient = {
+			if = {
+				limit = { has_trait = sub_clothing_rule_2 }
+				remove_trait = sub_clothing_rule_2
+			}
+			if = {
+				limit = { has_trait = sub_clothing_rule_3 }
+				remove_trait = sub_clothing_rule_3
+			}
+			add_trait = sub_clothing_rule_1
+		}
+	}
+
+	option = {
+		name = sub_rules.0002.c
+
+		trigger = {
+			scope:recipient = {
+				OR = {
+					has_trait = sub_subservient_2
+					has_trait = sub_subservient_3
+					has_trait = sub_subservient_4
+				}
+			}
+		}
+
+		scope:recipient = {
+			if = {
+				limit = { has_trait = sub_clothing_rule_1 }
+				remove_trait = sub_clothing_rule_1
+			}
+			if = {
+				limit = { has_trait = sub_clothing_rule_3 }
+				remove_trait = sub_clothing_rule_3
+			}
+			add_trait = sub_clothing_rule_2
+    	}
+	}
+
+	option = {
+		name = sub_rules.0002.d
+
+		trigger = {
+			scope:recipient = {
+				has_opinion_modifier = {
+					target = scope:actor
+					modifier = sub_subservient_to_master
+				}
+			}
+		}
+
+		scope:recipient = {
+			if = {
+				limit = { has_trait = sub_clothing_rule_1 }
+				remove_trait = sub_clothing_rule_1
+			}
+			if = {
+				limit = { has_trait = sub_clothing_rule_2 }
+				remove_trait = sub_clothing_rule_2
+			}
+			add_trait = sub_clothing_rule_3
+		}
+	}
+
+	option = {
+		name = sub_rules.0002.e
 	}
 }
