@@ -10,10 +10,10 @@
  sub_train_obedience_accelerated_interaction_desc: "Since [recipient.GetShortUINameNoTooltip] has already been superbly trained, it will be trivial to earn her loyalty."
  sub_remove_submissive_interaction: "Set Aside Submissive"
  sub_remove_submissive_interaction_desc: "While her devotion and training will remain, sexually you will no longer consider [recipient.GetShortUINameNoTooltip] your [submissive|E]."
- sub_remove_submissive_interaction_notification: "Set Aside Submissive"
- sub_remove_submissive_interaction: "Take Submissive"
+ sub_remove_submissive_interaction_notification: "Set Aside $submissive$"
+ sub_remove_submissive_interaction: "Take $submissive$"
  sub_remove_submissive_interaction_desc: "You once again desire to call [recipient.GetShortUINameNoTooltip] your [submissive|E]."
- sub_remove_submissive_interaction_notification: "Took Submissive"
+ sub_remove_submissive_interaction_notification: "Took $submissive$"
 
  START_SUB_TRAINING: "Begin Training"
 

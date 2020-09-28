@@ -213,7 +213,7 @@ sub_train_obedience_interaction = {
 	}
 }
 
-# Start sub_train_obedience scheme
+# Gain loyalty of already trained character
 sub_train_obedience_accelerated_interaction = {
 	category = interaction_category_friendly
 
@@ -257,7 +257,6 @@ sub_train_obedience_accelerated_interaction = {
 		}
 	}
 }
-
 
 # TBD: Add loc and actual options, then uncomment is_shown and is_valid_showing_failures_only
 # Spawn window to choose training
