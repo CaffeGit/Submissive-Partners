@@ -249,6 +249,10 @@ sub_rules.0002 = {
 				remove_trait = sub_clothing_rule_2
 			}
 			add_trait = sub_clothing_rule_3
+			add_opinion = {
+				modifier = sub_made_me_go_naked
+				target = scope:actor
+			}
 		}
 	}
 

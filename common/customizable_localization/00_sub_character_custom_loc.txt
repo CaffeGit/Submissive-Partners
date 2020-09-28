@@ -15,4 +15,3 @@
 		localization_key = SUB_MISTRESS
 	}
 }
-s

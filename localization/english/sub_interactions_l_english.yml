@@ -1,9 +1,5 @@
 ﻿l_english:
  # Interactions
- sub_make_nude_interaction: "Revoke Clothing Privileges"
- sub_make_nude_interaction_desc: "[recipient.GetShortUINameNoTooltip] will remain naked, until you decide otherwise."
- sub_undo_nude_interaction: "Permit Clothing"
- sub_undo_nude_interaction_desc: "You've changed your mind about [recipient.GetShortUINameNoTooltip]'s nudity- allow her to put on clothes again."
  sub_show_pose_interaction: "Pose For Me"
  sub_show_pose_interaction_desc: "Have [recipient.GetFirstNameNoTooltip] strike some poses."
  sub_clothing_rules_interaction: "Set Clothing Rules"
