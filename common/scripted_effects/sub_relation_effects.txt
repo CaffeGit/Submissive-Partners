@@ -1,0 +1,5 @@
+﻿sub_dom_sub_breakup_effect = {
+	$DOMINANT$ = {
+		remove_relation_submissive = $SUBMISSIVE$
+	}
+}
