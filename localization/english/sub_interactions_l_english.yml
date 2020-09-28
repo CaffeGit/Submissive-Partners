@@ -17,7 +17,7 @@
  is_scheming_against: "I am already scheming against [target.GetShortUINameNoTooltip]"
 
  # Toasts
- sub_accept_order: ""Of course, My [actor.Custom('LadyLordWomanMan')|U]""
+ sub_accept_order: ""Of course, [actor.Custom('SubMasterMistress')|U]""
  sub_train_obedience_interaction_toast: "Obedience Training"
  sub_train_obedience_accelerated_interaction_toast: "[recipient.GetFirstNameNoTooltip] professes her loyalty"
 

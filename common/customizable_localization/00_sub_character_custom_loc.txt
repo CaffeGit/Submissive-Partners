@@ -1,0 +1,17 @@
+﻿SubMasterMistress = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = SUB_MISTRESS
+	}
+
+	text = {
+		trigger = {
+			is_male = yes
+		}
+		localization_key = SUB_MASTER
+	}
+}
