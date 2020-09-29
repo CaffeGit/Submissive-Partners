@@ -16,8 +16,8 @@ sub_set_chastity_rules = {
   }
 }
 
-sub_set_training = {
-  events = {
-    sub_training.0001
-  }
-}
+# sub_set_training = {
+#   events = {
+#     sub_training.0001
+#   }
+# }
