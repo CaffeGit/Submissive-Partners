@@ -1,5 +1,5 @@
 ﻿l_english:
- trait_sub_subservient: "Subservient"
+ trait_sub_subservient: "Subservience"
  trait_sub_subservient_1: "Trainee (Obedience)"
  trait_sub_subservient_1_desc: "She has a basic idea of the obedience expected of a $game_concept_submissive$, but not much more than that."
  trait_sub_subservient_1_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] has a basic idea of the obedience expected of a $game_concept_submissive$, but not much more than that."
@@ -23,6 +23,8 @@
  trait_sub_clothing_rule_3: "Forced Nudity"
  trait_sub_clothing_rule_3_desc: "Baring it all, whether she wants to or not."
  trait_sub_clothing_rule_3_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] is baring it all, whether she wants to or not."
+ trait_sub_clothing_rule_4: "Clothing Rule 4"
+ trait_sub_clothing_rule_4_desc: "This trait isn't supposed to be used. You didn't... you didn't try to CHEAT, did you?!"
 
  trait_sub_chastity_rules: "Chastity Rules"
  trait_sub_chastity_rule_1: "Orgasms Restricted"

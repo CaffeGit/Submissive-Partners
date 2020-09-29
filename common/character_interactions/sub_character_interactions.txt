@@ -187,7 +187,6 @@ sub_train_obedience_interaction = {
 
 	is_valid_showing_failures_only = {
 		scope:actor = {
-			is_adult = yes
 			can_start_scheme = {
 				type = sway
 				target = scope:recipient
@@ -235,12 +234,6 @@ sub_train_obedience_accelerated_interaction = {
 		scope:actor = { is_ai = no }
 	}
 
-	is_valid_showing_failures_only = {
-		scope:actor = {
-			is_adult = yes
-		}
-	}
-
 	on_accept = {
 		sub_train_obedience_success_effect = {
 			DOMINANT = scope:actor
@@ -260,55 +253,55 @@ sub_train_obedience_accelerated_interaction = {
 
 # TBD: Add loc and actual options, then uncomment is_shown and is_valid_showing_failures_only
 # Spawn window to choose training
-sub_set_training_interaction = {
-	category = interaction_category_friendly
-	common_interaction = yes
-	interface_priority = 95
+# sub_set_training_interaction = {
+# 	category = interaction_category_friendly
+# 	common_interaction = yes
+# 	interface_priority = 95
 
-	desc = "test desc"
+# 	desc = "test desc"
 
-	auto_accept = yes
+# 	auto_accept = yes
 
-	is_shown = {
-		scope:recipient = {
-			AND = {
-				is_male = yes
-				is_female = yes
-			}
-		}
-	}
-	# is_shown = {
-	# 	scope:recipient = {
-	# 		AND = {
-	# 			is_adult = yes
-	# 			is_female = yes
-	# 			OR = {
-	# 				is_consort_of = scope:actor
-	# 				has_relation_lover = scope:actor
-	# 				has_relation_soulmate = scope:actor
-	# 				has_relation_dominant = scope:actor
-	# 				has_opinion_modifier = {
-	# 					target = scope:actor
-	# 					modifier = sub_subservient_to_master
-	# 				}
-	# 			}
-	# 		}
-	# 	}
-	# }
+# 	is_shown = {
+# 		scope:recipient = {
+# 			AND = {
+# 				is_male = yes
+# 				is_female = yes
+# 			}
+# 		}
+# 	}
+# 	# is_shown = {
+# 	# 	scope:recipient = {
+# 	# 		AND = {
+# 	# 			is_adult = yes
+# 	# 			is_female = yes
+# 	# 			OR = {
+# 	# 				is_consort_of = scope:actor
+# 	# 				has_relation_lover = scope:actor
+# 	# 				has_relation_soulmate = scope:actor
+# 	# 				has_relation_dominant = scope:actor
+# 	# 				has_opinion_modifier = {
+# 	# 					target = scope:actor
+# 	# 					modifier = sub_subservient_to_master
+# 	# 				}
+# 	# 			}
+# 	# 		}
+# 	# 	}
+# 	# }
 
-	# TBD: if no valid training options, show failure
-	# is_valid_showing_failures_only = {
-	# 	scope:recipient = { has_trait = sub_subservient_4 }
-	# }
+# 	# TBD: if no valid training options, show failure
+# 	# is_valid_showing_failures_only = {
+# 	# 	scope:recipient = { has_trait = sub_subservient_4 }
+# 	# }
 
-	on_accept = {
-		scope:actor = {
-			trigger_event = {
-				on_action = sub_set_training
-			}
-		}
-	}
-}
+# 	on_accept = {
+# 		scope:actor = {
+# 			trigger_event = {
+# 				on_action = sub_set_training
+# 			}
+# 		}
+# 	}
+# }
 
 #######
 ### EXPERIMENTAL

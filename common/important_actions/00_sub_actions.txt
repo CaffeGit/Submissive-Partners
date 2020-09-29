@@ -5,6 +5,11 @@
 		every_consort = {
 			limit = {
 				sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+				NOT = {
+					any_targeting_scheme = {
+						scheme_owner = root
+					}
+				}
 			}
 			try_create_important_action = {
 				important_action_type = action_can_obedience_train
@@ -16,6 +21,11 @@
 			type = lover
 			limit = {
 				sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+				NOT = {
+					any_targeting_scheme = {
+						scheme_owner = root
+					}
+				}
 			}
 			try_create_important_action = {
 				important_action_type = action_can_obedience_train
@@ -27,6 +37,11 @@
 			type = soulmate
 			limit = {
 				sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+				NOT = {
+					any_targeting_scheme = {
+						scheme_owner = root
+					}
+				}
 			}
 			try_create_important_action = {
 				important_action_type = action_can_obedience_train

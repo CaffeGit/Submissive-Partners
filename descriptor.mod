@@ -1,6 +1,6 @@
-﻿version="0.3.1"
+﻿version="1.0"
 tags={
 	"Utilities"
 }
 name="Submissive Partners"
-supported_version="1.0.3"
+supported_version="1.1.*"

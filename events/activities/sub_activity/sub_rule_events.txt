@@ -92,12 +92,7 @@ sub_rules.0001 = {
 		name = sub_rules.0001.d
 
 		trigger = {
-			scope:recipient = {
-				has_opinion_modifier = {
-					target = scope:actor
-					modifier = sub_subservient_to_master
-				}
-			}
+			scope:recipient = { has_trait = sub_subservient_4 }
 		}
 
 		scope:recipient = {
@@ -121,12 +116,7 @@ sub_rules.0001 = {
 		name = sub_rules.0001.e
 
 		trigger = {
-			scope:recipient = {
-				has_opinion_modifier = {
-					target = scope:actor
-					modifier = sub_subservient_to_master
-				}
-			}
+			scope:recipient = { has_trait = sub_subservient_4 }
 		}
 
 		scope:recipient = {
@@ -231,12 +221,7 @@ sub_rules.0002 = {
 		name = sub_rules.0002.d
 
 		trigger = {
-			scope:recipient = {
-				has_opinion_modifier = {
-					target = scope:actor
-					modifier = sub_subservient_to_master
-				}
-			}
+			scope:recipient = { has_trait = sub_subservient_4 }
 		}
 
 		scope:recipient = {

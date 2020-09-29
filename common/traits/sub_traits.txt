@@ -41,7 +41,7 @@ sub_subservient_2 = {
 	intrigue = -1
 	prowess = -1
 
-	personal_scheme_power_mult = -0.2
+	hostile_scheme_power_mult = -0.2
 
 	ai_compassion = 20
 	ai_vengefulness = -20
@@ -74,7 +74,7 @@ sub_subservient_3 = {
 
 	opinion_of_liege = 10
 
-	personal_scheme_power_mult = -0.5
+	hostile_scheme_power_mult = -0.5
 
 	ai_compassion = 60
 	ai_vengefulness = -60
@@ -107,7 +107,7 @@ sub_subservient_4 = {
 
 	opinion_of_liege = 20
 
-	personal_scheme_power_mult = -0.9
+	hostile_scheme_power_mult = -0.9
 
 	ai_compassion = 100
 	ai_vengefulness = -100
@@ -141,9 +141,9 @@ sub_clothing_rule_1 = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = sub_clothing_rule_1_desc
+				desc = trait_sub_clothing_rule_1_desc
 			}
-			desc = sub_clothing_rule_1_character_desc
+			desc = trait_sub_clothing_rule_1_character_desc
 		}
 	}
 }
@@ -167,9 +167,9 @@ sub_clothing_rule_2 = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = sub_clothing_rule_2_desc
+				desc = trait_sub_clothing_rule_2_desc
 			}
-			desc = sub_clothing_rule_2_character_desc
+			desc = trait_sub_clothing_rule_2_character_desc
 		}
 	}
 }
@@ -198,9 +198,9 @@ sub_clothing_rule_3 = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = sub_clothing_rule_3_desc
+				desc = trait_sub_clothing_rule_3_desc
 			}
-			desc = sub_clothing_rule_3_character_desc
+			desc = trait_sub_clothing_rule_3_character_desc
 		}
 	}
 }

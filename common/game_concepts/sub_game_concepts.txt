@@ -1,5 +1,5 @@
 ﻿sub_train_obedience_scheme = {
-	alias = { sub_train_obedience_schemes sub_train_obedience }
+	alias = { sub_train_obedience_schemes sub_train_obedience sub_train_obedience_action sub_train_obedience_scheme_single }
 	parent = scheme
 }
 

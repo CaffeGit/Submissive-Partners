@@ -116,7 +116,6 @@
 
 	is_valid = {
 		scope:recipient = {
-			is_adult = yes
 			NOT = {
 				any_targeting_scheme = {
 					scheme_owner = root
