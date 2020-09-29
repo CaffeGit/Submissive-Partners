@@ -141,9 +141,9 @@ sub_clothing_rule_1 = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = sub_clothing_rule_1_desc
+				desc = trait_sub_clothing_rule_1_desc
 			}
-			desc = sub_clothing_rule_1_character_desc
+			desc = trait_sub_clothing_rule_1_character_desc
 		}
 	}
 }
@@ -167,9 +167,9 @@ sub_clothing_rule_2 = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = sub_clothing_rule_2_desc
+				desc = trait_sub_clothing_rule_2_desc
 			}
-			desc = sub_clothing_rule_2_character_desc
+			desc = trait_sub_clothing_rule_2_character_desc
 		}
 	}
 }
@@ -198,9 +198,9 @@ sub_clothing_rule_3 = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = sub_clothing_rule_3_desc
+				desc = trait_sub_clothing_rule_3_desc
 			}
-			desc = sub_clothing_rule_3_character_desc
+			desc = trait_sub_clothing_rule_3_character_desc
 		}
 	}
 }
