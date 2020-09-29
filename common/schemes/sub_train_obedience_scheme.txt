@@ -14,7 +14,6 @@
 
 	allow = {
 		is_ai = no
-		is_adult = yes
 		scope:target = {
 			sub_can_be_obedience_trained_trigger = { DOMINANT = scope:owner }
 		}

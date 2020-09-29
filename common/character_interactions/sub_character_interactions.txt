@@ -187,7 +187,6 @@ sub_train_obedience_interaction = {
 
 	is_valid_showing_failures_only = {
 		scope:actor = {
-			is_adult = yes
 			can_start_scheme = {
 				type = sway
 				target = scope:recipient
@@ -233,12 +232,6 @@ sub_train_obedience_accelerated_interaction = {
 
 	is_valid = {
 		scope:actor = { is_ai = no }
-	}
-
-	is_valid_showing_failures_only = {
-		scope:actor = {
-			is_adult = yes
-		}
 	}
 
 	on_accept = {
