@@ -8,12 +8,18 @@
 			is_adult = no
 		}
 
-		modifier = { #Is the suggestion available for most important relations?
+		modifier = { #Is the suggestion available for spouses?
 			add = 1
 			OR = {
-				any_consort = {
+				any_spouse = {
 					sub_can_be_obedience_trained_trigger = { DOMINANT = root }
 				}
+			}
+		}
+
+		modifier = { #Is the suggestion available for other important relations?
+			add = 0.5
+			OR = {
 				any_relation = {
 					type = lover
 					sub_can_be_obedience_trained_trigger = { DOMINANT = root }
@@ -97,6 +103,13 @@
 			add = 50
 			scope:recipient = {
 				has_relation_soulmate = scope:actor
+			}
+		}
+
+		modifier = { #Lovers are slightly more important than concubines
+			add = 1
+			scope:recipient = {
+				has_relation_lover = scope:actor
 			}
 		}
 	}
