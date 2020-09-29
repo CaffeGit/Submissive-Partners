@@ -3,67 +3,29 @@
 #######
 
 # Set Clothing Rules
-sub_make_nude_interaction = {
+sub_clothing_rules_interaction = {
 	category = interaction_category_friendly
 	common_interaction = yes
-	interface_priority = 101
+	interface_priority = 96
 
-	desc = sub_make_nude_interaction_desc
+	desc = sub_clothing_rules_interaction_desc
 
 	auto_accept = yes
 
 	is_shown = {
 		scope:recipient = {
-			AND = {
-				NOT = { has_trait = sub_clothing_rule_3 }
-				sub_show_sub_interactions_trigger = { DOMINANT = scope:actor }
-			}
+			sub_show_sub_interactions_trigger = { DOMINANT = scope:actor }
 		}
 	}
 
 	is_valid_showing_failures_only = {
-		scope:recipient = {
-			sub_has_obedience_modifier_trigger = { DOMINANT = scope:actor }
-		}
+		scope:recipient = { has_trait = sub_subservient }
 	}
 
 	on_accept = {
-		scope:recipient = {
-			add_trait = sub_clothing_rule_3
-			add_opinion = {
-				modifier = sub_made_me_go_naked
-				target = scope:actor
-			}
-		}
-
 		scope:actor = {
-			send_interface_toast = {
-				title = sub_accept_order
-				right_icon = scope:recipient
-			}
-		}
-	}
-}
-
-sub_undo_nude_interaction = {
-	category = interaction_category_friendly
-	common_interaction = no
-	interface_priority = 101
-
-	desc = sub_undo_nude_interaction_desc
-
-	auto_accept = yes
-	is_shown = {
-    	scope:recipient = { has_trait = sub_clothing_rule_3 }
-	}
-
-	on_accept = {
-		scope:recipient = { remove_trait = sub_clothing_rule_3 }
-
-		scope:actor = {
-			send_interface_toast = {
-				title = sub_accept_order
-				right_icon = scope:recipient
+			trigger_event = {
+				on_action = sub_set_clothing_rules
 			}
 		}
 	}
@@ -127,6 +89,72 @@ sub_show_pose_interaction = {
 	}
 }
 
+# Remove submissive relation
+sub_remove_submissive_interaction = {
+	category = interaction_category_hostile
+
+	auto_accept = yes
+	ignores_pending_interaction_block = yes
+
+	desc = sub_remove_submissive_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			has_relation_submissive = scope:recipient
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = sub_remove_submissive_interaction_notification
+				right_icon = scope:recipient
+				sub_dom_sub_breakup_effect = {
+					DOMINANT = scope:actor
+					SUBMISSIVE = scope:recipient
+				}
+				stress_impact = {
+					lustful = minor_stress_impact_gain
+					compassionate = minor_stress_impact_gain
+				}
+			}
+		}
+	}
+}
+
+# Regain submissive relation
+sub_regain_submissive_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+
+	auto_accept = yes
+	ignores_pending_interaction_block = yes
+
+	desc = sub_regain_submissive_interaction_desc
+
+	is_shown = {
+		scope:recipient = {
+			can_set_relation_dominant_trigger = { CHARACTER = scope:actor }
+			sub_has_obedience_modifier_trigger = { DOMINANT = scope:actor }
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = sub_regain_submissive_interaction_notification
+				right_icon = scope:recipient
+				set_relation_submissive = scope:recipient
+				stress_impact = {
+					lustful = minor_stress_impact_loss
+				}
+			}
+		}
+	}
+}
+
 #######
 ### TRAINING SCHEMES
 #######
@@ -134,8 +162,6 @@ sub_show_pose_interaction = {
 # Start sub_train_obedience scheme
 sub_train_obedience_interaction = {
 	category = interaction_category_friendly
-
-	# icon = "gfx/interface/icons/character_interactions/sub_friendly_interaction.dds"
 
 	common_interaction = yes
 	interface_priority = 150
@@ -162,8 +188,9 @@ sub_train_obedience_interaction = {
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			is_adult = yes
-			NOT = {
-				is_scheming_against = { target = scope:recipient }
+			can_start_scheme = {
+				type = sway
+				target = scope:recipient
 			}
 		}
 	}
@@ -186,7 +213,7 @@ sub_train_obedience_interaction = {
 	}
 }
 
-# Start sub_train_obedience scheme
+# Gain loyalty of already trained character
 sub_train_obedience_accelerated_interaction = {
 	category = interaction_category_friendly
 
@@ -230,7 +257,6 @@ sub_train_obedience_accelerated_interaction = {
 		}
 	}
 }
-
 
 # TBD: Add loc and actual options, then uncomment is_shown and is_valid_showing_failures_only
 # Spawn window to choose training
@@ -289,40 +315,40 @@ sub_set_training_interaction = {
 #######
 
 # Breast Enhancement
-sub_make_busty_interaction = {
-	category = interaction_category_friendly
-	common_interaction = yes
-	interface_priority = 100
+# sub_make_busty_interaction = {
+# 	category = interaction_category_friendly
+# 	common_interaction = yes
+# 	interface_priority = 100
 
-  	desc = sub_make_busty_interaction_desc
+#   	desc = sub_make_busty_interaction_desc
 
-  	auto_accept = yes
+#   	auto_accept = yes
 
-	is_shown = {
-		scope:recipient = {
-			AND = {
-				NOT = { has_trait = tits_big_3 }
-				is_female = yes
-				OR = {
-					sub_has_sub_relation_trigger = { DOMINANT = scope:actor }
-					sub_has_obedience_modifier_trigger = { DOMINANT = scope:actor }
-				}
-			}
-		}
-	}
+# 	is_shown = {
+# 		scope:recipient = {
+# 			AND = {
+# 				NOT = { has_trait = tits_big_3 }
+# 				is_female = yes
+# 				OR = {
+# 					sub_has_sub_relation_trigger = { DOMINANT = scope:actor }
+# 					sub_has_obedience_modifier_trigger = { DOMINANT = scope:actor }
+# 				}
+# 			}
+# 		}
+# 	}
 
-	is_valid_showing_failures_only = {
-		scope:recipient = { is_adult = yes }
-	}
+# 	is_valid_showing_failures_only = {
+# 		scope:recipient = { is_adult = yes }
+# 	}
 
-	on_accept = {
-		scope:recipient = { add_trait = tits_big_3 }
+# 	on_accept = {
+# 		scope:recipient = { add_trait = tits_big_3 }
 
-		scope:actor = {
-			send_interface_toast = {
-				title = sub_breast_enhancement_order
-				right_icon = scope:recipient
-			}
-		}
-	}
-}
+# 		scope:actor = {
+# 			send_interface_toast = {
+# 				title = sub_breast_enhancement_order
+# 				right_icon = scope:recipient
+# 			}
+# 		}
+# 	}
+# }

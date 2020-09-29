@@ -1,0 +1,127 @@
+﻿sub_suggestion_obedience_training = {
+
+	weight = {
+		base = 0
+
+		modifier = { #Since the scheme is blocked for kids
+			add = -5
+			is_adult = no
+		}
+
+		modifier = { #Is the suggestion available for spouses?
+			add = 1
+			OR = {
+				any_spouse = {
+					sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+				}
+			}
+		}
+
+		modifier = { #Is the suggestion available for other important relations?
+			add = 0.5
+			OR = {
+				any_relation = {
+					type = lover
+					sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+				}
+				any_relation = {
+					type = soulmate
+					sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+				}
+			}
+		}
+
+		modifier = { #More likely if you have no active friendly schemes
+			add = 0.5
+			NOT = {
+				any_scheme = {
+					friendly_scheme_trigger = yes
+				}
+			}
+		}
+
+		modifier = { #More likely if you have < 2 submissives
+			add = 0.5
+			num_of_relation_submissive < 2
+		}
+	}
+
+	check_create_suggestion = {
+		every_consort = {
+			limit = {
+				sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+			}
+			try_create_suggestion = {
+				suggestion_type = sub_suggestion_obedience_training
+				actor = root
+				recipient = this
+			}
+		}
+		every_relation = {
+			type = lover
+			limit = {
+				sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+			}
+			try_create_suggestion = {
+				suggestion_type = sub_suggestion_obedience_training
+				actor = root
+				recipient = this
+			}
+		}
+		every_relation = {
+			type = soulmate
+			limit = {
+				sub_can_be_obedience_trained_trigger = { DOMINANT = root }
+			}
+			try_create_suggestion = {
+				suggestion_type = sub_suggestion_obedience_training
+				actor = root
+				recipient = this
+			}
+		}
+	}
+
+	effect = {
+		open_interaction_window = {
+			interaction = sub_train_obedience_interaction
+			actor = scope:actor
+			recipient = scope:recipient
+		}
+	}
+
+	score = {
+		base = 50
+
+		modifier = { #Score higher if it's your spouse
+			add = 100
+			scope:recipient = {
+				is_spouse_of = scope:actor
+			}
+		}
+
+		modifier = { #Score higher if it's your soulmate
+			add = 50
+			scope:recipient = {
+				has_relation_soulmate = scope:actor
+			}
+		}
+
+		modifier = { #Lovers are slightly more important than concubines
+			add = 1
+			scope:recipient = {
+				has_relation_lover = scope:actor
+			}
+		}
+	}
+
+	is_valid = {
+		scope:recipient = {
+			is_adult = yes
+			NOT = {
+				any_targeting_scheme = {
+					scheme_owner = root
+				}
+			}
+		}
+	}
+}

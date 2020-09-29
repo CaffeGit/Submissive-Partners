@@ -125,18 +125,53 @@ sub_subservient_4 = {
 	}
 }
 
-sub_clothing_rule_1 = { # placeholder trait
+sub_clothing_rule_1 = {
 	index = 5604
 
 	group = sub_clothing_rules
 	level = 1
+
+	intrigue = 1
+
+	attraction_opinion = 10
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = sub_clothing_rule_1_desc
+			}
+			desc = sub_clothing_rule_1_character_desc
+		}
+	}
 }
 
-sub_clothing_rule_2 = { # placeholder trait
+sub_clothing_rule_2 = {
 	index = 5605
 
 	group = sub_clothing_rules
 	level = 2
+
+	intrigue = 2
+	prowess = -2
+
+	attraction_opinion = 20
+
+	monthly_dread = -2
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = sub_clothing_rule_2_desc
+			}
+			desc = sub_clothing_rule_2_character_desc
+		}
+	}
 }
 
 sub_clothing_rule_3 = {
@@ -156,6 +191,18 @@ sub_clothing_rule_3 = {
 
 	monthly_dread = -10
 	dread_loss_mult = 5
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = sub_clothing_rule_3_desc
+			}
+			desc = sub_clothing_rule_3_character_desc
+		}
+	}
 }
 
 sub_clothing_rule_4 = { # placeholder trait

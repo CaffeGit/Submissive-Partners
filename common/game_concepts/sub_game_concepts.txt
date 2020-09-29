@@ -2,3 +2,8 @@
 	alias = { sub_train_obedience_schemes sub_train_obedience }
 	parent = scheme
 }
+
+sub_subservience_concept = {
+	alias = { sub_subservient_concept }
+	texture = "gfx/interface/icons/traits/sub_subservient_4.dds"
+}
