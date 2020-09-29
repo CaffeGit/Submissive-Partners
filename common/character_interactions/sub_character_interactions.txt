@@ -315,40 +315,40 @@ sub_set_training_interaction = {
 #######
 
 # Breast Enhancement
-sub_make_busty_interaction = {
-	category = interaction_category_friendly
-	common_interaction = yes
-	interface_priority = 100
+# sub_make_busty_interaction = {
+# 	category = interaction_category_friendly
+# 	common_interaction = yes
+# 	interface_priority = 100
 
-  	desc = sub_make_busty_interaction_desc
+#   	desc = sub_make_busty_interaction_desc
 
-  	auto_accept = yes
+#   	auto_accept = yes
 
-	is_shown = {
-		scope:recipient = {
-			AND = {
-				NOT = { has_trait = tits_big_3 }
-				is_female = yes
-				OR = {
-					sub_has_sub_relation_trigger = { DOMINANT = scope:actor }
-					sub_has_obedience_modifier_trigger = { DOMINANT = scope:actor }
-				}
-			}
-		}
-	}
+# 	is_shown = {
+# 		scope:recipient = {
+# 			AND = {
+# 				NOT = { has_trait = tits_big_3 }
+# 				is_female = yes
+# 				OR = {
+# 					sub_has_sub_relation_trigger = { DOMINANT = scope:actor }
+# 					sub_has_obedience_modifier_trigger = { DOMINANT = scope:actor }
+# 				}
+# 			}
+# 		}
+# 	}
 
-	is_valid_showing_failures_only = {
-		scope:recipient = { is_adult = yes }
-	}
+# 	is_valid_showing_failures_only = {
+# 		scope:recipient = { is_adult = yes }
+# 	}
 
-	on_accept = {
-		scope:recipient = { add_trait = tits_big_3 }
+# 	on_accept = {
+# 		scope:recipient = { add_trait = tits_big_3 }
 
-		scope:actor = {
-			send_interface_toast = {
-				title = sub_breast_enhancement_order
-				right_icon = scope:recipient
-			}
-		}
-	}
-}
+# 		scope:actor = {
+# 			send_interface_toast = {
+# 				title = sub_breast_enhancement_order
+# 				right_icon = scope:recipient
+# 			}
+# 		}
+# 	}
+# }
