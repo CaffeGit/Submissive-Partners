@@ -1,5 +1,5 @@
 ﻿l_english:
  sub_suggestion_obedience_training_label: "Train Partner"
  sub_suggestion_obedience_training: "Suggestion: Train [recipient.GetShortUIName] in $game_concept_sub_subservience_concept$"
- sub_suggestion_obedience_training_desc: "Your [actor.Custom2('RelationToMeShort', SCOPE.sC('recipient'))] [recipient.GetShortUIName] can be trained to be [sub_subservient_concept|E] to you, offering a variety of benefits both personally and politically."
+ sub_suggestion_obedience_training_desc: "Your [actor.Custom2('RelationToMeShort', SCOPE.sC('recipient'))] [recipient.GetShortUINameNoTooltip] can be trained to be [sub_subservient_concept|E] to you, offering a variety of benefits both personally and politically."
  sub_suggestion_obedience_training_click: "#I Click to open Train Interaction#!"
