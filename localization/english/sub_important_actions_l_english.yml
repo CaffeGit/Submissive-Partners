@@ -2,7 +2,7 @@
  action_can_obedience_train: "Partner can be trained"
  action_can_obedience_train_combined_group_label: "Partners can be trained"
  action_can_obedience_train_combined_group_name: "$action_can_obedience_train_combined_group_label$"
- action_can_obedience_train_desc: "One of your partners, [recipient.GetUIName], can be targeted by an [sub_train_obedience_scheme|E]."
+ action_can_obedience_train_desc: "One of your partners, [recipient.GetUIName], can be trained in [sub_subservience_concept|E]."
  action_can_obedience_train_combined_group_description: "You can train partners in [sub_subservience_concept|E]."
  action_can_obedience_train_label: "You can train [recipient.GetShortUIName] in $game_concept_sub_subservience_concept$"
  action_can_obedience_train_combined_label: "[recipient.GetUINameNoTooltip]"

@@ -1,14 +1,18 @@
 ﻿l_english:
  # Scheme Interaction
  sub_train_obedience_interaction: "$game_concept_sub_train_obedience$ #weak (Scheme)#!"
- sub_train_obedience_interaction_desc: "Have [recipient.GetShortUINameNoTooltip] undergo [game_concept_sub_train_obedience|E] to learn [sub_subservience_concept|E]*\n\n*preview time to complete innacurate"
+ sub_train_obedience_interaction_desc: "[sub_train_obedience_action|E] [recipient.GetShortUINameNoTooltip] to be your [submissive|E]*\n\n*preview time to complete innacurate"
 
  # Notifications
- sub_train_obedience: "$game_concept_sub_train_obedience$ Scheme"
- sub_train_obedience_invalid: "I stop trying to train [target.GetShortUINameNoTooltip] as she can no longer become $game_concept_sub_subservient_concept$ to me."
+ sub_train_obedience: "$game_concept_sub_train_obedience_scheme$"
+ sub_train_obedience_invalid: "I stop trying to [sub_train_obedience_action|E] [target.GetShortUINameNoTooltip] as she can no longer become my [submissive|E]."
 
  # Scheme Name/Description
- sub_train_obedience_desc: "Train a character to be more obedient"
+ sub_train_obedience_action: "Train"
+ sub_train_obedience_desc: "$sub_train_obedience_action$ a character to be more obedient"
  sub_train_obedience_desc_general: "$sub_train_obedience_desc$."
- sub_train_obedience_action: "Train (Obedience)"
- SUB_TRAIN_OBEDIENCE_SUCCESS_DESC: "[TARGET_CHARACTER.GetShortUINameNoTooltip] will be devoted and loyal to you for life"
+ SUB_TRAIN_OBEDIENCE_SUCCESS_DESC: "[TARGET_CHARACTER.GetShortUINameNoTooltip] will become your [submissive|E], and be devoted and loyal to you for life"
+
+#  seduce_action: "Seduce"
+#  seduce_desc: "I will win [SCHEME.GetTarget.GetShortUINameNoTooltip] over with sweet words and sweeter gestures – [SCHEME.GetTarget.GetSheHe] will soon be mine!"
+#  seduce_desc_general: "Using sweet words and sweeter gestures, aim to win the affection of someone."

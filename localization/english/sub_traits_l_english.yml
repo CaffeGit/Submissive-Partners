@@ -1,5 +1,5 @@
 ﻿l_english:
- trait_sub_subservient: "Subservient"
+ trait_sub_subservient: "Subservience"
  trait_sub_subservient_1: "Trainee (Obedience)"
  trait_sub_subservient_1_desc: "She has a basic idea of the obedience expected of a $game_concept_submissive$, but not much more than that."
  trait_sub_subservient_1_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] has a basic idea of the obedience expected of a $game_concept_submissive$, but not much more than that."
