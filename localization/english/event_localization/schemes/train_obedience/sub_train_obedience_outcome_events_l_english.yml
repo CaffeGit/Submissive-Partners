@@ -5,7 +5,7 @@
 
  sub_train_obedience_outcome.0002.t: "Cut Tragically Short"
  sub_train_obedience_outcome.0002.desc: "With the death of my [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('target') )] [target.GetShortUINameNoTooltip], my plans for her no longer matter.\n\nWhatever may once have been, it is now dead."
- sub_train_obedience_outcome.0002.a: "Truly a Pity"
+ sub_train_obedience_outcome.0002.a: "Truly a pity"
 
  sub_train_obedience_outcome.1000.t: "A Modest Proposal"
  sub_train_obedience_outcome.1000.desc: "You summon [target.GetShortUINameNoTooltip] to your chambers. Ever since she became your [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('target') )], you've wanted to talk with her about taking your relationship in a new direction, and you've decided there's no sense in waiting any longer. You're just not sure how she'll react to the idea.\n\nThe two of you talk for a long time, late into the night- about love, loyalty, and trust. About what you each want from life, and from each other. Finally, you decide that a better opportunity won't be presenting itself anytime soon.\n\nYou watch her carefully as you you give voice to the idea that's been stirring in the back of your mind all night. What you really want is for her to be more... obedient. More submissive. And you want to show her how."

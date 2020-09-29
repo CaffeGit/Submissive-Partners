@@ -2,7 +2,7 @@
  game_concept_sub_train_obedience: "Obedience Training"
  game_concept_sub_train_obedience_scheme: "Obedience Training Scheme"
  game_concept_sub_train_obedience_schemes: "Obedience Training Schemes"
- game_concept_sub_train_obedience_scheme_desc: "The $game_concept_sub_train_obedience_scheme$ is a [personal_scheme|E] to train a character to be [sub_subservient_concept|E].\n\nWhile eventual success is assured, low opinion or a willful personality can make it a long process. However, the rewards last a lifetime and are well worth the effort."
+ game_concept_sub_train_obedience_scheme_desc: "The $game_concept_sub_train_obedience_scheme$ is a [personal_scheme|E] to train a character to be [sub_subservient_concept|E] to you. It is not [secret_scheme_single|E] and does not use [agents|E].\n\nYour [martial|E] has a slight effect on [scheme_power|E], but power is mostly based on the [scheme_target|E]'s personality and [opinion|E] of you.\n\nWhile eventual success is assured, low opinion or a willful personality can make it a long process. However, the rewards last a lifetime and are well worth the effort."
 
  game_concept_sub_subservience_concept: "Subservience"
  game_concept_sub_subservient_concept: "Subservient"

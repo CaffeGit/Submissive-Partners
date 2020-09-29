@@ -1,11 +1,11 @@
 ﻿l_english:
  # Scheme Interaction
- sub_train_obedience_interaction: "Obedience Training #weak (Scheme)#!"
- sub_train_obedience_interaction_desc: "Train [recipient.GetShortUINameNoTooltip] in obedience*\n\n*preview time to complete innacurate"
+ sub_train_obedience_interaction: "$game_concept_sub_train_obedience$ #weak (Scheme)#!"
+ sub_train_obedience_interaction_desc: "Have [recipient.GetShortUINameNoTooltip] undergo [game_concept_sub_train_obedience|E] to learn [sub_subservience_concept|E]*\n\n*preview time to complete innacurate"
 
  # Notifications
- sub_train_obedience: "Obedience Training Scheme"
- sub_train_obedience_invalid: "I stop trying to train [target.GetShortUINameNoTooltip] as she can no longer become my Submissive."
+ sub_train_obedience: "$game_concept_sub_train_obedience$ Scheme"
+ sub_train_obedience_invalid: "I stop trying to train [target.GetShortUINameNoTooltip] as she can no longer become $game_concept_sub_subservient_concept$ to me."
 
  # Scheme Name/Description
  sub_train_obedience_desc: "Train a character to be more obedient"

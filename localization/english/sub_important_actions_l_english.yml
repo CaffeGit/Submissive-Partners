@@ -12,7 +12,7 @@
  action_can_accelerated_obedience_train_combined_group_label: "Partners can be made obedient"
  action_can_accelerated_obedience_train_combined_group_name: "$action_can_accelerated_obedience_train_combined_group_label$"
  action_can_accelerated_obedience_train_desc: "One of your partners, [recipient.GetUIName], can be immediately made [sub_subservient_concept|E] to you."
- action_can_accelerated_obedience_train_combined_group_description: "You can immediately make [sub_subservient_concept|E] to you."
+ action_can_accelerated_obedience_train_combined_group_description: "You can immediately make some of your partners [sub_subservient_concept|E] to you."
  action_can_accelerated_obedience_train_label: "You can make [recipient.GetShortUIName] $game_concept_sub_subservient_concept$"
  action_can_accelerated_obedience_train_combined_label: "[recipient.GetUINameNoTooltip]"
  action_can_accelerated_obedience_train_click: "#I Click to open Interaction#!"
