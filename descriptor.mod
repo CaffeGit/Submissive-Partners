@@ -2,5 +2,5 @@
 tags={
 	"Utilities"
 }
-name="Submissive Partners"
+name="Submissive-Partners"
 supported_version="1.1.*"
