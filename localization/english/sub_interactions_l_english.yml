@@ -5,11 +5,11 @@
  sub_clothing_rules_interaction: "Set Clothing Rules"
  sub_clothing_rules_interaction_desc: "Decide what clothing, if any, [recipient.GetShortUINameNoTooltip] should wear in public."
  sub_chastity_rules_interaction: "Set Chastity Rules"
- sub_chastity_rules_interaction_desc: "Decide how often [recipient.GetShortUINameNoTooltip] is allowed orgasms, or lock her up in chastity to prevent pregnancy entirely."
+ sub_chastity_rules_interaction_desc: "Decide how often [recipient.GetShortUINameNoTooltip] is allowed orgasms, or lock [recipient.GetHerHim] up in chastity to prevent pregnancy entirely."
  sub_train_obedience_accelerated_interaction: "Instill Obedience"
- sub_train_obedience_accelerated_interaction_desc: "Since [recipient.GetShortUINameNoTooltip] has already been superbly trained, she will willingly become [sub_subservient_concept|E] to you."
+ sub_train_obedience_accelerated_interaction_desc: "Since [recipient.GetShortUINameNoTooltip] has already been superbly trained, [recipient.GetSheHe] will willingly become [sub_subservient_concept|E] to you."
  sub_remove_submissive_interaction: "Set Aside $game_concept_submissive$"
- sub_remove_submissive_interaction_desc: "While her devotion and training will remain, sexually you will no longer consider [recipient.GetShortUINameNoTooltip] your [submissive|E]."
+ sub_remove_submissive_interaction_desc: "While [recipient.GetHerHis] devotion and training will remain, sexually you will no longer consider [recipient.GetShortUINameNoTooltip] your [submissive|E]."
  sub_remove_submissive_interaction_notification: "Set Aside $game_concept_submissive$"
  sub_regain_submissive_interaction: "Take $game_concept_submissive$"
  sub_regain_submissive_interaction_desc: "You once again desire to call [recipient.GetShortUINameNoTooltip] your [submissive|E]."
@@ -20,7 +20,7 @@
  # Toasts
  sub_accept_order: ""Of course, [actor.Custom('SubMasterMistress')|U]""
  sub_train_obedience_interaction_toast: "$game_concept_sub_train_obedience$"
- sub_train_obedience_accelerated_interaction_toast: "[recipient.GetFirstNameNoTooltip] professes her loyalty"
+ sub_train_obedience_accelerated_interaction_toast: "[recipient.GetFirstNameNoTooltip] professes [recipient.GetHerHis] loyalty"
 
  # Debugging/Testing
 #  sub_make_busty_interaction: "Breast Enhancement"
