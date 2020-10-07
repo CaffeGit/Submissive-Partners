@@ -33,3 +33,22 @@ SubMasterMistressPossessive = {
 		localization_key = SUB_MISTRESS_POSSESSIVE
 	}
 }
+
+SubPenisPussy = {
+	type = character
+
+	text = {
+		trigger = {
+			carn_is_futa_trigger = yes
+		}
+		localization_key = SUB_PENIS
+	}
+
+	text = {
+		trigger = {
+			is_female = yes
+			carn_is_futa_trigger = no
+		}
+		localization_key = SUB_PUSSY
+	}
+}
