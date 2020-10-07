@@ -13,4 +13,5 @@ If you are interested in contributing, get in touch with me via either of the li
 ## Credits
 
 - Caffe: Lead Developer & Author
+- Irivial: French translation
 - Triskelia: Icon artwork

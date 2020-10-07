@@ -1,0 +1,5 @@
+﻿l_french:
+ sub_subservient_to_master: "Obéissante à [GetPlayer.Custom('SubMasterMistress')|U]"
+ sub_made_me_go_naked: "Quoi?! Mais tout le monde verra!"
+ sub_positive_training_start: "Apprecie être entrainée"
+ sub_negative_training_start: "Contrariée a être entrainée"
