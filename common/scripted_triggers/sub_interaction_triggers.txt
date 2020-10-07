@@ -17,15 +17,75 @@ sub_has_obedience_modifier_trigger = {
 sub_show_sub_interactions_trigger = {
 	AND = {
 		is_adult = yes
-		is_female = yes
 		sub_has_sub_relation_trigger = { DOMINANT = $DOMINANT$ }
 	}
+	OR = {
+		has_game_rule = sub_all_genders_valid_subs
+		AND = {
+			has_game_rule = sub_female_only_valid_subs
+			is_female = yes
+		}
+		AND = {
+			has_game_rule = sub_male_only_valid_subs
+			is_male = yes
+		}
+	}
+}
+
+sub_can_set_relation_dominant_regardless_attraction_trigger = {
+	is_adult = yes
+	$CHARACTER$ = {
+		is_adult = yes
+	}
+	NOR = {
+		has_relation_dominant = $CHARACTER$
+		has_relation_submissive = $CHARACTER$
+	}
+}
+
+sub_can_set_relation_submissive_regardless_attraction_trigger = {
+	is_adult = yes
+	$CHARACTER$ = {
+		is_adult = yes
+	}
+	NOR = {
+		has_relation_dominant = $CHARACTER$
+		has_relation_submissive = $CHARACTER$
+	}
+}
+
+sub_can_set_relation_dominant_with_game_rule_trigger = {
+	OR = {
+		AND = {
+			has_game_rule = sub_gender_attraction_requirement_enabled
+			can_set_relation_dominant_trigger = { CHARACTER = $CHARACTER$ }
+		}
+		AND = {
+			has_game_rule = sub_gender_attraction_requirement_disabled
+			sub_can_set_relation_dominant_regardless_attraction_trigger = { CHARACTER = $CHARACTER$ }
+		}
+	}
+	$CHARACTER$ = { is_adult = yes }
+}
+
+sub_can_set_relation_submissive_with_game_rule_trigger = {
+	OR = {
+		AND = {
+			has_game_rule = sub_gender_attraction_requirement_enabled
+			can_set_relation_submissive_trigger = { CHARACTER = $CHARACTER$ }
+		}
+		AND = {
+			has_game_rule = sub_gender_attraction_requirement_disabled
+			sub_can_set_relation_submissive_regardless_attraction_trigger = { CHARACTER = $CHARACTER$ }
+		}
+	}
+	$CHARACTER$ = { is_adult = yes }
 }
 
 sub_can_be_obedience_trained_trigger = {
 	AND = {
 		sub_show_sub_interactions_trigger = { DOMINANT = $DOMINANT$ }
-		can_set_relation_dominant_trigger = { CHARACTER = $DOMINANT$ }
+		sub_can_set_relation_dominant_with_game_rule_trigger = { CHARACTER = $DOMINANT$ }
 		NOT = { has_trait = sub_subservient_4 }
 	}
 	$DOMINANT$ = { is_adult = yes }
@@ -34,7 +94,7 @@ sub_can_be_obedience_trained_trigger = {
 sub_can_be_accelerated_obedience_trained_trigger = {
 	AND = {
 		sub_show_sub_interactions_trigger = { DOMINANT = $DOMINANT$ }
-		can_set_relation_dominant_trigger = { CHARACTER = $DOMINANT$ }
+		sub_can_set_relation_dominant_with_game_rule_trigger = { CHARACTER = $DOMINANT$ }
 		NOT = { sub_has_obedience_modifier_trigger = { DOMINANT = $DOMINANT$ } }
 		has_trait = sub_subservient_4
 	}
