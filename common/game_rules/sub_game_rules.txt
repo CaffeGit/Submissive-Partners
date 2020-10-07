@@ -1,8 +1,8 @@
 ﻿sub_valid_subs = {
-	default = sub_all_genders_valid_subs
-	sub_all_genders_valid_subs = {}
-	sub_female_only_valid_subs = {}
-	sub_male_only_valid_subs = {}
+	default = sub_valid_subs_all_genders
+	sub_valid_subs_all_genders = {}
+	sub_valid_subs_female_only = {}
+	sub_valid_subs_male_only = {}
 }
 
 sub_gender_attraction_requirement = {

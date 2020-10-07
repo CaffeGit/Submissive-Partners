@@ -20,13 +20,13 @@ sub_show_sub_interactions_trigger = {
 		sub_has_sub_relation_trigger = { DOMINANT = $DOMINANT$ }
 	}
 	OR = {
-		has_game_rule = sub_all_genders_valid_subs
+		has_game_rule = sub_valid_subs_all_genders
 		AND = {
-			has_game_rule = sub_female_only_valid_subs
+			has_game_rule = sub_valid_subs_female_only
 			is_female = yes
 		}
 		AND = {
-			has_game_rule = sub_male_only_valid_subs
+			has_game_rule = sub_valid_subs_male_only
 			is_male = yes
 		}
 	}
