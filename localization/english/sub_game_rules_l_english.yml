@@ -1,11 +1,11 @@
 ﻿l_english:
  rule_sub_valid_subs: "#X Submissive Partners:#! Valid Sub Genders"
  setting_sub_all_genders_valid_subs: "All Genders"
- setting_sub_all_genders_valid_subs_desc: "Both male and female characters can become $game_concept_submissives$. #X Warning:#! Some text assumes submissives are female."
+ setting_sub_all_genders_valid_subs_desc: "Both male and female characters can become $game_concept_submissives$."
  setting_sub_female_only_valid_subs: "#high Female Only#!"
  setting_sub_female_only_valid_subs_desc: "Only female characters can become $game_concept_submissives$."
  setting_sub_male_only_valid_subs: "#high Male Only#!"
- setting_sub_male_only_valid_subs_desc: "Only male characters can become $game_concept_submissives$. #X Warning:#! Some text assume submissivess are female."
+ setting_sub_male_only_valid_subs_desc: "Only male characters can become $game_concept_submissives$."
 
  rule_sub_gender_attraction_requirement: "#X Submissive Partners:#! Gender Attraction Requirement"
  setting_sub_gender_attraction_requirement_enabled: "Enabled"
