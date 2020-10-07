@@ -1,0 +1,33 @@
+﻿l_french:
+ sub_pose.0001.t: "Se donner en spectacle"
+ sub_pose.0001.desc.short: ""Quel est votre souhait, [actor.Custom('SubMasterMistress')|U]?""
+ sub_pose.0002.desc.short: ""J'éspérais que vous disiez cela, [actor.Custom('SubMasterMistress')|U]. Lorsque vous serez satisfait de mon spectacle peut etre pourrions-nous aller sous les draps?""
+ sub_pose.0003.desc.short: ""Oui, un petit peu... mais vous pouvez regarder de tout votre saoûl, [actor.Custom('SubMasterMistress')|U]. Votre plaisir est plus important que ma modestie.""
+ sub_pose.0004.desc.short: ""Je ferais de mon mieux, [actor.Custom('SubMasterMistress')|U], Mais vous avoir ici a me regarder est tres ... perturbant. Est-ce que cette pose vous plait ?""
+ sub_pose.0005.desc.short: ""Oh...! D-depuis quand avez vous des menottes ici ?! Plus important, combien de temps allez vous me laisser emprisonnée ainsi...?""
+
+ sub_pose.0001.a: "Actuellement la premiere pose était bien."
+ sub_pose.0001.b: "Tu est magnifique."
+ sub_pose.0001.c: "Embarassée?"
+ sub_pose.0001.d: "Essayes d'avoir l'air naturelle."
+ sub_pose.0001.e: "En fait, je pense que tu seras plus belle enchaînée!"
+ sub_pose.0001.f: "Ce sera tout pour le moment."
+
+ sub_rules.0001.t: "Changer les rêgles de chasteté"
+ sub_rules.0001.desc.short: "Vous regardez quelles différentes rêgles vous pouvez instaurer pour les orgasmes de [recipient.GetFirstNameNoTooltip]."
+
+ sub_rules.0001.a: "Supprimer toute restriction sur ses orgasmes."
+ sub_rules.0001.b: "seulement des un controle occasionel des orgasmes lui fera du bien."
+ sub_rules.0001.c: "La garder sur le fil. peut etre quelques orgasmes à l'année, si elle se comporte bien."
+ sub_rules.0001.d: "Des Orgasmes? Jamais! Une interdiciton totale de se toucher est ce dont elle a besoin."
+ sub_rules.0001.e: "Enfermer son intimité. Pas d'orgasmes, pas de masturbation, et aucune chance d'enfanter."
+ sub_rules.0001.f: "J'ai changé d'avis."
+
+ sub_rules.0002.t: "Changer les rêgles d'habillement"
+ sub_rules.0002.desc.short: "Habiller a votre goût [recipient.GetFirstNameNoTooltip] en privé dans votre chambre est satisfaisant, cependant vous pouvez aussi determiner ce qu'elle est authorisée a porter le reste du temps..."
+
+ sub_rules.0002.a: "La laisser porter ce qu'elle aime."
+ sub_rules.0002.b: "L'habiller avec des habits provocateurs."
+ sub_rules.0002.c: "N'authoriser que les sous-vêtements."
+ sub_rules.0002.d: "Supprimer son droit de s'habiller entierement!"
+ sub_rules.0002.e: "J'ai changé d'avis."

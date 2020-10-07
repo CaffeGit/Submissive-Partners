@@ -1,0 +1,11 @@
+﻿l_french:
+ game_concept_sub_train_obedience_scheme: "Plan d'Entrainement d'Obéissance"
+ game_concept_sub_train_obedience_schemes: "Plans d'Entrainement d'Obéissance"
+ game_concept_sub_train_obedience: "Entrainement d'Obéissance"
+ game_concept_sub_train_obedience_action: "Entrainement"
+ game_concept_sub_train_obedience_scheme_single: "un Plan d'Entrainement d'Obéissance"
+ game_concept_sub_train_obedience_scheme_desc: "Le $game_concept_sub_train_obedience_scheme$ est un [personal_scheme|E] pour entrainer un personnage dans [sub_subservience_concept|E], eventuellement la faisant devenir votre [submissive|E]. ce n'est pas [secret_scheme_single|E] et n'utilise pas [agents|E].\n\nVotre [martial|E] a un effet léger sur [scheme_power|E], mais la puissance est principalement basée sur la personalité de [scheme_target|E] et son [opinion|E] à votre sujet. Bien que le succes est assuré, une opinion basse ou une personalité obstinée en fera une longue entreprise. Cependant, les résultats persisteront pour toute la vie et son dignes des éfforts fournis."
+
+ game_concept_sub_subservience_concept: "Asservisement"
+ game_concept_sub_subservient_concept: "Servile"
+ game_concept_sub_subservience_concept_desc: "$game_concept_sub_subservience_concept$ a plusieur facettes, et est enseigné à travers le [sub_train_obedience_scheme|E]. Personnages qui sont $game_concept_sub_subservient_concept$ à un maître ou une maîtresse tendent a avoir une opinion extremement élevée vis a vis de ce personnage, s'éfforcent de leur plaire, et sont ouvert a suivre les règles dictées par ces personnages.\n\n être $game_concept_sub_subservient_concept$ envers quelqu'un est intimement lié au fait d'être leur [submissive|E], mais n'est pas identique. completer le $game_concept_sub_train_obedience_scheme_single$ fera que l'apprentie une $game_concept_sub_subservient_concept$ pour la vie, mais le $game_concept_submissive$ [relation|E] depend de l'accord continue de la $game_concept_submissive$ et du $game_concept_dominant$."
