@@ -1,5 +1,5 @@
 ﻿sub_valid_subs = {
-	default = sub_female_only_valid_subs
+	default = sub_all_genders_valid_subs
 	sub_all_genders_valid_subs = {}
 	sub_female_only_valid_subs = {}
 	sub_male_only_valid_subs = {}
