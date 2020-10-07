@@ -1,0 +1,12 @@
+﻿sub_valid_subs = {
+	default = sub_female_only_valid_subs
+	sub_all_genders_valid_subs = {}
+	sub_female_only_valid_subs = {}
+	sub_male_only_valid_subs = {}
+}
+
+sub_gender_attraction_requirement = {
+	default = sub_gender_attraction_requirement_enabled
+	sub_gender_attraction_requirement_enabled = {}
+	sub_gender_attraction_requirement_disabled = {}
+}
