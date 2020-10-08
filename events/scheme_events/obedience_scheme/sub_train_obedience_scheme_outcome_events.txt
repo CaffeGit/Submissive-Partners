@@ -192,7 +192,6 @@ sub_train_obedience_outcome.1002 = {
 }
 
 # Neutral response
-# Positive response
 sub_train_obedience_outcome.1003 = {
 	type = character_event
 	title = sub_train_obedience_outcome.1003.t
