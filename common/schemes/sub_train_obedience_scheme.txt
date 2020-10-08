@@ -56,6 +56,7 @@
 		if = {
 			limit = {
 				NOT = { scheme_progress = 100 }
+				scheme_target = { is_alive = yes }
 				scheme_owner = {
 					NOR = {
 						is_consort_of = scope:scheme.scheme_target
