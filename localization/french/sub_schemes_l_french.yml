@@ -1,14 +1,14 @@
 ﻿l_french:
  # Scheme Interaction
  sub_train_obedience_interaction: "$game_concept_sub_train_obedience$ #weak (Scheme)#!"
- sub_train_obedience_interaction_desc: "[sub_train_obedience_action|E] [recipient.GetShortUINameNoTooltip] pour etre votre [submissive|E]*\n\n*preview time to complete innacurate"
+ sub_train_obedience_interaction_desc: "[sub_train_obedience_action|E] [recipient.GetShortUINameNoTooltip] pour etre votre [submissive|E]*\n\n*Temps prévu imprécis"
 
  # Notifications
  sub_train_obedience: "$game_concept_sub_train_obedience_scheme$"
- sub_train_obedience_invalid: "J'arrete d'essayer d'[sub_train_obedience_action|E] [target.GetShortUINameNoTooltip] car elle ne peut plus devenir ma [submissive|E]."
+ sub_train_obedience_invalid: "J'arrete d'essayer d'[sub_train_obedience_action|E] [target.GetShortUINameNoTooltip] car [target.GetSheHe] ne peut plus devenir m[target.Custom('FR_OnA')] [submissive|E]."
 
  # Scheme Name/Description
  sub_train_obedience_action: "Entrainer"
  sub_train_obedience_desc: "$sub_train_obedience_action$ [SCHEME.GetTarget.GetShortUINameNoTooltip] dans [sub_subservience_concept|E], en faire eventuellement votre [submissive|E]."
  sub_train_obedience_desc_general: "$sub_train_obedience_action$ un personnage dans [sub_subservience_concept|E], en faire éventuellement votre[submissive|E]."
- SUB_TRAIN_OBEDIENCE_SUCCESS_DESC: "[TARGET_CHARACTER.GetShortUINameNoTooltip] deviendra votre [submissive|E], et vous sera loyale et dévouée a vie."
+ SUB_TRAIN_OBEDIENCE_SUCCESS_DESC: "[TARGET_CHARACTER.GetShortUINameNoTooltip] deviendra votre [submissive|E], et vous sera loyal[target.Custom('FR_E')] et dévoué[target.Custom('FR_E')] à vie."

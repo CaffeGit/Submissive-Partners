@@ -1,5 +1,5 @@
 ﻿l_french:
  sub_suggestion_obedience_training_label: "Entrainer un partenaire"
- sub_suggestion_obedience_training: "Suggestion: Entrainer [recipient.GetShortUIName] dans $game_concept_sub_subservience_concept$"
- sub_suggestion_obedience_training_desc: "Votre [actor.Custom2('RelationToMeShort', SCOPE.sC('recipient'))] [recipient.GetShortUINameNoTooltip] peut etre entrainée a devenir [sub_subservient_concept|E] offrant une variété de bénéfices personnels et politiques."
+ sub_suggestion_obedience_training: "Suggestion: Entrainer [recipient.GetShortUIName] à devenir un[recipient.Custom('FR_E')] $game_concept_sub_subservience_concept$"
+ sub_suggestion_obedience_training_desc: "Votre [actor.Custom2('RelationToMeShort', SCOPE.sC('recipient'))] [recipient.GetShortUINameNoTooltip] peut etre entrainé[recipient.Custom('FR_E')] à devenir un[recipient.Custom('FR_E')] [sub_subservient_concept|E] offrant une variété de bénéfices personnels et politiques."
  sub_suggestion_obedience_training_click: "#Cliquer pour ouvrir l'interaction d'entrainement#!"

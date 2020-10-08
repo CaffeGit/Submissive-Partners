@@ -1,5 +1,12 @@
 ﻿l_french:
+#Relations
  SUB_MASTER: "maître"
  SUB_MISTRESS: "maîtresse"
  SUB_MASTER_POSSESSIVE: "du maître"
  SUB_MISTRESS_POSSESSIVE: "de la maîtresse"
+ 
+#Anatomie
+ SUB_PENIS: "penis"
+ SUB_PUSSY: "vagin"
+ SUB_MALE_TORSO: "torse"
+ SUB_FEMALE_TORSO: "poitrine"
