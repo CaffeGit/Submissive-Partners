@@ -13,5 +13,6 @@ If you are interested in contributing, get in touch with me via either of the li
 ## Credits
 
 - Caffe: Lead Developer & Author
+- erri120: Creator of localization_helper
 - Irivial: French translation
 - Triskelia: Icon artwork
