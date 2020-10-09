@@ -1,0 +1,11 @@
+﻿l_german:
+game_concept_sub_train_obedience_scheme:0 "Obedience Training Scheme"
+game_concept_sub_train_obedience_schemes:0 "Obedience Training Schemes"
+game_concept_sub_train_obedience:0 "Obedience Training"
+game_concept_sub_train_obedience_action:0 "Train"
+game_concept_sub_train_obedience_scheme_single:0 "an Obedience Training Scheme"
+game_concept_sub_train_obedience_scheme_desc:0 "The $game_concept_sub_train_obedience_scheme$ is a [personal_scheme|E] to train a character in [sub_subservience_concept|E], eventually making them your [submissive|E]. It is not [secret_scheme_single|E] and does not use [agents|E].\n\nYour [martial|E] has a slight effect on [scheme_power|E], but power is mostly based on the [scheme_target|E]'s personality and [opinion|E] of you. While eventual success is assured, low opinion or a willful personality can make it a long process. However, the rewards last a lifetime and are well worth the effort."
+
+game_concept_sub_subservience_concept:0 "Subservience"
+game_concept_sub_subservient_concept:0 "Subservient"
+game_concept_sub_subservience_concept_desc:0 "$game_concept_sub_subservience_concept$ has many facets, and is taught through the [sub_train_obedience_scheme|E]. Characters who are $game_concept_sub_subservient_concept$ to a Master or Mistress tend to have an extremely high opinion of that character, strive to please them, and are open to following rules set by them.\n\nBeing $game_concept_sub_subservient_concept$ to someone is intimately related to being their [submissive|E], but they are not identical. Completing $game_concept_sub_train_obedience_scheme_single$ will make the trainee $game_concept_sub_subservient_concept$ for life, but the $game_concept_submissive$ [relation|E] depends upon the continued consent of both the $game_concept_submissive$ and the $game_concept_dominant$."

@@ -1,0 +1,14 @@
+﻿l_simp_chinese:
+rule_sub_valid_subs:0 "#X Submissive Partners:#! Valid Sub Genders"
+setting_sub_valid_subs_all_genders:0 "All Genders"
+setting_sub_valid_subs_all_genders_desc:0 "Both male and female characters can become $game_concept_submissives$."
+setting_sub_valid_subs_female_only:0 "#high Female Only#!"
+setting_sub_valid_subs_female_only_desc:0 "Only female characters can become $game_concept_submissives$."
+setting_sub_valid_subs_male_only:0 "#high Male Only#!"
+setting_sub_valid_subs_male_only_desc:0 "Only male characters can become $game_concept_submissives$."
+
+rule_sub_gender_attraction_requirement:0 "#X Submissive Partners:#! Gender Attraction Requirement"
+setting_sub_gender_attraction_requirement_enabled:0 "Enabled"
+setting_sub_gender_attraction_requirement_enabled_desc:0 "Characters will not enter into a $game_concept_dominant$/$game_concept_submissive$ relationship unless each is attracted to the other's gender."
+setting_sub_gender_attraction_requirement_disabled:0 "#high Disabled#!"
+setting_sub_gender_attraction_requirement_disabled_desc:0 "Characters can enter into a $game_concept_dominant$/$game_concept_submissive$ relationship regardless of gender attraction."

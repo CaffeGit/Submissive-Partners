@@ -182,7 +182,7 @@ def copy_base_translations(input_dir: str, output_dir: str, input_lang: str, out
 
     if not os.path.exists(output_dir):
         os.mkdir(output_dir);
-    items = glob.glob(input_dir + '\\*');
+    items = glob.glob(input_dir + '/*');
     for item in items:
         if os.path.isdir(item):
             path = os.path.join(output_dir, item.split(os.path.sep)[-1]);

@@ -1,0 +1,33 @@
+﻿l_korean:
+sub_pose.0001.t:0 "Putting On A Show"
+sub_pose.0001.desc.short:0 ""What do you desire, [actor.Custom('SubMasterMistress')|U]?""
+sub_pose.0002.desc.short:0 ""I was hoping you would say that, [actor.Custom('SubMasterMistress')|U]. Perhaps when you're satisfied with my little show, we could move to the bed?""
+sub_pose.0003.desc.short:0 ""Yes, a little... but you can look all you want, [actor.Custom('SubMasterMistress')|U]. Your pleasure is more important than my modesty.""
+sub_pose.0004.desc.short:0 ""I will do my best, [actor.Custom('SubMasterMistress')|U], but having you watching me is very... distracting. Does this pose please you?""
+sub_pose.0005.desc.short:0 ""Oh...! H-how long have you had shackles in here?! And m-more importantly, how long are you going to keep me locked up like this...?""
+
+sub_pose.0001.a:0 "Actually the first pose was fine."
+sub_pose.0001.b:0 "You look stunning."
+sub_pose.0001.c:0 "Getting embarrassed at all?"
+sub_pose.0001.d:0 "Just try to look natural."
+sub_pose.0001.e:0 "Actually, I think you'd look best chained up!"
+sub_pose.0001.f:0 "That will be all for now."
+
+sub_rules.0001.t:0 "Changing Chastity Rules"
+sub_rules.0001.desc.short:0 "You consider the different rules you could set for [recipient.GetFirstNameNoTooltip]'s orgasms."
+
+sub_rules.0001.a:0 "Remove all restrictions on [recipient.GetHerHis] orgasms."
+sub_rules.0001.b:0 "Occasional orgasm denial will do [recipient.GetHerHim] good."
+sub_rules.0001.c:0 "Keep [recipient.GetHerHim] denied. Perhaps a few orgasms a year, if [recipient.GetSheHe] behaves."
+sub_rules.0001.d:0 "Orgasms? Never! In fact, a no-touch rule is what [recipient.GetSheHe] needs."
+sub_rules.0001.e:0 "Lock [recipient.GetHerHim] in a chastity belt. No orgasms, no touching, and no chance of pregnancy."
+sub_rules.0001.f:0 "Nevermind."
+
+sub_rules.0002.t:0 "Changing Clothing Rules"
+sub_rules.0002.desc.short:0 "Dressing up [recipient.GetFirstNameNoTooltip] in the privacy of your chambers is enjoyable, of course, but you could also determine what [recipient.GetSheHe]'s allowed to wear the rest of the time..."
+
+sub_rules.0002.a:0 "Let [recipient.GetHerHim] wear what [recipient.GetSheHe] likes."
+sub_rules.0002.b:0 "Have [recipient.GetHerHim] dress provocatively."
+sub_rules.0002.c:0 "Permit undergarments only."
+sub_rules.0002.d:0 "Revoke all clothing privileges!"
+sub_rules.0002.e:0 "Nevermind."

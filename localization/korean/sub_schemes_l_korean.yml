@@ -1,0 +1,11 @@
+﻿l_korean:
+sub_train_obedience_interaction:0 "$game_concept_sub_train_obedience$ #weak (Scheme)#!"
+sub_train_obedience_interaction_desc:0 "[sub_train_obedience_action|E] [recipient.GetShortUINameNoTooltip] to be your [submissive|E]*\n\n*preview time to complete innacurate"
+
+sub_train_obedience:0 "$game_concept_sub_train_obedience_scheme$"
+sub_train_obedience_invalid:0 "I stop trying to [sub_train_obedience_action|E] [target.GetShortUINameNoTooltip] as [target.GetSheHe] can no longer become my [submissive|E]."
+
+sub_train_obedience_action:0 "Train"
+sub_train_obedience_desc:0 "$sub_train_obedience_action$ [SCHEME.GetTarget.GetShortUINameNoTooltip] in [sub_subservience_concept|E], eventually making [SCHEME.GetTarget.GetHerHim] your [submissive|E]."
+sub_train_obedience_desc_general:0 "$sub_train_obedience_action$ a character in [sub_subservience_concept|E], eventually making them your [submissive|E]."
+SUB_TRAIN_OBEDIENCE_SUCCESS_DESC:0 "[TARGET_CHARACTER.GetShortUINameNoTooltip] will become your [submissive|E], and be devoted and loyal to you for life"

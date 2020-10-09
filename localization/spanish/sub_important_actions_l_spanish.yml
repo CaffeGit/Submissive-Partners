@@ -1,0 +1,18 @@
+﻿l_spanish:
+action_can_obedience_train:0 "Partner can be trained"
+action_can_obedience_train_combined_group_label:0 "Partners can be trained"
+action_can_obedience_train_combined_group_name:0 "$action_can_obedience_train_combined_group_label$"
+action_can_obedience_train_desc:0 "One of your partners, [recipient.GetUIName], can be trained in [sub_subservience_concept|E]."
+action_can_obedience_train_combined_group_description:0 "You can train partners in [sub_subservience_concept|E]."
+action_can_obedience_train_label:0 "You can train [recipient.GetShortUINameNoTooltip] in $game_concept_sub_subservience_concept$"
+action_can_obedience_train_combined_label:0 "[recipient.GetUINameNoTooltip]"
+action_can_obedience_train_click:0 "#I Click to open Train Interaction#!"
+
+action_can_accelerated_obedience_train:0 "Partner can be made obedient"
+action_can_accelerated_obedience_train_combined_group_label:0 "Partners can be made obedient"
+action_can_accelerated_obedience_train_combined_group_name:0 "$action_can_accelerated_obedience_train_combined_group_label$"
+action_can_accelerated_obedience_train_desc:0 "One of your partners, [recipient.GetUIName], can be immediately made [sub_subservient_concept|E] to you."
+action_can_accelerated_obedience_train_combined_group_description:0 "You can immediately make some of your partners [sub_subservient_concept|E] to you."
+action_can_accelerated_obedience_train_label:0 "You can make [recipient.GetShortUIName] $game_concept_sub_subservient_concept$"
+action_can_accelerated_obedience_train_combined_label:0 "[recipient.GetUINameNoTooltip]"
+action_can_accelerated_obedience_train_click:0 "#I Click to open Interaction#!"

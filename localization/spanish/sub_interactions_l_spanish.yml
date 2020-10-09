@@ -1,0 +1,23 @@
+﻿l_spanish:
+sub_show_pose_interaction:0 "Pose For Me"
+sub_show_pose_interaction_desc:0 "Have [recipient.GetFirstNameNoTooltip] strike some poses."
+sub_clothing_rules_interaction:0 "Set Clothing Rules"
+sub_clothing_rules_interaction_desc:0 "Decide what clothing, if any, [recipient.GetShortUINameNoTooltip] should wear in public."
+sub_chastity_rules_interaction:0 "Set Chastity Rules"
+sub_chastity_rules_interaction_desc:0 "Decide how often [recipient.GetShortUINameNoTooltip] is allowed orgasms, or lock [recipient.GetHerHim] up in chastity to prevent pregnancy entirely."
+sub_train_obedience_accelerated_interaction:0 "Instill Obedience"
+sub_train_obedience_accelerated_interaction_desc:0 "Since [recipient.GetShortUINameNoTooltip] has already been superbly trained, [recipient.GetSheHe] will willingly become [sub_subservient_concept|E] to you."
+sub_remove_submissive_interaction:0 "Set Aside $game_concept_submissive$"
+sub_remove_submissive_interaction_desc:0 "While [recipient.GetHerHis] devotion and training will remain, sexually you will no longer consider [recipient.GetShortUINameNoTooltip] your [submissive|E]."
+sub_remove_submissive_interaction_notification:0 "Set Aside $game_concept_submissive$"
+sub_regain_submissive_interaction:0 "Take $game_concept_submissive$"
+sub_regain_submissive_interaction_desc:0 "You once again desire to call [recipient.GetShortUINameNoTooltip] your [submissive|E]."
+sub_regain_submissive_interaction_notification:0 "Took $game_concept_submissive$"
+
+START_SUB_TRAINING:0 "Begin Training"
+
+sub_accept_order:0 ""Of course, [actor.Custom('SubMasterMistress')|U]""
+sub_train_obedience_interaction_toast:0 "$game_concept_sub_train_obedience$"
+sub_train_obedience_accelerated_interaction_toast:0 "[recipient.GetFirstNameNoTooltip] professes [recipient.GetHerHis] loyalty"
+
+

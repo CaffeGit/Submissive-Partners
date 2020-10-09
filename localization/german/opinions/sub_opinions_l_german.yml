@@ -1,0 +1,5 @@
+﻿l_german:
+sub_subservient_to_master:0 "Obedient to [GetPlayer.Custom('SubMasterMistress')|U]"
+sub_made_me_go_naked:0 "What?! But everyone will see!"
+sub_positive_training_start:0 "Enjoys being trained"
+sub_negative_training_start:0 "Resents being trained"
