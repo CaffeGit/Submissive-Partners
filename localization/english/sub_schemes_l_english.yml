@@ -1,7 +1,7 @@
 ﻿l_english:
  # Scheme Interaction
  sub_train_obedience_interaction: "$game_concept_sub_train_obedience$ #weak (Scheme)#!"
- sub_train_obedience_interaction_desc: "[sub_train_obedience_action|E] [recipient.GetShortUINameNoTooltip] to be your [submissive|E]*\n\n*preview time to complete innacurate"
+ sub_train_obedience_interaction_desc: "[sub_train_obedience_action|E] [recipient.GetShortUINameNoTooltip] to be your [submissive|E]*\n\n*preview time to complete inaccurate"
 
  # Notifications
  sub_train_obedience: "$game_concept_sub_train_obedience_scheme$"
